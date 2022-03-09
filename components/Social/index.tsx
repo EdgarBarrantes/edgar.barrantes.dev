@@ -15,6 +15,7 @@ const SocialContainer = ({ children, href }: SocialContainerProps) => {
       <a
         className="block p-6 sm:p-8 align-middle transition hover:scale-110"
         target="_blank"
+        rel="noreferrer"
         href={href}
       >
         {children}

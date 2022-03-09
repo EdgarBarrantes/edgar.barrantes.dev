@@ -107,7 +107,7 @@ const getHtml = async (md: string) => {
 };
 
 const getSlug = (filename: string) =>
-  filename.split(".")[0].replaceAll(" ", "-").toLowerCase();
+  filename.split(".")[0]?.replaceAll(" ", "-").toLowerCase();
 
 // Suboptimal solution. Here because gray-matter automatically parses numbers
 // in arrays as numbers and not as strings, hence "==".

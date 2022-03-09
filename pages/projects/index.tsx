@@ -29,6 +29,7 @@ const Home: NextPage = () => {
                   key={project.title}
                   href={project.href}
                   target="_blank"
+                  rel="noreferrer"
                   className="basis-full sm:basis-1/3 my-3 sm:pr-6 flex"
                 >
                   <div className="p-6 transition hover:scale-105 hover:shadow-md bg-indigo-50 dark:bg-indigo-900 rounded-md basis-full">

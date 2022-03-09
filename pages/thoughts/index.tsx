@@ -32,6 +32,7 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts }: ThoughtsProps) => {
                 className="hover:underline font-bold"
                 href="https://obsidian.md"
                 target="_blank"
+                rel="noreferrer"
               >
                 Obsidian
               </a>{" "}

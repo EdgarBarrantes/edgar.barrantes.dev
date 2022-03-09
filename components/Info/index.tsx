@@ -11,12 +11,13 @@ const Info = () => {
         height={180}
       />
       <p className="ml-5">
-        Hey, I'm <b>Edgar</b>, software developer. I enjoy working on
+        Hey, I&apos;m <b>Edgar</b>, software developer. I enjoy working on
         decentralised applications, debating ideas and going here and there.
         Feel free to{" "}
         <a
           className="font-bold hover:underline"
           target="_blank"
+          rel="noreferrer"
           href="mailto:edgar@barrantes.dev"
         >
           contact me

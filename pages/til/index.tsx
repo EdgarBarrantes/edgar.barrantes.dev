@@ -34,7 +34,7 @@ const TIL: NextPage<TILProps> = ({ tils }) => {
               Quick notes that I take regarding something new learned, mostly
               software development focused.
               <br />
-              It's my small garden to store the bits and pieces of useful
+              It&apos;s my small garden to store the bits and pieces of useful
               information that might one day help you as well.
             </div>
           }

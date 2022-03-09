@@ -15,7 +15,7 @@ const Tag: NextPage<TagProps> = ({ tag, content }) => {
   return (
     <div>
       <Head>
-        <title>{`#${tag.title}`} - Edgar Barrantes</title>
+        <title>{`#${tag}`} - Edgar Barrantes</title>
         <meta
           name="description"
           content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."

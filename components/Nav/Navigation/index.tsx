@@ -12,10 +12,10 @@ const Navigation = () => {
           <NavigationLink to="/resume">Resume</NavigationLink>
         </Box>
         <Box className="basis-1/2 sm:basis-auto">
-          <NavigationLink to="/til">TIL</NavigationLink>
+          <NavigationLink to="/thoughts">Thoughts</NavigationLink>
         </Box>
         <Box className="basis-1/2 sm:basis-auto">
-          <NavigationLink to="/thoughts">Thoughts</NavigationLink>
+          <NavigationLink to="/til">TIL</NavigationLink>
         </Box>
         <Box className="basis-1/2 sm:basis-auto">
           <NavigationLink to="/projects">Projects</NavigationLink>
@@ -32,7 +32,7 @@ const Navigation = () => {
         <Box className="basis-full sm:basis-auto flex justify-center order-1 sm:order-0">
           <NewsletterLink />
         </Box>
-        <Box className="basis-full sm:basis-auto p-8 order-0 sm:order-1">
+        <Box className="basis-full sm:basis-auto p-8 order-0 sm:order-1 hidden">
           Want to focus?
         </Box>
         <Box className="basis-full sm:basis-auto flex justify-center order-2 sm:order-2">

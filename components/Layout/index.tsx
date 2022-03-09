@@ -17,11 +17,11 @@ const Layout = ({
 
   return (
     <main
-      className={`transition-colors p-0 flex flex-col justify-center items-center min-h-screen min-w-screen bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-50 font-main`}
+      className={`relative transition-colors p-0 flex flex-col justify-center items-center w-screen min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-main`}
     >
       {shouldNavigationBeToggable && (
         <div className="w-full">
-          <div className="absolute top-4 right-8 z-20">
+          <div className="absolute top-0 sm:top-4 -right-0 sm:right-8 z-30">
             <div className="flex">
               <NavigationToggle
                 isNavigationOpen={isNavigationOpen}
@@ -29,7 +29,7 @@ const Layout = ({
               />
             </div>
           </div>
-          <div className="absolute top-4 left-8 z-20">
+          <div className="absolute top-0 sm:top-4 left-0 sm:left-8 z-30">
             <div className="flex">
               <NavigationHome />
             </div>
@@ -37,18 +37,21 @@ const Layout = ({
         </div>
       )}
 
-      <div className="absolute top-0 flex flex-col justify-center items-center min-h-screen pt-24 sm:pt-0">
-        <div
-          className={`sm:px-2 transition-opacity duration-300 ${
-            isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-0"
-          }`}
-        >
+      <div
+        className={`absolute right-0 left-0 top-0 flex flex-col justify-center items-center 
+        min-h-screen pt-0 transition-opacity duration-300 ${
+          isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-0"
+        }`}
+      >
+        <div className={`sm:px-2`}>
           <Navigation />
         </div>
       </div>
-      <div className={`flex flex-col justify-center items-center min-h-screen`}>
+      <div
+        className={`flex flex-col justify-center items-center min-h-screen max-w-4xl py-32 sm:py-48`}
+      >
         <div
-          className={`transition-opacity duration-300 ${
+          className={`transition-opacity duration-300 mx-4 ${
             !isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-0"
           }`}
         >

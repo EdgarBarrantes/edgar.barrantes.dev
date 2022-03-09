@@ -13,7 +13,7 @@ const NewsletterLink = () => {
   return (
     <a
       href="/"
-      className="block dark:invert transition cursor-pointer w-auto p-8"
+      className="block dark:invert transition hover:scale-110 cursor-pointer w-auto p-8"
       onClick={openNewsletterModal}
     >
       <NewsletterIcon width="48" height="48" viewBox="0 0 120 120" />

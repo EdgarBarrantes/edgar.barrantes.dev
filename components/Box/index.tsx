@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { HTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface BoxProps {
   children: ReactNode;
@@ -9,7 +8,7 @@ interface BoxProps {
 const Box = ({ className, children }: BoxProps) => {
   return (
     <div
-      className={`block text-2xl align-middle transition ${
+      className={`block text-xl sm:text-2xl align-middle ${
         className ? className : ""
       }`}
     >

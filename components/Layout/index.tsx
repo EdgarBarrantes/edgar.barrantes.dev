@@ -44,7 +44,7 @@ const Layout = ({
         }`}
       >
         <div className={`sm:px-2`}>
-          <Navigation />
+          <Navigation toggleNavigation={setIsNavigationOpen} />
         </div>
       </div>
       <div

@@ -1,23 +1,50 @@
+import { useRouter } from "next/router";
+
 import Box from "../../Box";
 import NavigationLink from "../NavigationLink";
 import ModeToggle from "../../ColorModeToggle";
 import Social from "../../Social";
 import NewsletterLink from "../../NewsletterIcon";
 
-const Navigation = () => {
+interface NavigationProps {
+  toggleNavigation?: (isOpen: boolean) => void;
+}
+
+const Navigation = ({ toggleNavigation }: NavigationProps) => {
+  const router = useRouter();
+  const decideOnShouldToggle = (pathname: string) => {
+    return () => {
+      if (router.pathname.startsWith(`/${pathname}`)) {
+        toggleNavigation && toggleNavigation(false);
+      }
+    };
+  };
+  console.log(router.pathname);
   return (
     <div className="mx-auto text-center">
       <div className="flex flex-wrap justify-between">
-        <Box className="basis-1/2 sm:basis-auto">
+        <Box
+          onClick={decideOnShouldToggle("resume")}
+          className="basis-1/2 sm:basis-auto"
+        >
           <NavigationLink to="/resume">Resume</NavigationLink>
         </Box>
-        <Box className="basis-1/2 sm:basis-auto">
+        <Box
+          onClick={decideOnShouldToggle("thoughts")}
+          className="basis-1/2 sm:basis-auto"
+        >
           <NavigationLink to="/thoughts">Thoughts</NavigationLink>
         </Box>
-        <Box className="basis-1/2 sm:basis-auto">
+        <Box
+          onClick={decideOnShouldToggle("til")}
+          className="basis-1/2 sm:basis-auto"
+        >
           <NavigationLink to="/til">TIL</NavigationLink>
         </Box>
-        <Box className="basis-1/2 sm:basis-auto">
+        <Box
+          onClick={decideOnShouldToggle("projects")}
+          className="basis-1/2 sm:basis-auto"
+        >
           <NavigationLink to="/projects">Projects</NavigationLink>
         </Box>
       </div>

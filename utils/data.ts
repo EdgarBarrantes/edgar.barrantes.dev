@@ -102,12 +102,12 @@ const getHtml = async (md: string) => {
     .use(rehypeFormat)
     .use(rehypeHighlight)
     .use(rehypeStringify)
-    .process(md.replaceAll("[[", "__").replaceAll("]]", "__"));
+    .process(md.replace(/\[\[/g, "__").replace(/\]\]/g, "__"));
   return result.toString();
 };
 
 const getSlug = (filename: string) =>
-  filename.split(".")[0]?.replaceAll(" ", "-").toLowerCase();
+  filename.split(".")[0]?.replace(/\s/g, "-").toLowerCase();
 
 // Suboptimal solution. Here because gray-matter automatically parses numbers
 // in arrays as numbers and not as strings, hence "==".

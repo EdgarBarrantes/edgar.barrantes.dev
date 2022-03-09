@@ -1,9 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Layout from "../../components/Layout";
-import Navigation from "../../components/Nav/Navigation";
+import ContentDisplay from "../../components/ContentDisplay";
 
-const Home: NextPage = () => {
+import Layout from "../../components/Layout";
+import { getAllTILs } from "../../utils/data";
+
+interface TILProps {
+  tils: {
+    data: {
+      [key: string]: any;
+    };
+    slug: string;
+    type: string;
+  }[];
+}
+
+const TIL: NextPage<TILProps> = ({ tils }) => {
   return (
     <div>
       <Head>
@@ -15,10 +27,31 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Navigation />
+        <ContentDisplay
+          title="Today I learned..."
+          description={
+            <div>
+              Quick notes that I take regarding something new learned, mostly
+              software development focused.
+              <br />
+              It's my small garden to store the bits and pieces of useful
+              information that might one day help you as well.
+            </div>
+          }
+          content={tils}
+        />
       </Layout>
     </div>
   );
 };
 
-export default Home;
+export async function getStaticProps() {
+  const tils = getAllTILs();
+  return {
+    props: {
+      tils,
+    },
+  };
+}
+
+export default TIL;

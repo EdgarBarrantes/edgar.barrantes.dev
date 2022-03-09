@@ -5,18 +5,11 @@ import ToggleIcon from "../../public/toggle.svg";
 
 const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
 
   const switchTheme = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    if (isMounted) {
-      setTheme(theme === "light" ? "dark" : "light");
-    }
+    setTheme(theme === "light" ? "dark" : "light");
   };
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   return (
     <a

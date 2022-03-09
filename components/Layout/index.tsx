@@ -39,7 +39,7 @@ const Layout = ({
 
       <div
         className={`absolute right-0 left-0 top-0 flex flex-col justify-center items-center 
-        min-h-screen pt-0  ${
+        min-h-screen pt-20 ${
           isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
       >

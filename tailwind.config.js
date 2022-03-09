@@ -1,19 +1,15 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx,md}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx,md}",
+    "./pages/**/*.{js,ts,jsx,tsx,md,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,md,mdx}",
   ],
   darkMode: "class",
-  purge: [
-    "./components/**/*.{js,ts,jsx,tsx,mdx,md}",
-    "./pages/**/*.{js,ts,jsx,tsx,md,mdx}",
-  ],
 
   theme: {
     extend: {},
     fontFamily: {
       sans: ["ui-sans-serif", "system-ui"],
-      main: ["Helvetica"],
+      main: ["Rubik, sans-serif"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

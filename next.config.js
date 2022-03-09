@@ -14,7 +14,6 @@ const nextConfig = {
     return config;
   },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-  target: "serverless",
 };
 
 const withMDX = require("@next/mdx")({

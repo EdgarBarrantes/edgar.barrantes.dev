@@ -1,20 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import ContentDisplay from "../../components/ContentDisplay";
 import Info from "../../components/Info";
 
 import Layout from "../../components/Layout";
-import { getAllThoughts, getThought, getThoughtHtml } from "../../utils/data";
+import { getAllTags, getTaggedContent } from "../../utils/data";
 
-interface ThoughtProps {
-  thought: any;
+interface TagProps {
+  tag: any;
   content: any;
 }
 
-const Thought: NextPage<ThoughtProps> = ({ thought, content }) => {
+const Tag: NextPage<TagProps> = ({ tag, content }) => {
   return (
     <div>
       <Head>
-        <title>{thought.title} - Edgar Barrantes</title>
+        <title>{`#${tag.title}`} - Edgar Barrantes</title>
         <meta
           name="description"
           content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."
@@ -22,9 +23,10 @@ const Thought: NextPage<ThoughtProps> = ({ thought, content }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <article
-          dangerouslySetInnerHTML={{ __html: content }}
-          className="prose dark:prose-invert lg:prose-lg"
+        <ContentDisplay
+          title={`#${tag}`}
+          description={<div>Content tagged with {tag}</div>}
+          content={content}
         />
         <Info />
       </Layout>
@@ -33,12 +35,12 @@ const Thought: NextPage<ThoughtProps> = ({ thought, content }) => {
 };
 
 export async function getStaticPaths() {
-  const thoughts = getAllThoughts();
+  const tags = getAllTags();
   return {
-    paths: thoughts.map((thought) => {
+    paths: tags.map((tag) => {
       return {
         params: {
-          slug: thought.slug,
+          slug: tag.toString(),
         },
       };
     }),
@@ -53,13 +55,13 @@ interface Context {
 }
 
 export async function getStaticProps({ params: { slug } }: Context) {
-  const thought = getThought(slug);
+  const taggedContent = getTaggedContent(slug);
   return {
     props: {
-      thought: thought.data,
-      content: await getThoughtHtml(thought.content),
+      tag: slug,
+      content: taggedContent,
     },
   };
 }
 
-export default Thought;
+export default Tag;

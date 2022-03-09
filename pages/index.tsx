@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Info from "../components/Info";
 import Layout from "../components/Layout";
 import Navigation from "../components/Nav/Navigation";
 
@@ -15,7 +16,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout shouldNavigationBeToggable={false}>
-        <Navigation />
+        <div className="-mx-4">
+          <Navigation />
+        </div>
       </Layout>
     </div>
   );

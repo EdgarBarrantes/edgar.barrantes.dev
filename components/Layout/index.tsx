@@ -39,8 +39,8 @@ const Layout = ({
 
       <div
         className={`absolute right-0 left-0 top-0 flex flex-col justify-center items-center 
-        min-h-screen pt-0 transition-opacity duration-300 ${
-          isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-0"
+        min-h-screen pt-0  ${
+          isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
       >
         <div className={`sm:px-2`}>
@@ -48,15 +48,11 @@ const Layout = ({
         </div>
       </div>
       <div
-        className={`flex flex-col justify-center items-center min-h-screen max-w-4xl py-32 sm:py-48`}
+        className={`flex flex-col justify-center items-center min-h-screen max-w-4xl py-32 sm:py-48 ${
+          !isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
+        }`}
       >
-        <div
-          className={`transition-opacity duration-300 mx-4 ${
-            !isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-0"
-          }`}
-        >
-          {children}
-        </div>
+        <div className={`mx-4`}>{children}</div>
       </div>
     </main>
   );

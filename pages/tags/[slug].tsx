@@ -25,7 +25,7 @@ const Tag: NextPage<TagProps> = ({ tag, content }) => {
       <Layout>
         <ContentDisplay
           title={`#${tag}`}
-          description={<div>Content tagged with {tag}</div>}
+          description={() => <div>Content tagged with {"" + tag}</div>}
           content={content}
         />
         <Info />

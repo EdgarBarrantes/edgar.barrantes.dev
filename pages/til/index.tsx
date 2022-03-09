@@ -29,7 +29,7 @@ const TIL: NextPage<TILProps> = ({ tils }) => {
       <Layout>
         <ContentDisplay
           title="Today I learned..."
-          description={
+          description={() => (
             <div>
               Quick notes that I take regarding something new learned, mostly
               software development focused.
@@ -37,7 +37,7 @@ const TIL: NextPage<TILProps> = ({ tils }) => {
               It&apos;s my small garden to store the bits and pieces of useful
               information that might one day help you as well.
             </div>
-          }
+          )}
           content={tils}
         />
       </Layout>

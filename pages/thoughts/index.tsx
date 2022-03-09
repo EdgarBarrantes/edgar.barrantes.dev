@@ -24,7 +24,7 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts }: ThoughtsProps) => {
       <Layout>
         <ContentDisplay
           title="Thoughts"
-          description={
+          description={() => (
             <div>
               Musings and notes I take on subjects that I deem important.
               <br /> Some of these are just personal notes that I take in{" "}
@@ -38,7 +38,7 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts }: ThoughtsProps) => {
               </a>{" "}
               in order to remember things better.
             </div>
-          }
+          )}
           content={thoughts}
         />
       </Layout>

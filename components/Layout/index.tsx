@@ -2,7 +2,6 @@ import { ReactNode, useState } from "react";
 
 import Navigation from "../Nav/Navigation";
 import NavigationToggle from "../Nav/NavigationToggle";
-import NavigationHome from "../Nav/NavigationHome";
 
 interface LayoutProps {
   children: ReactNode;

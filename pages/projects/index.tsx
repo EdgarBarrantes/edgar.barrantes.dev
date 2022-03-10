@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Thoughts - Edgar Barrantes</title>
+        <title>Projects - Edgar Barrantes</title>
         <meta
           name="description"
           content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."
@@ -16,7 +16,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        {" "}
         <div>
           <h1 className="text-4xl font-bold pb-4">Projects</h1>
           <p className="text-xl italic pb-8">

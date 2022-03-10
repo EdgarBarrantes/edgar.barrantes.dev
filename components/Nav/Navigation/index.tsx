@@ -4,7 +4,7 @@ import Box from "../../Box";
 import NavigationLink from "../NavigationLink";
 import ModeToggle from "../../ColorModeToggle";
 import Social from "../../Social";
-import NewsletterLink from "../../NewsletterIcon";
+import NavigationHome from "../NavigationHome";
 
 interface NavigationProps {
   toggleNavigation?: (isOpen: boolean) => void;
@@ -57,7 +57,7 @@ const Navigation = ({ toggleNavigation }: NavigationProps) => {
 
       <div className="flex flex-wrap justify-between items-center">
         <Box className="basis-full sm:basis-auto flex justify-center order-1 sm:order-0">
-          <NewsletterLink />
+          <NavigationHome />
         </Box>
         <Box className="basis-full sm:basis-auto p-8 order-0 sm:order-1 hidden">
           Want to focus?

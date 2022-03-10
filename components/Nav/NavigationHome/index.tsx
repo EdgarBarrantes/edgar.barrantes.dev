@@ -7,7 +7,7 @@ const NavigationToggle = () => {
       <a
         className={`transition dark:invert hover:scale-110 cursor-pointer p-8`}
       >
-        <Home width="36" height="36" viewBox="0 0 120 120" />
+        <Home width="48" height="48" viewBox="0 0 120 120" />
       </a>
     </Link>
   );

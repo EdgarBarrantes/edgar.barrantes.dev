@@ -29,17 +29,12 @@ const Layout = ({
               />
             </div>
           </div>
-          <div className="absolute top-0 sm:top-4 left-0 sm:left-8 z-30">
-            <div className="flex">
-              <NavigationHome />
-            </div>
-          </div>
         </div>
       )}
 
       <div
         className={`absolute right-0 left-0 top-0 flex flex-col justify-center items-center 
-        min-h-screen pt-20 ${
+        min-h-screen pt-20 sm:pt-0 ${
           isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
       >

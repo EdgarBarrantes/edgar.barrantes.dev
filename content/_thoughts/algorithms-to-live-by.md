@@ -2,6 +2,7 @@
 tag: [2022, book]
 title: Algorithms to live by
 description: Decision making inspired in algorithms invented for machines, valid in a world where computation time is not unlimited
+date: "13-03-2022"
 ---
 
 # Algorithms to live by

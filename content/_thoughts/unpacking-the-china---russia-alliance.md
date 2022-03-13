@@ -2,6 +2,7 @@
 tag: [2022, video]
 title: Unpacking the China - Russia alliance
 description: On what potential outcomes their relationship could have
+date: "11-03-2022"
 ---
 
 # Unpacking the China - Russia alliance

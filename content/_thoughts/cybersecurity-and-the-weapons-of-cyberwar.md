@@ -2,6 +2,7 @@
 tag: [2022]
 title: Cybersecurity and the Weapons of Cyberwar
 description: Podcast that left me an impresion regarding the view of argentinian hackers of governments
+date: "12-03-2022"
 ---
 
 # Cybersecurity and the Weapons of Cyberwar

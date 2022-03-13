@@ -10,7 +10,13 @@ import matter from "gray-matter";
 import { Content } from "./interfaces";
 
 const getAllThoughts = () => {
-  return getAllFiles("thoughts");
+  return getAllFiles("thoughts").sort((firstThought, secondThought) => {
+    console.log("value of first", new Date(firstThought.data.date).valueOf());
+    return (
+      getTimestamp(secondThought.data.date) -
+      getTimestamp(firstThought.data.date)
+    );
+  });
 };
 
 const getThought = (filename: string) => getFile("thoughts", filename);
@@ -115,6 +121,13 @@ const contains = (array: [], text: string) => {
     }
   });
   return isInArray;
+};
+
+const getTimestamp = (date: string) => {
+  const dateArray = date.split("-");
+  return new Date(
+    `${Number(dateArray[1]) - 1}-${dateArray[0]}-${dateArray[2]}`
+  ).valueOf();
 };
 
 export {

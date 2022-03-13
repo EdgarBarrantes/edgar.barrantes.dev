@@ -26,11 +26,12 @@ const ContentDisplay = ({
               <a className="basis-full sm:basis-1/2 my-3 sm:odd:pr-3 sm:even:pl-3 flex">
                 <div className="p-6 transition hover:scale-105 hover:shadow-md bg-indigo-50 dark:bg-indigo-900 rounded-md basis-full">
                   <h1 className="pb-2 font-bold text-clip">{article.title}</h1>
+                  <p className="pb-2 italic text-left">{article.date}</p>
                   <p className="pb-6 text-ellipsis">{article.description}</p>
                   <div className="-ml-2 mb-2">
                     {article.tag.map((t: string) => {
                       return (
-                        <Link key={t} href={"/tags/" + t}>
+                        <Link key={t} href={`/tags/${t}`}>
                           <a className="p-2 m-2 rounded z-10 transition border-2 border-indigo-900 dark:border-transparent hover:border-indigo-500 dark:hover:border-indigo-200 dark:bg-indigo-800 hover:opacity-80 hover:shadow-lg dark:hover:shadow-none dark:shadow-indigo-600">
                             {t}
                           </a>

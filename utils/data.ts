@@ -11,7 +11,6 @@ import { Content } from "./interfaces";
 
 const getAllThoughts = () => {
   return getAllFiles("thoughts").sort((firstThought, secondThought) => {
-    console.log("value of first", new Date(firstThought.data.date).valueOf());
     return (
       getTimestamp(secondThought.data.date) -
       getTimestamp(firstThought.data.date)

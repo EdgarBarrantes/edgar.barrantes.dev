@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Info = () => {
   return (
-    <div className="flex items-center flex-col sm:flex-row my-12 p-6 text-slate-50 dark:text-indigo-50 bg-slate-900 dark:bg-indigo-900 rounded-md">
+    <div className="flex items-center flex-col sm:flex-row my-8 p-6 text-slate-50 dark:text-indigo-50 bg-slate-900 dark:bg-indigo-900 rounded-md">
       <Image
         src="/profile.jpg"
         alt="Profile picture"

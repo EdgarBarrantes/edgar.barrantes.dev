@@ -17,6 +17,11 @@ const Home: NextPage = () => {
       </Head>
       <Layout shouldNavigationBeToggable={false}>
         <div className="-mx-4">
+          <div className="flex flex-wrap justify-center items-center -mt-16">
+            <div className="max-w-xl px-4">
+              <Info />
+            </div>
+          </div>
           <Navigation />
         </div>
       </Layout>

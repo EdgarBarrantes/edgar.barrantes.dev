@@ -1,16 +1,12 @@
 import fs from "fs";
 import path from "path";
-import { read } from "to-vfile";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import rehypeDocument from "rehype-document";
 import rehypeFormat from "rehype-format";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 import { Content } from "./interfaces";
 
 const getAllThoughts = () => {
@@ -97,12 +93,11 @@ const getHtml = async (md: string) => {
   const result = await unified()
     .use(remarkParse)
     .use(remarkRehype)
-    // Review this next two plugins.
-    .use(rehypeDocument)
     .use(rehypeFormat)
     .use(rehypeHighlight)
     .use(rehypeStringify)
-    .process(md.replace(/\[\[/g, "__").replace(/\]\]/g, "__"));
+    .process(md);
+  // .process(md.replace(/\[\[/g, "__").replace(/\]\]/g, "__"));
   return result.toString();
 };
 
@@ -111,7 +106,7 @@ const getSlug = (filename: string) =>
 
 // Suboptimal solution. Here because gray-matter automatically parses numbers
 // in arrays as numbers and not as strings, hence "==".
-// After removing
+// After removing year from tags, this should go back to array.contains().
 const contains = (array: [], text: string) => {
   let isInArray = false;
   array.forEach((element) => {

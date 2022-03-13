@@ -22,11 +22,10 @@ const Til: NextPage<TilProps> = ({ til, content }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <article
-          dangerouslySetInnerHTML={{ __html: content }}
-          className="prose dark:prose-invert lg:prose-lg"
-        />
-        <Info />
+        <div className="prose dark:prose-invert lg:prose-lg">
+          <article dangerouslySetInnerHTML={{ __html: content }} />
+          <Info />
+        </div>
       </Layout>
     </div>
   );

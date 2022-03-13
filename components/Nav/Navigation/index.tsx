@@ -19,7 +19,6 @@ const Navigation = ({ toggleNavigation }: NavigationProps) => {
       }
     };
   };
-  console.log(router.pathname);
   return (
     <div className="mx-auto text-center">
       <div className="flex flex-wrap justify-between">

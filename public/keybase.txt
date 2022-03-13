@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/erian
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://edgarbarrantes.com
+  * I am erian (https://keybase.io/erian) on keybase.
+  * I have a public key ASBfv24OTjet1ouG6V7yLxzl9vM1kKObEvE3A8p_KNymfwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01205fbf6e0e4e37add68b86e95ef22f1ce5f6f33590a39b12f13703ca7f28dca67f0a",
+            "host": "keybase.io",
+            "kid": "01205fbf6e0e4e37add68b86e95ef22f1ce5f6f33590a39b12f13703ca7f28dca67f0a",
+            "uid": "7219166fd07376d16bc70b83e172b319",
+            "username": "erian"
+        },
+        "service": {
+            "hostname": "edgarbarrantes.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.16"
+    },
+    "ctime": 1469925705,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1469925453,
+        "hash": "c42542bd343c99461f12b7ee33a3d0cec19427e300cd0854a643ef58f3bb1b4721beafc33d668a9bb156d8f7f642549e49492f9f165f02214deb2b9b398b5c37",
+        "seqno": 550599
+    },
+    "prev": "e5970d5cf5ed31ef999a869ef7477521367918b800dd6f4bac6918e53a70115c",
+    "seqno": 9,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgX79uDk43rdaLhule8i8c5fbzNZCjmxLxNwPKfyjcpn8Kp3BheWxvYWTFAvZ7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNWZiZjZlMGU0ZTM3YWRkNjhiODZlOTVlZjIyZjFjZTVmNmYzMzU5MGEzOWIxMmYxMzcwM2NhN2YyOGRjYTY3ZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNWZiZjZlMGU0ZTM3YWRkNjhiODZlOTVlZjIyZjFjZTVmNmYzMzU5MGEzOWIxMmYxMzcwM2NhN2YyOGRjYTY3ZjBhIiwidWlkIjoiNzIxOTE2NmZkMDczNzZkMTZiYzcwYjgzZTE3MmIzMTkiLCJ1c2VybmFtZSI6ImVyaWFuIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJlZGdhcmJhcnJhbnRlcy5jb20iLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE2In0sImN0aW1lIjoxNDY5OTI1NzA1LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0Njk5MjU0NTMsImhhc2giOiJjNDI1NDJiZDM0M2M5OTQ2MWYxMmI3ZWUzM2EzZDBjZWMxOTQyN2UzMDBjZDA4NTRhNjQzZWY1OGYzYmIxYjQ3MjFiZWFmYzMzZDY2OGE5YmIxNTZkOGY3ZjY0MjU0OWU0OTQ5MmY5ZjE2NWYwMjIxNGRlYjJiOWIzOThiNWMzNyIsInNlcW5vIjo1NTA1OTl9LCJwcmV2IjoiZTU5NzBkNWNmNWVkMzFlZjk5OWE4NjllZjc0Nzc1MjEzNjc5MThiODAwZGQ2ZjRiYWM2OTE4ZTUzYTcwMTE1YyIsInNlcW5vIjo5LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQHRtPWAWHSkIp1/8gaBJZVfoi5yYj15pMh5OCoVe+XDaWuwx5gLG+WACFBmXDXIH+DAQ1t6NMgTDWiI99cfX/g6oc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCAjxdnb6mTO8uy4wQoFcrgWABvUIPGTOYo5IquMaoyp6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/erian
+
+==================================================================

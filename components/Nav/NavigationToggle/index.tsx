@@ -17,7 +17,7 @@ const NavigationToggle = ({
   return (
     <a
       href="/"
-      className={`transition dark:invert hover:animate-spin cursor-pointer p-8`}
+      className={`transition dark:invert md:hover:animate-spin cursor-pointer p-8`}
       onClick={toggleNavigation}
     >
       <Gear width="36" height="36" viewBox="0 0 120 120" />

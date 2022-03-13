@@ -8,20 +8,5 @@
     "title": "This website",
     "description": "Built with Next.js and TailwindCSS, integrated with two other projects listed here.",
     "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev"
-  },
-  {
-    "title": "WASM and Rust Pomodoro timer",
-    "description": "Built with Rust and WASM, for your productivity needs, figured I'd make this site useful.",
-    "href": "https://github.com/EdgarBarrantes/"
-  },
-  {
-    "title": "Ethereum contract interaction",
-    "description": "As displayed in this site. Give it a contract address and select the correct network in your wallet and try it out. Built with Ethers",
-    "href": "https://github.com/EdgarBarrantes/"
-  },
-  {
-    "title": "ENS-like application for minting NFT's and storing data",
-    "description": "Contract deployed in Polygon Mumbai testnet and frontend in Next.js",
-    "href": "https://github.com/EdgarBarrantes/"
   }
 ]

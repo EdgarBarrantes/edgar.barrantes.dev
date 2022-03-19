@@ -8,5 +8,10 @@
     "title": "This website",
     "description": "Built with Next.js and TailwindCSS, integrated with two other projects listed here.",
     "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev"
+  },
+  {
+    "title": "Swarm uploader of wikipedia pages",
+    "description": "A docker-compose that handles setting up a Swarm node and a signer, setups up an express API and Next application in order to handle zim files and upload them to the swarm network",
+    "href": "https://github.com/EdgarBarrantes/swarm-zim-uploader"
   }
 ]

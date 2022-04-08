@@ -28,7 +28,7 @@ const ContentDisplay = ({
                   <h1 className="pb-2 font-bold text-clip">{article.title}</h1>
                   <p className="pb-2 italic text-left">{article.date}</p>
                   <p className="pb-6 text-ellipsis">{article.description}</p>
-                  <div className="-ml-2 mb-2">
+                  <div className="-ml-2 mb-2 flex flex-wrap">
                     {article.tag.map((t: string) => {
                       return (
                         <Link key={t} href={`/tags/${t}`}>

@@ -1,4 +1,6 @@
+import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
+import BackButton from "../BackButton";
 
 import Navigation from "../Nav/Navigation";
 import NavigationToggle from "../Nav/NavigationToggle";
@@ -13,10 +15,10 @@ const Layout = ({
   children,
 }: LayoutProps) => {
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
-
+  const router = useRouter();
   return (
     <main
-      className={`relative transition-colors p-0 flex flex-col justify-center items-center w-screen min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-main`}
+      className={`relative transition-colors p-0 flex flex-col justify-center items-center w-screen min-h-screen overflow-x-hidden bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-main`}
     >
       {shouldNavigationBeToggable && (
         <div className="w-full">
@@ -46,6 +48,15 @@ const Layout = ({
           !isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
         }`}
       >
+        {router.pathname !== "/" && (
+          <div className="w-full">
+            <div className="absolute top-4 sm:top-8 right-16 sm:right-28 z-30">
+              <div className="flex">
+                <BackButton router={router} />
+              </div>
+            </div>
+          </div>
+        )}
         <div className={`mx-4`}>{children}</div>
       </div>
     </main>

@@ -11,7 +11,7 @@
   },
   {
     "title": "Swarm uploader of wikipedia pages",
-    "description": "A docker-compose that handles setting up a Swarm node and a signer, setups up an express API and Next application in order to handle zim files and upload them to the swarm network",
+    "description": "Winner of Swarm and FairDataSociety hackathon bounty competition: a docker-compose that handles setting up a Swarm node, an express API and Next application in order to handle zim files and upload them to the Swarm network",
     "href": "https://github.com/EdgarBarrantes/swarm-zim-uploader"
   }
 ]

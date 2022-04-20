@@ -19,7 +19,7 @@ const TIL: NextPage<TILProps> = ({ tils }) => {
   return (
     <div>
       <Head>
-        <title>Thoughts - Edgar Barrantes</title>
+        <title>Today I learned - Edgar Barrantes</title>
         <meta
           name="description"
           content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."

@@ -1,14 +1,10 @@
-sudo chmod 666 /var/run/docker.sock
-
 ---
-
-tag: [2022, docker, software, dockerfile]
+tag: [2022, docker, software]
 title: Fix docker permission issue
-description: Fixes Error: connect EACCES /var/run/docker.sock
-
+description: Fixes Error connect EACCES /var/run/docker.sock
 ---
 
-# How to run bash inside of a docker container
+# Fix docker permission issue
 
 In order to fix this error:
 

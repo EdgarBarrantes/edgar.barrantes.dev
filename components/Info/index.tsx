@@ -15,7 +15,7 @@ const Info = () => {
         decentralised applications, debating ideas and going here and there.
         Feel free to{" "}
         <a
-          className="font-bold hover:underline"
+          className="font-bold hover:underline text-white"
           target="_blank"
           rel="noreferrer"
           href="mailto:edgar@barrantes.dev"

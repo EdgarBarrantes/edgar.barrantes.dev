@@ -21,11 +21,12 @@ UNKNOWNSTRING-eengsairo.files
 ```
 
 Where:
-_USERNAME: your username_
-_STRING: a particular string in your system, also in your case it might me dev edition_
-\_UUID: The Internal UUID of the metamask extension, find it by pasting `about:debugging#addons` in your address bar, it's on the metamask extension, labeled as Internal UUID.
-_NUMBER: Some number I don't know where it comes from, you might have several, find one where you can find the folder ending in `eengsairo.files`
-\_UNKNOWNSTRING: Same as above, no idea where this comes from._
+
+- USERNAME: your username
+- STRING: a particular string in your system, also in your case it might me dev edition.
+- UUID: The Internal UUID of the metamask extension, find it by pasting `about:debugging#addons` in your address bar, it's on the metamask extension, labeled as Internal UUID.
+- NUMBER: Some number I don't know where it comes from, you might have several, find one where you can find the folder ending in `eengsairo.files`.
+- UNKNOWNSTRING: Same as above, no idea where this comes from.
 
 There's an sqlite database there, you can open it with [an SQLlite browser](https://sqlitebrowser.org/dl/). On `Browse Data` tab, in the file table, there is only one row (in my case), where the id is a number you should remember, let's call it **MAGICNUMBER**.
 

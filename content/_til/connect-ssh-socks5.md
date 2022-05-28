@@ -2,6 +2,8 @@
 tag: [2022, ssh, vpn]
 title: How to create a vpn with a server you have access to
 description:
+date: "27-05-2022"
+source: [jeff]
 ---
 
 # How to create a vpn with a server you have access to
@@ -26,4 +28,4 @@ Open up chrome with that connection as a proxy:
 google-chrome --proxy-server="socks5://127.0.0.1:8082"
 ```
 
-There, that browser session is passing all it's traffic through your server.
+There you go, that browser session is passing all its traffic through your server.

@@ -1,8 +1,23 @@
 [
   {
+    "title": "Starknet Remix Plugin",
+    "description": "A workspace for Starknet developers to write, compile, and deploy Cairo code",
+    "href": "https://remix.ethereum.org/#activate=Starknet"
+  },
+  {
+    "title": "Starkfees",
+    "description": "A tool to learn how much you have spent in gas with Starknet",
+    "href": "https://starkfees.xyz/"
+  },
+  {
     "title": "Supabase SWR utils",
     "description": "SWR wrapper, serverside fetcher and utils for Supabase, typescript set of packages as a monorepo with Lerna.",
     "href": "https://github.com/EdgarBarrantes/supabase-utils"
+  },
+  {
+    "title": "Swarm uploader of wikipedia pages",
+    "description": "Winner of Swarm and FairDataSociety hackathon bounty competition: a docker-compose that handles setting up a Swarm node, an express API and Next application in order to handle zim files and upload them to the Swarm network",
+    "href": "https://github.com/EdgarBarrantes/swarm-zim-uploader"
   },
   {
     "title": "This website",
@@ -10,8 +25,8 @@
     "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev"
   },
   {
-    "title": "Swarm uploader of wikipedia pages",
-    "description": "Winner of Swarm and FairDataSociety hackathon bounty competition: a docker-compose that handles setting up a Swarm node, an express API and Next application in order to handle zim files and upload them to the Swarm network",
-    "href": "https://github.com/EdgarBarrantes/swarm-zim-uploader"
+    "title": "Starknet Costa Rica meetup",
+    "description": "A space to chat about Starknet and Cairo, and to learn about the technology and its applications",
+    "href": "https://www.meetup.com/starknet-costa-rica/"
   }
 ]

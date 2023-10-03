@@ -1,7 +1,8 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { ReactNode, useState } from "react";
-import BackButton from "../BackButton";
 
+import BackButton from "../BackButton";
 import Navigation from "../Nav/Navigation";
 import NavigationToggle from "../Nav/NavigationToggle";
 

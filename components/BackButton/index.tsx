@@ -8,8 +8,13 @@ interface BackButtonProps {
 const BackButton = ({ router }: BackButtonProps) => {
   const moveBack = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    router.back();
+    const route = router.pathname.split("/");
+    route[route.length - 2].
+    router.push(`/${route[route.length - 2]}`);
+    // router.pathname.split("/");
+    // router.back();
   };
+  console.log();
 
   return (
     <a

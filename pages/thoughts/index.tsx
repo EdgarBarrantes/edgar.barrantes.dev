@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import ContentDisplay from "../../components/ContentDisplay";
 
 import Layout from "../../components/Layout";

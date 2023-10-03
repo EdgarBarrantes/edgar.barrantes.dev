@@ -5,14 +5,18 @@ import Layout from "../components/Layout";
 import Navigation from "../components/Nav/Navigation";
 
 const Home: NextPage = () => {
+  const title = "Edgar Barrantes";
+  const description =
+    "Edgar Barrantes is a software developer passionate about descentralised systems with extensive experience in full stack development who's focusing on moving towards web3";
   return (
     <div>
       <Head>
-        <title>Edgar Barrantes</title>
-        <meta
-          name="description"
-          content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content="https://edgar.barrantes.dev/" />
+        <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout shouldNavigationBeToggable={false}>

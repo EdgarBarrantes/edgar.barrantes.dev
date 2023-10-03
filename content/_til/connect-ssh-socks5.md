@@ -18,7 +18,7 @@ Where apps is setup in ~/.ssh/config:
 
 ```
   User root
-  IdentityFile ~/.ssh/whathaveyou
+  IdentityFile ~/.ssh/whathaveyou,
   HostName IP
 ```
 

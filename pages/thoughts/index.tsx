@@ -17,7 +17,7 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts }: ThoughtsProps) => {
         <title>Thoughts - Edgar Barrantes</title>
         <meta
           name="description"
-          content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."
+          content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
         />
       </Head>
       <Layout>

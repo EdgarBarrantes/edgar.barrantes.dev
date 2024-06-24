@@ -7,7 +7,7 @@ import Navigation from "../components/Nav/Navigation";
 const Home: NextPage = () => {
   const title = "Edgar Barrantes";
   const description =
-    "Edgar Barrantes is a software developer passionate about descentralised systems with extensive experience in full stack development who's focusing on moving towards web3";
+    "Edgar Barrantes is a software engineer passionate about descentralised systems with extensive experience in full stack development and web 3.";
   return (
     <div>
       <Head>

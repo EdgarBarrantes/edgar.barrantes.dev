@@ -22,7 +22,7 @@ const TIL: NextPage<TILProps> = ({ tils }) => {
         <title>Today I learned - Edgar Barrantes</title>
         <meta
           name="description"
-          content="Edgar Barrantes is a software developer... What you do for a living doesn't define you though."
+          content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

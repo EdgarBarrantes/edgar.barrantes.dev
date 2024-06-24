@@ -1,7 +1,7 @@
 ---
 tag: [2022, ssh, vpn]
 title: How to create a vpn with a server you have access to
-description:
+description: "Quick trick for personal vpn"
 date: "27-05-2022"
 source: [jeff]
 ---

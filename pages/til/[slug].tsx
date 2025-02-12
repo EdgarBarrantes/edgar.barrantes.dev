@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Info from "../../components/Info";
+import SEO from '../../components/SEO'
+import ArticleSchema from '../../components/SEO/ArticleSchema'
 
 import Layout from "../../components/Layout";
 import { getAllTILs, getTIL, getTILHtml } from "../../utils/data";
@@ -13,14 +15,17 @@ interface TilProps {
 const Til: NextPage<TilProps> = ({ til, content }) => {
   return (
     <div>
-      <Head>
-        <title>{til.title} - Edgar Barrantes</title>
-        <meta
-          name="description"
-          content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO 
+        title={til.title}
+        description={til.description || "Quick technical note on " + til.title}
+        article={true}
+      />
+      <ArticleSchema
+        title={til.title}
+        description={til.description || "Quick technical note on " + til.title}
+        date={til.date}
+        url={`https://edgar.barrantes.dev/til/${til.slug}`}
+      />
       <Layout>
         <div className="prose dark:prose-invert lg:prose-lg">
           <article dangerouslySetInnerHTML={{ __html: content }} />

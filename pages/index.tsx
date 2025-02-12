@@ -3,6 +3,7 @@ import Head from "next/head";
 import Info from "../components/Info";
 import Layout from "../components/Layout";
 import Navigation from "../components/Nav/Navigation";
+import SEO from '../components/SEO'
 
 const Home: NextPage = () => {
   const title = "Edgar Barrantes";
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
     "Edgar Barrantes is a software engineer passionate about descentralised systems with extensive experience in full stack development and web 3.";
   return (
     <div>
+      <SEO />
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />

@@ -2,20 +2,21 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import ContentDisplay from "../../components/ContentDisplay";
 import Info from "../../components/Info";
+import SEO from "../../components/SEO";
 
 import Layout from "../../components/Layout";
 import { getAllTags, getTaggedContent } from "../../utils/data";
 
 interface TagProps {
-  tag: any;
-  content: any;
+  tag: string;
+  content: any[];
 }
 
 const Tag: NextPage<TagProps> = ({ tag, content }) => {
   return (
     <div>
       <Head>
-        <title>{`#${tag}`} - Edgar Barrantes</title>
+        <title>{tag} - Edgar Barrantes</title>
         <meta
           name="description"
           content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
@@ -25,7 +26,7 @@ const Tag: NextPage<TagProps> = ({ tag, content }) => {
       <Layout>
         <ContentDisplay
           title={`#${tag}`}
-          description={() => <div>Content tagged with {"" + tag}</div>}
+          description={<div>Content tagged with {tag}</div>}
           content={content}
         />
         <Info />
@@ -40,7 +41,7 @@ export async function getStaticPaths() {
     paths: tags.map((tag) => {
       return {
         params: {
-          slug: tag.toString(),
+          slug: tag,
         },
       };
     }),

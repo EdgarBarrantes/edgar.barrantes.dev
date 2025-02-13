@@ -1,27 +1,21 @@
-import Gear from "../../../public/gear.svg";
+import GearIcon from "../../../public/gear.svg";
 
 interface NavigationToggleProps {
-  isNavigationOpen: boolean;
-  setIsNavigationOpen: (isNavigationOpen: boolean) => void;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const NavigationToggle = ({
-  isNavigationOpen,
-  setIsNavigationOpen,
-}: NavigationToggleProps) => {
-  const toggleNavigation = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    setIsNavigationOpen(!isNavigationOpen);
-  };
-
+const NavigationToggle = ({ isOpen, onToggle }: NavigationToggleProps) => {
   return (
-    <a
-      href="/"
-      className={`transition dark:invert md:hover:animate-spin cursor-pointer p-8`}
-      onClick={toggleNavigation}
+    <button
+      onClick={onToggle}
+      className={`transition dark:invert hover:scale-110 cursor-pointer p-8 ${
+        isOpen ? 'rotate-180' : ''
+      }`}
+      aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
     >
-      <Gear width="36" height="36" viewBox="0 0 120 120" />
-    </a>
+      <GearIcon width="48" height="48" viewBox="0 0 120 120" />
+    </button>
   );
 };
 

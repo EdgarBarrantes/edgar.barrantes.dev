@@ -1,66 +1,51 @@
-import Head from "next/head";
+import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { ReactNode, useState } from "react";
-
-import BackButton from "../BackButton";
-import Navigation from "../Nav/Navigation";
-import NavigationToggle from "../Nav/NavigationToggle";
+import { useNavigation } from "../Navigation/NavigationContext";
+import Navigation from "../Navigation";
+import NavigationToggle from "../Navigation/NavigationToggle";
 
 interface LayoutProps {
   children: ReactNode;
-  shouldNavigationBeToggable?: boolean;
 }
 
-const Layout = ({
-  shouldNavigationBeToggable = true,
-  children,
-}: LayoutProps) => {
-  const [isNavigationOpen, setIsNavigationOpen] = useState(false);
+const Layout = ({ children }: LayoutProps) => {
+  const { isOpen, close } = useNavigation();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <main
-      className={`relative transition-colors p-0 flex flex-col justify-center items-center w-screen min-h-screen overflow-x-hidden bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-main`}
-    >
-      {shouldNavigationBeToggable && (
-        <div className="w-full">
-          <div className="absolute top-0 sm:top-4 -right-0 sm:right-8 z-30">
-            <div className="flex">
-              <NavigationToggle
-                isNavigationOpen={isNavigationOpen}
-                setIsNavigationOpen={setIsNavigationOpen}
-              />
-            </div>
+    <div className="relative min-h-screen">
+      {/* Main content */}
+      <main className="relative min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-indigo-900/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Page content */}
+          <div className="pt-16 pb-20">
+            {children}
           </div>
         </div>
+      </main>
+
+      {/* Navigation overlay and menu */}
+      {mounted && isOpen && (
+        <>
+          <div 
+            className="fixed inset-0 bg-slate-900/90 backdrop-blur-sm z-40"
+            onClick={close}
+            aria-hidden="true"
+          />
+          <Navigation />
+        </>
       )}
 
-      <div
-        className={`absolute right-0 left-0 top-0 flex flex-col justify-center items-center 
-        min-h-screen pt-20 sm:pt-0 ${
-          isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
-        }`}
-      >
-        <div className={`sm:px-2`}>
-          <Navigation toggleNavigation={setIsNavigationOpen} />
-        </div>
+      {/* Navigation toggle - moved outside the main content to always be on top */}
+      <div className="fixed top-4 right-4 z-[60]">
+        {mounted && <NavigationToggle />}
       </div>
-      <div
-        className={`flex flex-col justify-center items-center min-h-screen max-w-4xl py-32 sm:py-48 ${
-          !isNavigationOpen ? "opacity-100 z-20" : "opacity-0 z-10"
-        }`}
-      >
-        {router.pathname !== "/" && (
-          <div className="w-full">
-            <div className="absolute top-4 sm:top-8 right-16 sm:right-28 z-30">
-              <div className="flex">
-                <BackButton router={router} />
-              </div>
-            </div>
-          </div>
-        )}
-        <div className={`mx-4`}>{children}</div>
-      </div>
-    </main>
+    </div>
   );
 };
 

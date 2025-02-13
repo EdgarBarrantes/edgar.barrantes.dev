@@ -1,4 +1,5 @@
 import { NextRouter } from "next/router";
+import Link from "next/link";
 import BackIcon from "../../public/back.svg";
 
 interface BackButtonProps {
@@ -6,22 +7,10 @@ interface BackButtonProps {
 }
 
 const BackButton = ({ router }: BackButtonProps) => {
-  const moveBack = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    const route = router.pathname.split("/");
-    route.pop();
-    router.push(route.join("/") ? route.join("/") : "/");
-  };
-  console.log();
-
   return (
-    <a
-      href="/"
-      className={`dark:invert cursor-pointer p-8 left-0`}
-      onClick={moveBack}
-    >
+    <Link href="/" className="absolute top-4 left-4 cursor-pointer">
       <BackIcon style={{ transform: "scale(4)" }} />
-    </a>
+    </Link>
   );
 };
 

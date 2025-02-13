@@ -1,16 +1,15 @@
 import Link from "next/link";
-import Home from "../../../public/home.svg";
+import HomeIcon from "../../../public/home.svg";
 
-const NavigationToggle = () => {
+const NavigationHome = () => {
   return (
-    <Link href="/">
-      <a
-        className={`transition dark:invert hover:scale-110 cursor-pointer p-8`}
-      >
-        <Home width="48" height="48" viewBox="0 0 120 120" />
-      </a>
+    <Link 
+      href="/"
+      className="transition dark:invert hover:scale-110 cursor-pointer p-8"
+    >
+      <HomeIcon width="48" height="48" viewBox="0 0 120 120" />
     </Link>
   );
 };
 
-export default NavigationToggle;
+export default NavigationHome;

@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Info from "../../components/Info";
+import SEO from "../../components/SEO";
 
 import Layout from "../../components/Layout";
 import { getAllThoughts, getThought, getThoughtHtml } from "../../utils/data";
@@ -15,11 +16,7 @@ const Thought: NextPage<ThoughtProps> = ({ thought, content }) => {
     <div>
       <Head>
         <title>{thought.title} - Edgar Barrantes</title>
-        <meta
-          name="description"
-          content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={thought.description} />
       </Head>
       <Layout>
         <div className="prose dark:prose-invert lg:prose-lg">
@@ -32,7 +29,7 @@ const Thought: NextPage<ThoughtProps> = ({ thought, content }) => {
 };
 
 export async function getStaticPaths() {
-  const thoughts = getAllThoughts();
+  const thoughts = await getAllThoughts();
   return {
     paths: thoughts.map((thought) => {
       return {

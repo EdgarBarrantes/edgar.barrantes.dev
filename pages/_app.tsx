@@ -1,12 +1,21 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "next-themes";
+import { AppProps } from "next/app";
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { ThemeProvider } from '../components/ThemeProvider';
+import { StrictMode } from 'react'
+import { NavigationProvider } from '../components/Navigation/NavigationContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <StrictMode>
+      <NextThemesProvider attribute="class">
+        <ThemeProvider>
+          <NavigationProvider>
+            <Component {...pageProps} />
+          </NavigationProvider>
+        </ThemeProvider>
+      </NextThemesProvider>
+    </StrictMode>
   );
 }
 

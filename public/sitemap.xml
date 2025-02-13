@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://edgar.barrantes.dev</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/newsletter/index</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/projects/index</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/tags/[slug]</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/thoughts/[slug]</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/thoughts/index</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/[slug]</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/index</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_thoughts/algorithms-to-live-by</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://edgar.barrantes.dev/_thoughts/cybersecurity-and-the-weapons-of-cyberwar</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://edgar.barrantes.dev/_thoughts/unpacking-the-china---russia-alliance</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/connect-ssh-socks5</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/docker-exec-bash</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/docker-permissions-issue</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/execute-bash-in-node-async</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/fastecdsa-install-failure</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://edgar.barrantes.dev/_til/fix-metamask-whitescreen-of-death</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/getstaticprops-getstaticpaths</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/remove-tls-npm-warning</loc>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/_til/use-machine-as-hotspot</loc>
+  </url>
+</urlset>

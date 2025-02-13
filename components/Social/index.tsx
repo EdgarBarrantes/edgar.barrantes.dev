@@ -1,44 +1,35 @@
-import { ReactNode } from "react";
-
-import Box from "../Box";
-import Github from "../../public/github-fill.svg";
-import LinkedIn from "../../public/linkedin-fill.svg";
-import Mail from "../../public/mail-fill.svg";
-import Twitter from "../../public/twitter-fill.svg";
-interface SocialContainerProps {
-  children: ReactNode;
-  href: string;
-}
-const SocialContainer = ({ children, href }: SocialContainerProps) => {
-  return (
-    <Box>
-      <a
-        className="block p-6 sm:p-8 align-middle transition hover:scale-110"
-        target="_blank"
-        rel="noreferrer"
-        href={href}
-      >
-        {children}
-      </a>
-    </Box>
-  );
-};
+import Link from "next/link";
+import GithubIcon from "../../public/icons/github.svg";
+import TwitterIcon from "../../public/icons/twitter.svg";
 
 const Social = () => {
+  const socialLinks = [
+    {
+      href: "https://github.com/edgarbarrantes",
+      Icon: GithubIcon,
+      label: "GitHub"
+    },
+    {
+      href: "https://twitter.com/edgarbarrantes",
+      Icon: TwitterIcon,
+      label: "Twitter"
+    }
+  ];
+
   return (
-    <div className="flex mx-auto justify-center dark:invert">
-      <SocialContainer href="https://github.com/edgarbarrantes">
-        <Github />
-      </SocialContainer>
-      <SocialContainer href="https://www.linkedin.com/in/edgar-barrantes/">
-        <LinkedIn />
-      </SocialContainer>
-      <SocialContainer href="https://twitter.com/edgarbarrantes">
-        <Twitter />
-      </SocialContainer>
-      <SocialContainer href="mailto:edgar@barrantes.dev">
-        <Mail />
-      </SocialContainer>
+    <div className="flex justify-center space-x-6">
+      {socialLinks.map(({ href, Icon, label }) => (
+        <Link
+          key={href}
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={label}
+          className="p-4 rounded-full transition-all hover:scale-110 hover:bg-slate-100/10 dark:hover:bg-white/10"
+        >
+          <Icon className="w-8 h-8 text-slate-800 dark:text-white" />
+        </Link>
+      ))}
     </div>
   );
 };

@@ -2,17 +2,15 @@ import { ReactNode } from "react";
 
 interface BoxProps {
   children: ReactNode;
-  onClick?: () => void;
   className?: string;
+  onClick?: () => void;
 }
 
-const Box = ({ className, onClick, children }: BoxProps) => {
+const Box = ({ children, className, onClick }: BoxProps) => {
   return (
     <div
       onClick={onClick}
-      className={`block text-xl sm:text-2xl align-middle ${
-        className ? className : ""
-      }`}
+      className={`block text-xl sm:text-2xl align-middle ${className || ""}`}
     >
       {children}
     </div>

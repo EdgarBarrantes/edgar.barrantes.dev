@@ -1,22 +1,17 @@
 import Link from "next/link";
-import { ReactNode } from "react";
 
-interface BoxProps {
-  children: ReactNode;
-  to: string;
-  className?: string;
+interface NavigationLinkProps {
+  text: string;
+  href: string;
 }
 
-const NavigationLink = ({ children, to, className }: BoxProps) => {
+const NavigationLink = ({ text, href }: NavigationLinkProps) => {
   return (
-    <Link href={to}>
-      <a
-        className={`block p-8 align-middle font-bold transition-transform hover:scale-105 ${
-          className ? className : ""
-        }`}
-      >
-        {children}
-      </a>
+    <Link
+      href={href}
+      className="block p-8 align-middle font-bold transition-transform hover:scale-105"
+    >
+      {text}
     </Link>
   );
 };

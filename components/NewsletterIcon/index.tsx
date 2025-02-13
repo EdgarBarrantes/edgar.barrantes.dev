@@ -11,10 +11,11 @@ const NewsletterLink = () => {
   // };
 
   return (
-    <Link href="/newsletter">
-      <a className="block dark:invert transition hover:scale-110 cursor-pointer w-auto p-8">
-        <NewsletterIcon width="48" height="48" viewBox="0 0 120 120" />
-      </a>
+    <Link 
+      href="/newsletter"
+      className="hover:scale-105 transition cursor-pointer w-auto p-8"
+    >
+      <NewsletterIcon width="48" height="48" viewBox="0 0 120 120" />
     </Link>
   );
 };

@@ -17,26 +17,52 @@ export default function TIL({ tils, totalPages, initialTotal }: TILProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [content, setContent] = useState(tils)
 
+  const keywords = [
+    "Today I Learned",
+    "TIL",
+    "Tech Insights",
+    "Software Engineering",
+    "Coding Tips",
+    "Development Tips",
+    "Programming Insights",
+    "Technical Notes",
+    "Software Development",
+    "Learning Journal",
+    "Tech Blog",
+    "Developer Notes",
+    "Code Snippets",
+    "Technical Documentation",
+    "Edgar Barrantes",
+    "Edgar Barrantes Brais",
+    "Web Development",
+    "Software Architecture",
+    "Best Practices",
+    "Technical Writing"
+  ]
+
   return (
     <>
       <Meta 
-        title="TIL - Daily Tech Insights"
-        description="Discover bite-sized tech learnings, coding tips, and development insights from daily software engineering experiences."
+        title="Today I Learned (TIL) - Daily Tech Insights & Software Engineering Notes"
+        description="Discover bite-sized tech learnings, coding tips, and development insights from daily software engineering experiences. A collection of practical programming knowledge and best practices."
+        keywords={keywords}
       />
       <Layout>
         <Suspense fallback={<LoadingState />}>
           <ContentDisplay
             title="Today I Learned"
             description={
-              <span>
-                Welcome to my digital garden of technical discoveries! Here, I share concise, 
-                practical insights from my daily journey in software development.
-                <br />
-                <br />
-                From debugging tricks to architectural patterns, each entry is crafted to be 
-                immediately applicable to your work. Think of it as your technical field notes 
-                from the frontlines of modern development.
-              </span>
+              <div className="space-y-4">
+                <h2 className="text-2xl font-semibold">Daily Tech Insights & Software Engineering Notes</h2>
+                <p className="text-lg text-muted-foreground">
+                  Welcome to my digital garden of technical learnings! Here, I share concise, 
+                  practical insights from my software engineering journey.
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  From coding tips to architectural patterns, each entry is crafted to be 
+                  immediately applicable. Think of it as a living collection of technical field notes.
+                </p>
+              </div>
             }
             content={content}
             isLoading={isLoading}

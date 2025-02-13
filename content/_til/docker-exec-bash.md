@@ -131,7 +131,7 @@ docker exec <container_id> ps aux
 - Implement logging strategies
 
 ### 2. Debugging Container Creation
-```dockerfile
+```bash
 # Dockerfile for debugging
 FROM your-base-image
 

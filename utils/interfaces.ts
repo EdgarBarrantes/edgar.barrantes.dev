@@ -6,10 +6,11 @@ export interface ArticleData {
 }
 
 export interface Content {
-  data: ArticleData
-  content?: string
+  type: 'til' | 'thoughts'
   slug: string
-  type: 'thoughts' | 'til'
+  data: ArticleData
+  filename: string
+  content?: string
 }
 
 export interface Project {
@@ -17,4 +18,11 @@ export interface Project {
   description: string
   href: string
   tags?: string[]
+}
+
+export interface SearchableContent extends Omit<Content, 'content'> {
+  title: string
+  description: string
+  date?: string
+  tag?: string[]
 }

@@ -1,42 +1,82 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
+import type { ComponentProps } from 'react'
 
-type Theme = 'light' | 'dark' | 'system';
+// This script runs immediately before React hydration
+const themeScript = `
+  let isDark;
+  const stored = localStorage.getItem('theme');
+  
+  if (stored === 'dark') {
+    isDark = true;
+  } else if (stored === 'light') {
+    isDark = false;
+  } else {
+    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  
+  if (isDark) {
+    document.documentElement.classList.add('dark');
+  }
+  
+  // Avoid white flash
+  document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
 
-interface ThemeContextValue {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
-  resolvedTheme: string;
-  mounted: boolean;
-}
+  // Create a temporary background element
+  const tempBackground = document.createElement('div');
+  tempBackground.setAttribute('id', 'theme-temp-background');
+  tempBackground.style.position = 'fixed';
+  tempBackground.style.inset = '0';
+  tempBackground.style.backgroundColor = isDark ? 'rgb(9, 9, 11)' : 'white';
+  tempBackground.style.transition = 'opacity 0.3s ease-in-out';
+  tempBackground.style.zIndex = '-10';
+  document.body.appendChild(tempBackground);
 
-const ThemeContext = createContext<ThemeContextValue>({
-  theme: 'system',
-  setTheme: () => null,
-  resolvedTheme: 'light',
-  mounted: false
-});
+  // Remove the temporary background once the actual background is ready
+  const observer = new MutationObserver((mutations, obs) => {
+    const hasBackground = document.querySelector('canvas') || 
+                         document.querySelector('.fixed[aria-hidden="true"]');
+    
+    if (hasBackground) {
+      obs.disconnect();
+      tempBackground.style.opacity = '0';
+      setTimeout(() => tempBackground.remove(), 300);
+    }
+  });
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Ensure cleanup after 2s even if no background is found
+  setTimeout(() => {
+    observer.disconnect();
+    if (tempBackground && tempBackground.parentElement) {
+      tempBackground.style.opacity = '0';
+      setTimeout(() => tempBackground.remove(), 300);
+    }
+  }, 2000);
+`
 
+type ThemeProviderProps = ComponentProps<typeof NextThemesProvider>
+
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
-    <ThemeContext.Provider 
-      value={{ 
-        theme: theme as Theme, 
-        setTheme, 
-        resolvedTheme: resolvedTheme || 'light',
-        mounted 
-      }}
-    >
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
-export const useAppTheme = () => useContext(ThemeContext); 
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: themeScript
+        }}
+      />
+      <NextThemesProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+        {...props}
+      >
+        {children}
+      </NextThemesProvider>
+    </>
+  )
+} 

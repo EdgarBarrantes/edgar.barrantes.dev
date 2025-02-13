@@ -1,11 +1,11 @@
 {
   "name": "Edgar Barrantes",
-  "short_name": "EB",
-  "description": "Software engineer passionate about decentralised systems with extensive experience in full stack development and web 3.",
+  "short_name": "Edgar B.",
+  "description": "Personal website and blog of Edgar Barrantes, software engineer specializing in decentralized systems and blockchain technology.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#312e81",
+  "background_color": "#111217",
+  "theme_color": "#111217",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -32,5 +32,9 @@
       "sizes": "180x180",
       "type": "image/png"
     }
-  ]
+  ],
+  "categories": ["technology", "blog", "portfolio", "web development"],
+  "lang": "en-US",
+  "orientation": "any",
+  "prefer_related_applications": false
 } 

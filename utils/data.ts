@@ -157,7 +157,7 @@ const getTaggedContent = (tag: string): Content[] => {
     if (contains(data.tag, tag)) {
       taggedContent.push({ 
         data: validateArticleData(data),
-        content: '',
+        filename: tilName,
         slug: getSlug(tilName), 
         type: "til" 
       });
@@ -169,7 +169,7 @@ const getTaggedContent = (tag: string): Content[] => {
     if (contains(data.tag, tag)) {
       taggedContent.push({
         data: validateArticleData(data),
-        content: '',
+        filename: thoughtName,
         slug: getSlug(thoughtName),
         type: "thoughts"
       });

@@ -1,4 +1,14 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://edgar.barrantes.dev/sitemap.xml 
+# Sitemap location
+Sitemap: https://edgar.barrantes.dev/sitemap.xml
+
+# Prevent crawling of certain paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Crawl-delay for all bots
+Crawl-delay: 1 

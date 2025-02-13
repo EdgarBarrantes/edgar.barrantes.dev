@@ -9,60 +9,34 @@ import { useRouter } from 'next/router'
 import { twMerge } from 'tailwind-merge'
 import { useKeyboard } from '../../hooks/useKeyboard'
 import { ThemeToggle } from '../ThemeToggle'
-
-const Logo = () => (
-  <svg
-    width="40"
-    height="40"
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="text-primary transition-colors duration-75"
-  >
-    {/* Elegant background */}
-    <rect
-      width="40"
-      height="40"
-      rx="8"
-      fill="currentColor"
-      fillOpacity="0.05"
-    />
-    
-    {/* EB Monogram */}
-    <path
-      d="M15 12h12M15 20h10M15 28h12"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M25 8v24"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-    <path
-      d="M15 8v24"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
-  </svg>
-)
+import { BackgroundSwitcher } from '../BackgroundSwitcher'
+import { useBackground } from '../../contexts/BackgroundContext'
+import Image from 'next/image'
+import { Search } from '../Search'
 
 const navigation = [
   { name: 'Thoughts', href: '/thoughts' },
-  { name: 'Projects', href: '/projects' },
   { name: 'TIL', href: '/til' },
-  { name: 'Resume', href: '/resume' }
+  { name: 'Projects', href: '/projects' },
+  { name: 'Resume', href: '/resume' },
+  { name: 'Play', href: '/playground' },
+]
+
+const links = [
+  { href: '/thoughts', label: 'Thoughts' },
+  { href: '/til', label: 'TIL' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/resume', label: 'Resume' },
 ]
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { backgroundType, setBackgroundType } = useBackground()
+  const { resolvedTheme, theme } = useTheme()
   const router = useRouter()
+  const isPlayground = router.pathname === '/playground'
 
   // Handle scroll effect
   useEffect(() => {
@@ -90,7 +64,28 @@ export function Header() {
     callback: () => setIsOpen(false)
   })
 
-  if (!mounted) return null
+  // Initial loading state
+  if (!mounted) {
+    return (
+      <header className="fixed top-0 left-0 right-0 z-50 h-16">
+        <Container className="flex h-16 items-center justify-between">
+          <div className="flex">
+            <div className="relative w-10 h-10">
+              <Image
+                src="/logo.png"
+                alt="Edgar Barrantes"
+                fill
+                sizes="40px"
+                className="object-contain opacity-0"
+                priority
+              />
+            </div>
+          </div>
+          <div className="w-40" />
+        </Container>
+      </header>
+    )
+  }
 
   return (
     <>
@@ -106,7 +101,26 @@ export function Header() {
               href="/"
               className="flex items-center transition-colors hover:text-primary"
             >
-              <Logo />
+              <div 
+                className={twMerge(
+                  "relative w-10 h-10",
+                  "transition-[filter] duration-150",
+                  mounted && resolvedTheme === 'dark' && "invert"
+                )}
+              >
+                <Image
+                  src="/logo.png"
+                  alt="Edgar Barrantes"
+                  fill
+                  sizes="40px"
+                  className={twMerge(
+                    "object-contain",
+                    "transition-opacity duration-150",
+                    mounted ? "opacity-100" : "opacity-0"
+                  )}
+                  priority
+                />
+              </div>
               <span className="sr-only">Edgar Barrantes</span>
             </Link>
           </div>
@@ -127,19 +141,33 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <ThemeToggle />
+            <div className="flex items-center gap-2">
+              <BackgroundSwitcher 
+                value={backgroundType} 
+                onChange={setBackgroundType} 
+                showHangman={router.pathname === '/playground'}
+              />
+              <ThemeToggle />
+            </div>
           </nav>
 
           {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-          >
-            <MenuIcon className="h-6 w-6" />
-          </Button>
+          <div className="flex items-center gap-2 md:hidden">
+            <BackgroundSwitcher 
+              value={backgroundType} 
+              onChange={setBackgroundType} 
+              showHangman={router.pathname === '/playground'}
+            />
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
+            >
+              <MenuIcon className="h-6 w-6" />
+            </Button>
+          </div>
         </Container>
       </header>
 

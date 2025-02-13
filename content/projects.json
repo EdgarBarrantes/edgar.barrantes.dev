@@ -1,8 +1,19 @@
 [
   {
     "title": "Starknet Remix Plugin",
-    "description": "A workspace for Starknet developers to write, compile, and deploy Cairo code",
-    "href": "https://remix.ethereum.org/#activate=Starknet"
+    "description": "A Remix IDE plugin for Starknet development, enabling developers to write, compile, and deploy Cairo contracts directly from Remix.",
+    "href": "https://github.com/NethermindEth/starknet-remix-plugin",
+    "tags": ["starknet", "cairo", "web3", "developer-tools", "ethereum"]
+  },
+  {
+    "title": "Field matrix library",
+    "description": "A small Rust library to handle matrices made from elements of finite fields",
+    "href": "https://github.com/EdgarBarrantes/field-matrix"
+  },
+  {
+    "title": "HIIT and Qi Gong timer",
+    "description": "A timer for my personal HIIT workouts and Qi Gong sessions",
+    "href": "https://timer.barrantes.dev/"
   },
   {
     "title": "Starkfees",
@@ -22,11 +33,24 @@
   {
     "title": "This website",
     "description": "Built with Next.js and TailwindCSS, integrated with two other projects listed here.",
-    "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev"
+    "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev",
+    "tags": ["next-js", "typescript", "tailwind", "personal-website"]
   },
   {
     "title": "Starknet Costa Rica meetup",
     "description": "A space to chat about Starknet and Cairo, and to learn about the technology and its applications",
     "href": "https://www.meetup.com/starknet-costa-rica/"
+  },
+  {
+    "title": "Wikipedia to Swarm",
+    "description": "A tool to upload Wikipedia articles to Swarm decentralized storage, winner of the Fair Data Society Gitcoin hackathon.",
+    "href": "https://github.com/fairDataSociety/wikipedia-to-swarm",
+    "tags": ["swarm", "decentralized-storage", "web3", "typescript"]
+  },
+  {
+    "title": "Personal Website",
+    "description": "My personal website built with Next.js, TypeScript, and Tailwind CSS. Features a blog, TIL section, and interactive backgrounds.",
+    "href": "https://github.com/edgarbarrantes/edgar.barrantes.dev",
+    "tags": ["next-js", "typescript", "tailwind", "personal-website"]
   }
 ]

@@ -11,7 +11,7 @@ import { useTheme } from 'next-themes'
 const experiences = [
   {
     title: "Software Engineer",
-    company: "Current Position",
+    company: "Nethermind",
     period: "July 2022 - Present",
     description: [
       "Starknet Remix Plugin development",
@@ -276,13 +276,21 @@ export default function Resume() {
               <Text variant="h1">Resume</Text>
               <div className="flex gap-3">
                 <Button variant="outline" size="sm" asChild>
-                  <a href="https://github.com/edgarbarrantes" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/edgarbarrantes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <GithubIcon className="w-4 h-4 mr-2" />
                     GitHub
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <a href="https://linkedin.com/in/edgarbarrantes" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://linkedin.com/in/edgarbarrantes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <LinkedinIcon className="w-4 h-4 mr-2" />
                     LinkedIn
                   </a>
@@ -290,9 +298,10 @@ export default function Resume() {
               </div>
             </div>
             <Text variant="subtle" className="text-lg">
-              Problem solver and self-taught software engineer. 
-              Specializing in blockchain development, distributed systems, and full-stack web applications.
-              Passionate about decentralized systems and thoughtful debates.
+              Problem solver and self-taught software engineer. Specializing in
+              blockchain development, distributed systems, and full-stack web
+              applications. Passionate about decentralized systems and
+              thoughtful debates.
             </Text>
           </div>
 
@@ -303,27 +312,38 @@ export default function Resume() {
               <Text variant="h1">Edgar Barrantes</Text>
               <Text variant="subtle">Software Engineer</Text>
               <div className="contact">
-                <p>edgar@barrantes.dev • github.com/edgarbarrantes • linkedin.com/in/edgarbarrantes</p>
+                <p>
+                  <a href="github.com/edgarbarrantes">
+                    github.com/edgarbarrantes
+                  </a>{" "}
+                  • <a href="linkedin.com/in/edgarbarrantes">
+                    linkedin.com/in/edgarbarrantes
+                  </a>
+                </p>
               </div>
             </div>
 
             {/* Experience */}
             <section className="space-y-4">
               <Text variant="h2">Experience</Text>
-              <div className="grid gap-4">
+              <div className="grid gap-4  rounded-lg border text-card-foreground shadow-sm bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 h-full text-card-foreground">
                 {experiences.map((exp, index) => (
-                  <Card key={index} className="p-6 card">
+                  <Card key={index} className="p-6 card border-none">
                     <div className="space-y-2">
                       <div className="flex justify-between items-start">
                         <div>
                           <Text variant="h3">{exp.title}</Text>
                           <Text variant="subtle">{exp.company}</Text>
                         </div>
-                        <Text variant="subtle" className="text-sm">{exp.period}</Text>
+                        <Text variant="subtle" className="text-sm">
+                          {exp.period}
+                        </Text>
                       </div>
                       <ul className="list-disc list-inside space-y-1">
                         {exp.description.map((item, i) => (
-                          <li key={i} className="text-muted-foreground">{item}</li>
+                          <li key={i} className="text-muted-foreground">
+                            {item}
+                          </li>
                         ))}
                       </ul>
                     </div>
@@ -335,11 +355,13 @@ export default function Resume() {
             {/* Skills */}
             <section className="space-y-4">
               <Text variant="h2">Skills</Text>
-              <Card className="p-6 card">
+              <Card className="p-6 card rounded-lg border text-card-foreground shadow-sm bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 h-full text-card-foreground">
                 <div className="grid md:grid-cols-2 gap-6">
                   {Object.entries(skills).map(([category, items]) => (
                     <div key={category} className="space-y-2">
-                      <Text variant="h3" className="text-lg">{category}</Text>
+                      <Text variant="h3" className="text-lg">
+                        {category}
+                      </Text>
                       <div className="flex flex-wrap gap-2">
                         {items.map((skill) => (
                           <span
@@ -359,16 +381,23 @@ export default function Resume() {
             {/* Education */}
             <section className="space-y-4">
               <Text variant="h2">Education</Text>
-              <Card className="p-6 card">
+              <Card className="p-6 card rounded-lg border text-card-foreground shadow-sm bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 h-full text-card-foreground">
                 <div className="space-y-6">
                   {education.map((edu, index) => (
-                    <div key={index} className="flex justify-between items-start">
+                    <div
+                      key={index}
+                      className="flex justify-between items-start"
+                    >
                       <div>
                         <Text variant="h3">{edu.degree}</Text>
                         <Text variant="subtle">{edu.institution}</Text>
-                        <Text variant="subtle" className="text-sm">{edu.details}</Text>
+                        <Text variant="subtle" className="text-sm">
+                          {edu.details}
+                        </Text>
                       </div>
-                      <Text variant="subtle" className="text-sm">{edu.period}</Text>
+                      <Text variant="subtle" className="text-sm">
+                        {edu.period}
+                      </Text>
                     </div>
                   ))}
                 </div>
@@ -378,5 +407,5 @@ export default function Resume() {
         </div>
       </Layout>
     </>
-  )
+  );
 } 

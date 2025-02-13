@@ -14,7 +14,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/edgarbarrantes',
+    url: 'https://www.linkedin.com/in/edgar-barrantes',
   },
   {
     name: 'Twitter',

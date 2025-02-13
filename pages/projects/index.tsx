@@ -15,9 +15,9 @@ export default function Projects() {
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold pb-4">Featured Projects</h1>
             <p className="text-xl text-muted-foreground leading-relaxed pb-8">
-              A curated collection of open-source projects focused on decentralized systems, 
-              web3 infrastructure, and developer tools. Each project represents a step towards 
-              a more open and accessible web.
+              A curated collection of open-source projects I&apos;ve worked on,
+              focused on decentralized systems, web3 infrastructure, and 
+              developer tools.
             </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">

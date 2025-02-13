@@ -71,7 +71,7 @@ export function Info() {
     <div className="relative">
       {/* Background gradient */}
       <div
-        className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black"
+        className="absolute rounded inset-0 -z-10 h-full w-full bg-white/70 dark:bg-black/70"
         style={{
           backgroundImage: `radial-gradient(
             circle at center,
@@ -82,7 +82,7 @@ export function Info() {
         aria-hidden="true"
       />
 
-      <Card className="overflow-hidden border-none bg-background/50 backdrop-blur-sm">
+      <Card className="overflow-hidden border-none bg-background/50">
         <CardContent className="p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Profile Image */}
@@ -102,13 +102,13 @@ export function Info() {
             {/* Content */}
             <div className="flex-1 text-center md:text-left space-y-6">
               <div className="space-y-4">
-                <Text variant="h1" className="leading-tight">
+                <h1 className="text-4xl font-bold leading-tight">
                   Edgar Barrantes
-                </Text>
+                </h1>
                 <Text variant="subtle" className="text-lg md:text-xl">
                   Transforming complex technical challenges into elegant prompts
                   and architectures. Modern software creation is teaching
-                  machines to seamlesslyunderstand human intent. Into
+                  machines to seamlessly understand human intent. I&apos;m into
                   descentralised systems and classical texts. Currently
                   exploring the boundaries of AI capabilities. Wishes are now
                   commands.

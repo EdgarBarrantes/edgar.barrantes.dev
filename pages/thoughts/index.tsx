@@ -7,6 +7,12 @@ import { Info } from "../../components/Info";
 import { getAllThoughts } from "../../utils/data";
 import { Content } from "../../utils/interfaces";
 import { LoadingState } from "../../components/LoadingState";
+import dynamic from 'next/dynamic';
+
+// Dynamically import Newsletter component
+const Newsletter = dynamic(() => import('@/components/Newsletter').then(mod => mod.Newsletter), {
+  loading: () => <div className="h-[320px] animate-pulse bg-muted rounded-lg" />
+});
 
 interface ThoughtsProps {
   thoughts: Content[];
@@ -21,7 +27,7 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts, totalPages, initialTotal 
 
   return (
     <>
-      <Meta 
+      <Meta
         title="Thoughts on Tech & Innovation"
         description="Deep dives into software architecture, web3 development, and the future of technology. Exploring ideas that shape the digital landscape."
       />
@@ -31,20 +37,10 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts, totalPages, initialTotal 
             title="Thoughts & Insights"
             description={
               <span>
-                In-depth explorations of software engineering, decentralized systems, 
-                and technological innovations that are shaping our digital future.
-                <br /><br />
-                These articles are crafted in{" "}
-                <a
-                  className="hover:underline font-bold"
-                  href="https://obsidian.md"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Obsidian
-                </a>{" "}
-                using connected thought principles to create a rich tapestry of 
-                interlinked ideas and practical insights.
+                Explorations of software crafting, decentralized systems, 
+                geopolitics, ideas, and more.
+                <br />
+                For more, see my newsletter below.
               </span>
             }
             content={content}
@@ -53,6 +49,9 @@ const Thoughts: NextPage<ThoughtsProps> = ({ thoughts, totalPages, initialTotal 
             totalPages={totalPages}
             onPageChange={setCurrentPage}
           />
+          <div className="my-8">
+            <Newsletter />
+          </div>
         </Suspense>
       </Layout>
     </>
@@ -68,6 +67,8 @@ export async function getStaticProps() {
       thoughts,
       totalPages: 1,
       initialTotal: thoughts.length
-    }
+    },
+    // Revalidate every hour
+    revalidate: 3600
   }
 }

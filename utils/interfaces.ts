@@ -1,9 +1,20 @@
-interface Content {
-  data: {
-    [key: string]: any;
-  };
-  slug: string;
-  type: string;
+export interface ArticleData {
+  title: string
+  description: string
+  date: string
+  tag?: string[]
 }
 
-export type { Content };
+export interface Content {
+  data: ArticleData
+  content?: string
+  slug: string
+  type: 'thoughts' | 'til'
+}
+
+export interface Project {
+  title: string
+  description: string
+  href: string
+  tags?: string[]
+}

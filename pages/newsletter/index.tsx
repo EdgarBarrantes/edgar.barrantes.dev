@@ -1,26 +1,21 @@
-import type { NextPage } from "next";
-import Head from "next/head";
 import { Suspense } from 'react'
+import { Layout } from "../../components/Layout"
+import { Newsletter } from "../../components/Newsletter"
+import { LoadingState } from "../../components/LoadingState"
+import { Meta } from "../../components/SEO/Meta"
 
-import Layout from "../../components/Layout";
-import Newsletter from "../../components/Newsletter";
-import LoadingState from "../../components/LoadingState";
-import SEO from "../../components/SEO";
-
-const Home: NextPage = () => {
+export default function NewsletterPage() {
   return (
-    <div>
-      <SEO 
+    <>
+      <Meta 
         title="Newsletter"
-        description="Weekly stories and insights about software engineering and web3"
+        description="Subscribe to my newsletter for updates on software development, decentralized systems, and more."
       />
       <Layout>
         <Suspense fallback={<LoadingState />}>
           <Newsletter />
         </Suspense>
       </Layout>
-    </div>
-  );
-};
-
-export default Home;
+    </>
+  )
+}

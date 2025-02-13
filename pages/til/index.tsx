@@ -1,65 +1,62 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import ContentDisplay from "../../components/ContentDisplay";
 import { useState, Suspense } from 'react'
-import { GetStaticProps } from 'next'
-import { getPaginatedContent } from '../../utils/data'
-
-import Layout from "../../components/Layout";
-import { getAllTILs } from "../../utils/data";
-import { Content } from "../../utils/interfaces";
-import LoadingState from "../../components/LoadingState";
-import SEO from "../../components/SEO";
-import Navigation from "../../components/Nav/Navigation";
+import { Meta } from '../../components/SEO/Meta'
+import { Layout } from '../../components/Layout'
+import { ContentDisplay } from "../../components/ContentDisplay"
+import { LoadingState } from "../../components/LoadingState"
+import { getAllTILs } from "../../utils/data"
+import { Content } from "../../utils/interfaces"
 
 interface TILProps {
-  tils: {
-    data: {
-      [key: string]: any;
-    };
-    slug: string;
-    type: string;
-  }[];
+  tils: Content[]
+  totalPages: number
+  initialTotal: number
 }
 
-const TIL: NextPage<TILProps> = ({ tils }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function TIL({ tils, totalPages, initialTotal }: TILProps) {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [isLoading, setIsLoading] = useState(false)
+  const [content, setContent] = useState(tils)
 
   return (
-    <div>
-      <SEO
-        title="TIL | Edgar Barrantes"
-        description="Things I've learned along the way."
+    <>
+      <Meta 
+        title="TIL - Daily Tech Insights"
+        description="Discover bite-sized tech learnings, coding tips, and development insights from daily software engineering experiences."
       />
       <Layout>
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          <Navigation onClose={() => setIsOpen(false)} />
+        <Suspense fallback={<LoadingState />}>
           <ContentDisplay
-            title="Today I learned..."
+            title="Today I Learned"
             description={
               <span>
-                Quick notes that I take regarding something new learned, mostly
-                software development focused.
+                Welcome to my digital garden of technical discoveries! Here, I share concise, 
+                practical insights from my daily journey in software development.
                 <br />
-                It&apos;s my small garden to store the bits and pieces of useful
-                information that might one day help you as well.
+                <br />
+                From debugging tricks to architectural patterns, each entry is crafted to be 
+                immediately applicable to your work. Think of it as your technical field notes 
+                from the frontlines of modern development.
               </span>
             }
-            content={tils}
+            content={content}
+            isLoading={isLoading}
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
           />
-        </div>
+        </Suspense>
       </Layout>
-    </div>
-  );
-};
+    </>
+  )
+}
 
 export async function getStaticProps() {
-  const tils = getAllTILs();
+  const tils = getAllTILs()
   return {
     props: {
       tils,
-    },
-  };
+      totalPages: 1,
+      initialTotal: tils.length
+    }
+  }
 }
-
-export default TIL;

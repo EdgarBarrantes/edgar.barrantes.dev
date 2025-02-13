@@ -1,51 +1,107 @@
 ---
-tag: [2022, book]
-title: Algorithms to live by
-description: Decision making inspired in algorithms invented for machines, valid in a world where computation time is not unlimited
-date: "13-03-2022"
+tag: 
+  - computer-science
+  - decision-making
+  - algorithms
+  - productivity
+  - optimization
+  - book-review
+  - cognitive-science
+title: "Algorithms to Live By: The Computer Science of Human Decisions"
+description: "Exploring how computer science algorithms can revolutionize our daily decision-making processes, from career choices to time management."
+date: "2022-03-13"
 ---
 
-# Algorithms to live by
+# Algorithms to Live By: The Computer Science of Human Decisions
 
-## Notes
+## Executive Summary
 
-- Computer science ideas can apply to human decisions, even more so now, than infinite computation is not viable.
+This exploration of Brian Christian and Tom Griffiths' work reveals how computer science algorithms can provide powerful frameworks for human decision-making. The book demonstrates that computational thinking isn't just for computers—it's a valuable tool for navigating life's complexities.
 
-#### The secretary problem
+## Key Insights
 
-- 37% rule. First gather data, and then choose. Applies when you know you cannot go back and chose a previous match and that you will get accepted. 25% if you get a 50/50 of getting accepted. And 63% if you can accept previous ones (like Kepler with his second wife).
+### 1. The Optimal Stopping Problem (37% Rule)
 
-#### Explore / Exploit:
+The famous "secretary problem" provides a mathematical framework for making decisions when:
+- You must evaluate options sequentially
+- You can't return to previous options
+- You need to maximize your chances of selecting the best option
 
-- The multiarm bandit problem
-- There's a balance between exploration (acquiring data) and exploitation (getting benefit). A matematician explored the solution and discovered the [[Gittins index]] as a solution to the [[Multiarm bandit problem]], how to chose weather to explore more, or continue with the current selection, considering the potential reward of the next selection, considering the future as discounted (geometrically, tomorrow's "profits" have a fixed rate less value than today's). For example, it might make more sense to optimise more for today's rewards if tomorrow is uncertain or if you have a bigger need to make profits for today.
-- The less discounted the future, the better the rewards of exploration. 90% discount makes for 0.7 index a 0-0 wins/loses ratio, whereas 99% makes it 0.86.
-- This doesn't take into account the cost of changing options. It might make sense to change restaurants to test out (no cost), but it might not make sense to change houses (mortgage).
-- Though, the index is hard to estimate on the fly.
-- This is the method.
-  Regret minification
-- A simpler way to approach things is by thinking in terms of minimisation of regret.
-- Regret is always going to increase by default. A logarithmic increase is the optimal result.
-- Depending on how close are we of ending the journey, we'll tend more towards exploitation than exploration.
-- A common thread is that: as we get older, we enjoy life more, for we have maximised for enjoyment (exploit) and pruned bad arms.
-- [Example of a paper on this subject](https://arxiv.org/pdf/1901.08387.pdf).
+**Practical Application:**
+- Job hunting: Look at 37% of available options before making a decision
+- House hunting: Visit ~11 houses before choosing
+- Dating: The math suggests exploring options until age 26-27 (37% of dating life from 18-40)
 
-#### Sorting
+**Variations:**
+- 25% rule when acceptance isn't guaranteed
+- 63% rule when you can return to previous options
 
-- Google is not powerful because it searches, it's powerful because it sorts.
-  - _This is the reason one goes to google when duck duck go does not produce great results_
-- Sports use sorting algorithms to know who's the best at it.
-- [[Lewis Caroll]] as a mathematician proposed a solution for sorting winners at Tennis, for he realised that the chances of second place to actually be the second best player were 16/32. And the best four to be the best four was 1/12.
-- Sometimes, the best algorithms by efficiency is not the best for the job.
-  - For example in Baseball, when you actually want the games for the games themselves.
-  - Or in a fight, where you could do linear time if you just continue playing until defeated and the winner takes your place (fatigue).
-- Pecking order and displacement are ways of sorting without confrontation. This is seen in monkeys, and, in a way, in poker one-on-one tables.
+### 2. Explore vs. Exploit Trade-off
 
-[Link](https://algorithmstoliveby.com/)
+The multi-armed bandit problem illuminates the balance between:
+- **Exploration**: Gathering new information
+- **Exploitation**: Utilizing known rewards
 
-Consumed on:
+#### The Gittins Index
+A mathematical solution that considers:
+- Potential future rewards
+- Time value (geometric discounting)
+- Uncertainty levels
 
-- Year: [[2022]]
-- Quarter: [[2022-Q1]]
+**Key Finding**: The optimal strategy shifts based on your time horizon:
+- Early phase: Heavy exploration
+- Middle phase: Balanced approach
+- Late phase: Increased exploitation
 
-![[Index#Sources]]
+### 3. Sorting and Efficiency
+
+#### Key Principles:
+1. **Value of Organization**: Google's power lies not in search but in sorting
+2. **Efficiency Trade-offs**: Sometimes the mathematically optimal solution isn't practically optimal
+3. **Social Applications**: From sports rankings to organizational hierarchies
+
+**Real-world Applications:**
+- Tournament Design: Lewis Carroll's insights on tennis tournament structures
+- Social Hierarchies: How "pecking orders" emerge as natural sorting mechanisms
+- Resource Allocation: When to use different sorting strategies based on context
+
+## Practical Implications
+
+### 1. Decision Making
+- Use the 37% rule for sequential decision problems
+- Adapt exploration/exploitation based on your life stage
+- Consider the costs of switching when evaluating options
+
+### 2. Time Management
+- Apply sorting algorithms to prioritize tasks
+- Use computational thinking to optimize daily routines
+- Balance perfect solutions against good-enough approaches
+
+### 3. Social Dynamics
+- Understand how hierarchies naturally form
+- Optimize group decision-making processes
+- Apply tournament theory to fair competition design
+
+## Critical Analysis
+
+### Strengths
+- Bridges theoretical computer science and practical life decisions
+- Provides concrete, applicable decision-making frameworks
+- Backed by rigorous mathematical principles
+
+### Limitations
+- Some scenarios oversimplify human complexity
+- Not all algorithms translate perfectly to real-world situations
+- Requires adaptation for emotional and social factors
+
+## Further Reading
+
+- [Official Book Website](https://algorithmstoliveby.com/)
+- [Gittins Index Deep Dive](https://arxiv.org/pdf/1901.08387.pdf)
+- [Optimal Stopping Theory](https://en.wikipedia.org/wiki/Optimal_stopping)
+
+---
+
+*Read in Q1 2022*
+
+*Tags: #algorithms #decision-making #optimization #cognitive-science*

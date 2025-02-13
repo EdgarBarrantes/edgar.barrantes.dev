@@ -1,22 +1,26 @@
 interface ArticleSchemaProps {
   title: string
   description: string
-  date: string
+  date?: string
   url: string
 }
 
-const ArticleSchema = ({ title, description, date, url }: ArticleSchemaProps) => {
+export function ArticleSchema({ title, description, date, url }: ArticleSchemaProps) {
   const schema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": title,
-    "description": description,
-    "author": {
-      "@type": "Person",
-      "name": "Edgar Barrantes"
-    },
-    "datePublished": date,
-    "url": url
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    ...(date && {
+      datePublished: date,
+      dateModified: date,
+    }),
+    url,
+    author: {
+      '@type': 'Person',
+      name: 'Edgar Barrantes',
+      url: 'https://edgar.barrantes.dev'
+    }
   }
 
   return (
@@ -25,6 +29,4 @@ const ArticleSchema = ({ title, description, date, url }: ArticleSchemaProps) =>
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   )
-}
-
-export default ArticleSchema 
+} 

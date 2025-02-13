@@ -1,61 +1,68 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Info from "../../components/Info";
-import SEO from "../../components/SEO";
+import { Meta } from '../../components/SEO/Meta'
+import { Layout } from '../../components/Layout'
+import { Info } from '../../components/Info'
+import { ArticleSchema } from '../../components/SEO/ArticleSchema'
+import { getAllThoughts, getThought, getThoughtHtml } from '../../utils/data'
 
-import Layout from "../../components/Layout";
-import { getAllThoughts, getThought, getThoughtHtml } from "../../utils/data";
+interface ThoughtData {
+  title: string
+  description: string
+  date: string
+  tag?: string[]
+}
 
 interface ThoughtProps {
-  thought: any;
-  content: any;
+  thought: ThoughtData & {
+    slug: string
+  }
+  content: string
 }
 
-const Thought: NextPage<ThoughtProps> = ({ thought, content }) => {
+export default function Thought({ thought, content }: ThoughtProps) {
   return (
-    <div>
-      <Head>
-        <title>{thought.title} - Edgar Barrantes</title>
-        <meta name="description" content={thought.description} />
-      </Head>
+    <>
+      <Meta 
+        title={thought.title}
+        description={thought.description}
+        type="article"
+        date={thought.date}
+      />
+      <ArticleSchema
+        title={thought.title}
+        description={thought.description}
+        date={thought.date}
+        url={`https://edgar.barrantes.dev/thoughts/${thought.slug}`}
+      />
       <Layout>
-        <div className="prose dark:prose-invert lg:prose-lg">
-          <article dangerouslySetInnerHTML={{ __html: content }} />
+        <article className="prose dark:prose-invert lg:prose-lg mx-auto">
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <hr className="my-8" />
           <Info />
-        </div>
+        </article>
       </Layout>
-    </div>
-  );
-};
+    </>
+  )
+}
 
 export async function getStaticPaths() {
-  const thoughts = await getAllThoughts();
+  const thoughts = await getAllThoughts()
   return {
-    paths: thoughts.map((thought) => {
-      return {
-        params: {
-          slug: thought.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
+    paths: thoughts.map((thought) => ({
+      params: { slug: thought.slug }
+    })),
+    fallback: false
+  }
 }
 
-interface Context {
-  params: {
-    slug: string;
-  };
-}
-
-export async function getStaticProps({ params: { slug } }: Context) {
-  const thought = getThought(slug);
+export async function getStaticProps({ params: { slug } }: { params: { slug: string } }) {
+  const thought = getThought(slug)
   return {
     props: {
-      thought: thought.data,
-      content: await getThoughtHtml(thought.content),
-    },
-  };
+      thought: {
+        ...thought.data,
+        slug
+      },
+      content: await getThoughtHtml(thought.content)
+    }
+  }
 }
-
-export default Thought;

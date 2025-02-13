@@ -1,42 +1,42 @@
-import { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { tokens } from '@/styles/design-tokens';
 
-interface ThemeContextType {
-  theme: typeof tokens;
-  isDark: boolean;
-  toggleTheme: () => void;
+type Theme = 'light' | 'dark' | 'system';
+
+interface ThemeContextValue {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+  resolvedTheme: string;
+  mounted: boolean;
 }
 
-const ThemeContext = createContext<ThemeContextType>({
-  theme: tokens,
-  isDark: false,
-  toggleTheme: () => null,
+const ThemeContext = createContext<ThemeContextValue>({
+  theme: 'system',
+  setTheme: () => null,
+  resolvedTheme: 'light',
+  mounted: false
 });
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const { theme: colorMode, setTheme } = useTheme();
-  const isDark = colorMode === 'dark';
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
-  const toggleTheme = () => setTheme(isDark ? 'light' : 'dark');
-
-  const value = {
-    theme: tokens,
-    isDark,
-    toggleTheme,
-  };
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <ThemeContext.Provider value={value}>
+    <ThemeContext.Provider 
+      value={{ 
+        theme: theme as Theme, 
+        setTheme, 
+        resolvedTheme: resolvedTheme || 'light',
+        mounted 
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );
 }
 
-export const useAppTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useAppTheme must be used within ThemeProvider');
-  }
-  return context;
-}; 
+export const useAppTheme = () => useContext(ThemeContext); 

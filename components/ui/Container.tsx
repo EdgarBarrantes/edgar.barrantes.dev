@@ -1,22 +1,32 @@
-import { ReactNode } from 'react';
+import { forwardRef } from "react"
+import { twMerge } from "tailwind-merge"
+import { Base, BaseProps } from "./base"
 
-interface ContainerProps {
-  children: ReactNode;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  className?: string;
+export interface ContainerProps extends BaseProps {
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
 
-export function Container({ children, size = 'lg', className = '' }: ContainerProps) {
-  const sizes = {
-    sm: 'max-w-2xl',
-    md: 'max-w-4xl',
-    lg: 'max-w-6xl',
-    xl: 'max-w-7xl',
-  };
+export const Container = forwardRef<HTMLDivElement, ContainerProps>(
+  ({ size = 'lg', className, ...props }, ref) => {
+    const sizeStyles = {
+      sm: 'max-w-screen-sm',
+      md: 'max-w-screen-md',
+      lg: 'max-w-screen-lg',
+      xl: 'max-w-screen-xl',
+      full: 'max-w-none'
+    }
 
-  return (
-    <div className={`mx-auto px-4 sm:px-6 lg:px-8 ${sizes[size]} ${className}`}>
-      {children}
-    </div>
-  );
-} 
+    return (
+      <Base
+        ref={ref}
+        className={twMerge(
+          "mx-auto w-full px-4 sm:px-6 lg:px-8",
+          sizeStyles[size],
+          className
+        )}
+        {...props}
+      />
+    )
+  }
+)
+Container.displayName = "Container" 

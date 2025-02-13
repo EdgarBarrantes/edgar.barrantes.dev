@@ -1,114 +1,97 @@
-import Link from "next/link";
-import { ReactNode, useTransition, useEffect, useState } from "react";
-import { Content } from "../../utils/interfaces";
-import LoadingState from '../LoadingState'
+import { ReactNode, useTransition } from "react"
+import { Content } from "../../utils/interfaces"
+import { LoadingState } from '../LoadingState'
+import { Container } from '../ui/Container'
+import { Text } from '../ui/base'
+import { ArticleCard } from '../ArticleCard'
+import { Button } from '../ui/Button'
 
 interface ContentDisplayProps {
-  title: string;
-  description: ReactNode;
-  content: Content[];
-  isLoading?: boolean;
-  currentPage?: number;
-  totalPages?: number;
-  onPageChange?: (page: number) => void;
+  title: string
+  description: ReactNode
+  content: Content[]
+  isLoading?: boolean
+  currentPage: number
+  totalPages: number
+  onPageChange: (page: number) => void
 }
 
-const ContentDisplay = ({
+export function ContentDisplay({
   title,
   description,
   content,
-  isLoading = false,
-  currentPage = 1,
-  totalPages = 1,
+  isLoading,
+  currentPage,
+  totalPages,
   onPageChange
-}: ContentDisplayProps) => {
-  const [isPending, startTransition] = useTransition();
-  const [mounted, setMounted] = useState(false);
+}: ContentDisplayProps) {
+  const [isPending, startTransition] = useTransition()
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const handlePageChange = (page: number) => {
-    startTransition(() => {
-      onPageChange?.(page)
-    })
-  }
-
-  if (isLoading || !mounted) {
-    return <LoadingState />
+  if (isLoading) {
+    return <LoadingState type="article" />
   }
 
   return (
-    <div className={isPending ? 'opacity-70' : ''}>
-      <h1 className="text-4xl font-bold inline-block mb-4 border-b-4 border-indigo-100 dark:border-indigo-900">
-        {title}
-      </h1>
-      <p className="text-xl italic pb-8">{description}</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {content.map(({ data: article, slug, type }) => (
-          <div key={`${type}/${article.title}`} className="group">
-            <Link 
-              href={`/${type}/${slug}`}
-              className="block p-6 transition-all duration-300 bg-indigo-50 dark:bg-indigo-900 rounded-md 
-                group-hover:scale-105 group-hover:shadow-md"
-            >
-              <h2 className="font-bold mb-2">{article.title}</h2>
-              {article.date && (
-                <p className="italic text-left mb-2">{article.date}</p>
-              )}
-              <p className="mb-6">{article.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {article.tag && article.tag.map((t: string) => (
-                  <span key={t} className="inline-block" onClick={(e) => e.stopPropagation()}>
-                    <Link 
-                      href={`/tags/${t}`}
-                      className="inline-block p-2 rounded transition-all border-2 border-indigo-900 dark:border-transparent 
-                        hover:border-indigo-500 dark:hover:border-indigo-200 dark:bg-indigo-800 
-                        hover:opacity-80 hover:shadow-lg dark:hover:shadow-none dark:shadow-indigo-600"
-                    >
-                      {t}
-                    </Link>
-                  </span>
-                ))}
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
-      {totalPages > 1 && (
-        <div className="flex justify-center space-x-2 mt-8">
-          <button
-            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-            disabled={currentPage === 1 || isLoading}
-            className="px-4 py-2 rounded bg-indigo-100 dark:bg-indigo-800 disabled:opacity-50"
-          >
-            Previous
-          </button>
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              className={`px-4 py-2 rounded ${
-                page === currentPage
-                  ? 'bg-indigo-900 text-white'
-                  : 'bg-indigo-100 dark:bg-indigo-800'
-              }`}
-            >
-              {page}
-            </button>
-          ))}
-          <button
-            onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-            disabled={currentPage === totalPages || isLoading}
-            className="px-4 py-2 rounded bg-indigo-100 dark:bg-indigo-800 disabled:opacity-50"
-          >
-            Next
-          </button>
+    <Container>
+      <div className="space-y-8">
+        <div className="max-w-2xl">
+          <Text variant="h1" className="mb-4">
+            {title}
+          </Text>
+          <Text variant="subtle" className="text-lg">
+            {description}
+          </Text>
         </div>
-      )}
-    </div>
-  );
-};
 
-export default ContentDisplay;
+        <div className="grid gap-6 sm:grid-cols-2">
+          {content.map(({ data: article, slug, type }) => (
+            <ArticleCard
+              key={`${type}/${slug}`}
+              title={article.title}
+              description={article.description}
+              date={article.date}
+              tags={article.tag}
+              href={`/${type}/${slug}`}
+              type={type as 'thoughts' | 'til'}
+            />
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div className="flex justify-center gap-2">
+            <Button
+              variant="outline"
+              onClick={() => {
+                startTransition(() => onPageChange(currentPage - 1))
+              }}
+              disabled={currentPage === 1 || isPending}
+            >
+              Previous
+            </Button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                variant={page === currentPage ? 'default' : 'outline'}
+                onClick={() => {
+                  startTransition(() => onPageChange(page))
+                }}
+                disabled={isPending}
+              >
+                {page}
+              </Button>
+            ))}
+            <Button
+              variant="outline"
+              onClick={() => {
+                startTransition(() => onPageChange(currentPage + 1))
+              }}
+              disabled={currentPage === totalPages || isPending}
+            >
+              Next
+            </Button>
+          </div>
+        )}
+      </div>
+    </Container>
+  )
+}

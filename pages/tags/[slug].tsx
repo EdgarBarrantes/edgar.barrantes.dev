@@ -1,68 +1,55 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import ContentDisplay from "../../components/ContentDisplay";
-import Info from "../../components/Info";
-import SEO from "../../components/SEO";
-
-import Layout from "../../components/Layout";
-import { getAllTags, getTaggedContent } from "../../utils/data";
+import { Suspense } from 'react'
+import { Meta } from '../../components/SEO/Meta'
+import { Layout } from '../../components/Layout'
+import { ContentDisplay } from "../../components/ContentDisplay"
+import { LoadingState } from "../../components/LoadingState"
+import { getAllTags, getTaggedContent } from "../../utils/data"
+import { Content } from "../../utils/interfaces"
 
 interface TagProps {
-  tag: string;
-  content: any[];
+  tag: string
+  content: Content[]
 }
 
-const Tag: NextPage<TagProps> = ({ tag, content }) => {
+export default function Tag({ tag, content }: TagProps) {
   return (
-    <div>
-      <Head>
-        <title>{tag} - Edgar Barrantes</title>
-        <meta
-          name="description"
-          content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <Meta 
+        title={`${tag} - Tagged Content`}
+        description={`Content tagged with ${tag}`}
+      />
       <Layout>
-        <ContentDisplay
-          title={`#${tag}`}
-          description={<div>Content tagged with {tag}</div>}
-          content={content}
-        />
-        <Info />
+        <Suspense fallback={<LoadingState />}>
+          <ContentDisplay
+            title={`Tagged with "${tag}"`}
+            description="All content with this tag"
+            content={content}
+            currentPage={1}
+            totalPages={1}
+            onPageChange={() => {}}
+          />
+        </Suspense>
       </Layout>
-    </div>
-  );
-};
+    </>
+  )
+}
 
 export async function getStaticPaths() {
-  const tags = getAllTags();
+  const tags = getAllTags()
   return {
-    paths: tags.map((tag) => {
-      return {
-        params: {
-          slug: tag,
-        },
-      };
-    }),
-    fallback: false,
-  };
+    paths: tags.map((tag) => ({
+      params: { slug: tag }
+    })),
+    fallback: false
+  }
 }
 
-interface Context {
-  params: {
-    slug: string;
-  };
-}
-
-export async function getStaticProps({ params: { slug } }: Context) {
-  const taggedContent = getTaggedContent(slug);
+export async function getStaticProps({ params: { slug } }: { params: { slug: string } }) {
+  const content = getTaggedContent(slug)
   return {
     props: {
       tag: slug,
-      content: taggedContent,
-    },
-  };
+      content
+    }
+  }
 }
-
-export default Tag;

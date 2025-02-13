@@ -1,29 +1,26 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {},
-        },
-      ],
-    });
-    return config;
-  },
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-};
-
-const withMDX = require("@next/mdx")({
+const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
+    providerImportSource: "@mdx-js/react",
   },
-});
+})
 
-module.exports = withMDX(nextConfig);
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['images.unsplash.com'],
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
+    return config
+  },
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+}
+
+module.exports = withMDX(nextConfig)

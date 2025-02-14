@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "/public/styles/github-dark.min.css";
 import { AppProps } from "next/app";
 import { ThemeProvider } from '../components/ThemeProvider';
 import { Providers } from '../components/Providers';

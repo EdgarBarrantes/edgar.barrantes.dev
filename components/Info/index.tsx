@@ -4,6 +4,7 @@ import { Text } from "../ui/base";
 import { Button } from "../ui/Button";
 import { MailIcon, GithubIcon, TwitterIcon } from "lucide-react";
 import { twMerge } from "tailwind-merge";
+import dynamic from 'next/dynamic';
 
 const Logo = () => (
   <svg
@@ -44,6 +45,37 @@ const Logo = () => (
     />
   </svg>
 );
+
+// Defer loading of social links section
+const SocialLinks = dynamic(() => Promise.resolve(() => {
+  return (
+    <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
+      {socialLinks.map(({ href, Icon, label, text }) => (
+        <Button
+          key={href}
+          variant="outline"
+          size="sm"
+          asChild
+          className={twMerge(
+            "transition-all duration-75",
+            "hover:bg-primary hover:text-primary-foreground hover:border-primary",
+            "group"
+          )}
+        >
+          <a
+            href={href}
+            target={href.startsWith("mailto") ? undefined : "_blank"}
+            rel="noreferrer"
+            aria-label={label}
+          >
+            <Icon className="w-4 h-4 mr-2 transition-transform group-hover:scale-105 duration-75" />
+            {text}
+          </a>
+        </Button>
+      ))}
+    </div>
+  );
+}), { ssr: true });
 
 const socialLinks = [
   {
@@ -93,9 +125,11 @@ export function Info() {
                 alt="Edgar Barrantes"
                 className="relative rounded-full object-cover ring-2 ring-background"
                 fill
-                sizes="(max-width: 640px) 160px, 192px"
+                sizes="(max-width: 768px) 160px, 192px"
                 priority
-                quality={90}
+                quality={75}
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
 
@@ -105,45 +139,20 @@ export function Info() {
                 <h1 className="text-4xl font-bold leading-tight">
                   Edgar Barrantes
                 </h1>
-                <Text variant="subtle" className="text-lg md:text-xl">
-                  Transforming complex technical challenges into elegant prompts
-                  and architectures. Modern software creation is teaching
-                  machines to seamlessly understand human intent. I&apos;m into
-                  descentralised systems and classical texts. Currently
-                  exploring the boundaries of AI capabilities. Wishes are now
-                  commands.
-                </Text>
-                <Text variant="subtle" className="text-base md:text-lg">
-                  {""}
-                </Text>
+                <p className="text-base md:text-base">
+                  Transforming complex technical challenges into architectures
+                  and elegant prompts. Software creation now is teaching machines
+                  to understand human intent seamlessly.
+                </p>
+                <p className="text-base md:text-base">
+                  I&apos;m into descentralised systems, classical texts and
+                  optimising for curiosity and agency. Currently exploring the
+                  boundaries of AI capabilities. Wishes are now commands.
+                </p>
               </div>
 
-              {/* Social Links */}
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                {socialLinks.map(({ href, Icon, label, text }) => (
-                  <Button
-                    key={href}
-                    variant="outline"
-                    size="sm"
-                    asChild
-                    className={twMerge(
-                      "transition-all duration-75",
-                      "hover:bg-primary hover:text-primary-foreground hover:border-primary",
-                      "group"
-                    )}
-                  >
-                    <a
-                      href={href}
-                      target={href.startsWith("mailto") ? undefined : "_blank"}
-                      rel="noreferrer"
-                      aria-label={label}
-                    >
-                      <Icon className="w-4 h-4 mr-2 transition-transform group-hover:scale-105 duration-75" />
-                      {text}
-                    </a>
-                  </Button>
-                ))}
-              </div>
+              {/* Deferred Social Links */}
+              <SocialLinks />
             </div>
           </div>
         </CardContent>

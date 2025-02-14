@@ -16,7 +16,7 @@ export default function Playground() {
   // Reset background when leaving page if it was hangman
   useEffect(() => {
     // Set background type to hangman on initial page load
-    setBackgroundType('hangman')
+    setBackgroundType('kaleidoscope')
 
     return () => {
       // Always set background type to subtle on page unmount

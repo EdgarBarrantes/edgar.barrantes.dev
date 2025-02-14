@@ -110,7 +110,7 @@ export function Header() {
               >
                 <Image
                   src="/logo.png"
-                  alt="Edgar Barrantes"
+                  alt="A logo of a beautifully detailed tree with the initials E B inside of it"
                   fill
                   sizes="40px"
                   className={twMerge(

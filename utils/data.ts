@@ -10,6 +10,7 @@ import matter from "gray-matter";
 import { Content, ArticleData } from "./interfaces";
 import { remark } from 'remark'
 import html from 'remark-html'
+import { calculateReadingTime } from './readingTime'
 
 let markdownWorker: Worker;
 
@@ -101,7 +102,14 @@ const getFile = (type: string, filename: string) => {
   try {
     const md = matter.read(path.join(`content/_${type}`, `${filename}.md`));
     const fixedData = fixArticleData(md.data, `${filename}.md`, type);
-    
+
+    // Calculate reading time from content
+    const readingTime = calculateReadingTime(md.content || '');
+    const dataWithReadingTime = {
+      ...fixedData,
+      readingTime
+    };
+
     // If we fixed any data, save it back to the file
     if (JSON.stringify(md.data) !== JSON.stringify(fixedData)) {
       const updatedContent = matter.stringify(md.content, fixedData);
@@ -113,7 +121,7 @@ const getFile = (type: string, filename: string) => {
 
     return {
       ...md,
-      data: fixedData,
+      data: dataWithReadingTime,
       content: md.content || ''
     };
   } catch (error) {

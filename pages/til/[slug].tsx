@@ -10,6 +10,11 @@ interface TilData {
   description: string
   date: string
   tag?: string[]
+  readingTime?: {
+    minutes: number
+    words: number
+    text: string
+  }
 }
 
 interface TilProps {
@@ -43,6 +48,21 @@ export default function Til({ til, content }: TilProps) {
       />
       <Layout>
         <article className="prose dark:prose-invert lg:prose-lg mx-auto">
+          {til.readingTime && (
+            <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8 not-prose">
+              <time dateTime={til.date}>
+                {new Date(til.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+              <span>•</span>
+              <span>{til.readingTime.text}</span>
+              <span>•</span>
+              <span>{til.readingTime.words.toLocaleString()} words</span>
+            </div>
+          )}
           <div dangerouslySetInnerHTML={{ __html: content }} />
           <hr className="my-8" />
           <Info />

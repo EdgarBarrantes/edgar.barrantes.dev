@@ -3,6 +3,11 @@ export interface ArticleData {
   description: string
   date: string
   tag?: string[]
+  readingTime?: {
+    minutes: number
+    words: number
+    text: string
+  }
 }
 
 export interface Content {

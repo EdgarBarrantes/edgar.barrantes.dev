@@ -25,8 +25,9 @@ export function calculateReadingTime(content: string): ReadingTimeResult {
   const withoutFrontmatter = content.replace(/^---[\s\S]*?---/, '');
 
   // Count code blocks separately (they take longer to read)
-  const codeBlocks = withoutFrontmatter.match(/```[\s\S]*?```/g) || [];
-  const codeWords = codeBlocks.reduce((acc, block) => {
+  const codeBlockMatches = withoutFrontmatter.match(/```[\s\S]*?```/g);
+  const codeBlocks: string[] = codeBlockMatches ? codeBlockMatches : [];
+  const codeWords = codeBlocks.reduce((acc: number, block: string) => {
     const words = block.split(/\s+/).length;
     return acc + words;
   }, 0);

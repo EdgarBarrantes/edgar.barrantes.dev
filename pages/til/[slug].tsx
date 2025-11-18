@@ -2,6 +2,7 @@ import { Meta } from '../../components/SEO/Meta'
 import { Layout } from '../../components/Layout'
 import { Info } from '../../components/Info'
 import { ArticleSchema } from '../../components/SEO/ArticleSchema'
+import { BreadcrumbSchema } from '../../components/SEO/BreadcrumbSchema'
 import { getAllTILs, getTIL, getTILHtml } from '../../utils/data'
 
 interface TilData {
@@ -32,6 +33,13 @@ export default function Til({ til, content }: TilProps) {
         description={til.description || `Quick technical note on ${til.title}`}
         date={til.date}
         url={`https://edgar.barrantes.dev/til/${til.slug}`}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://edgar.barrantes.dev' },
+          { name: 'TIL', url: 'https://edgar.barrantes.dev/til' },
+          { name: til.title, url: `https://edgar.barrantes.dev/til/${til.slug}` }
+        ]}
       />
       <Layout>
         <article className="prose dark:prose-invert lg:prose-lg mx-auto">

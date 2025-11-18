@@ -2,6 +2,7 @@ import { Meta } from '../../components/SEO/Meta'
 import { Layout } from '../../components/Layout'
 import { Info } from '../../components/Info'
 import { ArticleSchema } from '../../components/SEO/ArticleSchema'
+import { BreadcrumbSchema } from '../../components/SEO/BreadcrumbSchema'
 import { getAllThoughts, getThought, getThoughtHtml } from '../../utils/data'
 
 interface ThoughtData {
@@ -32,6 +33,13 @@ export default function Thought({ thought, content }: ThoughtProps) {
         description={thought.description}
         date={thought.date}
         url={`https://edgar.barrantes.dev/thoughts/${thought.slug}`}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://edgar.barrantes.dev' },
+          { name: 'Thoughts', url: 'https://edgar.barrantes.dev/thoughts' },
+          { name: thought.title, url: `https://edgar.barrantes.dev/thoughts/${thought.slug}` }
+        ]}
       />
       <Layout>
         <article className="prose dark:prose-invert lg:prose-lg mx-auto">

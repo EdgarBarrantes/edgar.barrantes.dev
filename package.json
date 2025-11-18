@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "ts-node --project tsconfig.node.json scripts/generate-sitemap.ts"
+    "postbuild": "ts-node --project tsconfig.node.json scripts/generate-sitemap.ts && ts-node --project tsconfig.node.json scripts/generate-rss.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",

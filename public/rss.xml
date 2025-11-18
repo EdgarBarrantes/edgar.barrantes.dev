@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Edgar Barrantes Brais</title>
+    <link>https://edgar.barrantes.dev</link>
+    <description>Software engineer passionate about decentralised systems and thoughtful debates. Thoughts on Web3, blockchain, AI, and software development.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Nov 2025 16:10:46 GMT</lastBuildDate>
+    <atom:link href="https://edgar.barrantes.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <generator>Next.js</generator>
+    <webMaster>edgar@barrantes.dev (Edgar Barrantes Brais)</webMaster>
+    <managingEditor>edgar@barrantes.dev (Edgar Barrantes Brais)</managingEditor>
+    <copyright>Copyright 2025 Edgar Barrantes Brais</copyright>
+    <category>Technology</category>
+    <category>Web3</category>
+    <category>Blockchain</category>
+    <category>Software Development</category>
+    <image>
+      <url>https://edgar.barrantes.dev/og-image.jpg</url>
+      <title>Edgar Barrantes Brais</title>
+      <link>https://edgar.barrantes.dev</link>
+      <width>1200</width>
+      <height>630</height>
+    </image>
+    <item>
+      <title><![CDATA[Creating a Secure SOCKS5 Proxy Using SSH: A Privacy-First Guide]]></title>
+      <description><![CDATA[Learn how to set up a secure SOCKS5 proxy tunnel using SSH for private browsing, with detailed configuration steps and security best practices.]]></description>
+      <link>https://edgar.barrantes.dev/til/connect-ssh-socks5</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/connect-ssh-socks5</guid>
+      <pubDate>Fri, 27 May 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Resolving MetaMask White Screen Issue in Firefox on Linux]]></title>
+      <description><![CDATA[A comprehensive guide to fixing the MetaMask extension white screen problem in Firefox, with step-by-step instructions and safety precautions for your crypto wallet.]]></description>
+      <link>https://edgar.barrantes.dev/til/fix-metamask-whitescreen-of-death</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/fix-metamask-whitescreen-of-death</guid>
+      <pubDate>Mon, 23 May 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Resolving fastecdsa Installation Issues in Cairo Development Environment]]></title>
+      <description><![CDATA[A comprehensive guide to fixing fastecdsa installation failures when setting up Cairo and StarkNet development environments, with solutions for different Linux distributions.]]></description>
+      <link>https://edgar.barrantes.dev/til/fastecdsa-install-failure</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/fastecdsa-install-failure</guid>
+      <pubDate>Fri, 13 May 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Resolving Docker Socket Permission Issues in Linux]]></title>
+      <description><![CDATA[A comprehensive guide to fixing Docker socket permission errors (EACCES) with proper security considerations and best practices for Docker daemon access.]]></description>
+      <link>https://edgar.barrantes.dev/til/docker-permissions-issue</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/docker-permissions-issue</guid>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Upgrading npm Registry Connections to TLS 1.2+]]></title>
+      <description><![CDATA[A comprehensive guide to resolving npm's TLS warnings, upgrading Node.js security, and implementing best practices for secure package management.]]></description>
+      <link>https://edgar.barrantes.dev/til/remove-tls-npm-warning</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/remove-tls-npm-warning</guid>
+      <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Executing Shell Commands in Node.js: A TypeScript Guide]]></title>
+      <description><![CDATA[A comprehensive guide to executing shell commands asynchronously in Node.js using TypeScript, with best practices for error handling and system integration.]]></description>
+      <link>https://edgar.barrantes.dev/til/execute-bash-in-node-async</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/execute-bash-in-node-async</guid>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Interactive Debugging in Docker Containers: A Comprehensive Guide]]></title>
+      <description><![CDATA[Learn how to effectively debug Docker containers using interactive shell access, with best practices for container inspection and troubleshooting techniques.]]></description>
+      <link>https://edgar.barrantes.dev/til/docker-exec-bash</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/docker-exec-bash</guid>
+      <pubDate>Thu, 17 Mar 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Algorithms to Live By: The Computer Science of Human Decisions]]></title>
+      <description><![CDATA[Exploring how computer science algorithms can revolutionize our daily decision-making processes, from career choices to time management.]]></description>
+      <link>https://edgar.barrantes.dev/thoughts/algorithms-to-live-by</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/thoughts/algorithms-to-live-by</guid>
+      <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
+      <category>Thoughts</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[Next.js Static Generation: Understanding getStaticProps and getStaticPaths]]></title>
+      <description><![CDATA[A comprehensive guide to implementing static site generation in Next.js using getStaticProps and getStaticPaths for dynamic routes, with TypeScript examples and best practices.]]></description>
+      <link>https://edgar.barrantes.dev/til/getstaticprops-getstaticpaths</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/getstaticprops-getstaticpaths</guid>
+      <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[The Evolution of Cyber Warfare: From Zero-Days to Nation-State Attacks]]></title>
+      <description><![CDATA[An analysis of modern cyber warfare tactics, the economics of zero-day exploits, and the growing role of state-sponsored cyber operations in global conflicts.]]></description>
+      <link>https://edgar.barrantes.dev/thoughts/cybersecurity-and-the-weapons-of-cyberwar</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/thoughts/cybersecurity-and-the-weapons-of-cyberwar</guid>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <category>Thoughts</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[The China-Russia Strategic Partnership: A New Global Power Dynamic]]></title>
+      <description><![CDATA[An in-depth analysis of the evolving China-Russia relationship, its implications for global power dynamics, and potential future scenarios in the changing world order.]]></description>
+      <link>https://edgar.barrantes.dev/thoughts/unpacking-the-china---russia-alliance</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/thoughts/unpacking-the-china---russia-alliance</guid>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 GMT</pubDate>
+      <category>Thoughts</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+    <item>
+      <title><![CDATA[How to use a linux machine as a hotspot]]></title>
+      <description><![CDATA[When you have an ethernet connection and need to share it with your phone or other devices.]]></description>
+      <link>https://edgar.barrantes.dev/til/use-machine-as-hotspot</link>
+      <guid isPermaLink="true">https://edgar.barrantes.dev/til/use-machine-as-hotspot</guid>
+      <pubDate>Invalid Date</pubDate>
+      <category>Today I Learned</category>
+      <author>edgar@barrantes.dev (Edgar Barrantes Brais)</author>
+    </item>
+  </channel>
+</rss>

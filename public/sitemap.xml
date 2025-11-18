@@ -1,100 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://edgar.barrantes.dev/404</loc>
-  </url>
-
-  <url>
     <loc>https://edgar.barrantes.dev</loc>
+    <lastmod>2025-11-18T15:57:37.693Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://edgar.barrantes.dev/playground</loc>
+    <lastmod>2025-11-18T15:51:48.108Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/newsletter/index</loc>
+    <loc>https://edgar.barrantes.dev/newsletter</loc>
+    <lastmod>2025-11-18T15:51:48.107Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/projects/index</loc>
+    <loc>https://edgar.barrantes.dev/projects</loc>
+    <lastmod>2025-11-18T15:51:48.108Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/resume/index</loc>
+    <loc>https://edgar.barrantes.dev/resume</loc>
+    <lastmod>2025-11-18T15:57:56.991Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/tags/[slug]</loc>
+    <loc>https://edgar.barrantes.dev/thoughts</loc>
+    <lastmod>2025-11-18T15:51:48.109Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/thoughts/[slug]</loc>
+    <loc>https://edgar.barrantes.dev/til</loc>
+    <lastmod>2025-11-18T15:51:48.110Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/thoughts/index</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/til/[slug]</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/til/index</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/_thoughts/algorithms-to-live-by</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://edgar.barrantes.dev/_thoughts/cybersecurity-and-the-weapons-of-cyberwar</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://edgar.barrantes.dev/_thoughts/unpacking-the-china---russia-alliance</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/_til/connect-ssh-socks5</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/_til/docker-exec-bash</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/_til/docker-permissions-issue</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/_til/execute-bash-in-node-async</loc>
-  </url>
-
-  <url>
-    <loc>https://edgar.barrantes.dev/_til/fastecdsa-install-failure</loc>
+    <loc>https://edgar.barrantes.dev/thoughts/algorithms-to-live-by</loc>
+    <lastmod>2025-11-18T15:51:48.093Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc
-      >https://edgar.barrantes.dev/_til/fix-metamask-whitescreen-of-death</loc
+      >https://edgar.barrantes.dev/thoughts/cybersecurity-and-the-weapons-of-cyberwar</loc
     >
+    <lastmod>2025-11-18T15:51:48.093Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/_til/getstaticprops-getstaticpaths</loc>
+    <loc
+      >https://edgar.barrantes.dev/thoughts/unpacking-the-china---russia-alliance</loc
+    >
+    <lastmod>2025-11-18T15:51:48.093Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/_til/remove-tls-npm-warning</loc>
+    <loc>https://edgar.barrantes.dev/til/connect-ssh-socks5</loc>
+    <lastmod>2025-11-18T15:51:48.094Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://edgar.barrantes.dev/_til/use-machine-as-hotspot</loc>
+    <loc>https://edgar.barrantes.dev/til/docker-exec-bash</loc>
+    <lastmod>2025-11-18T15:51:48.094Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/docker-permissions-issue</loc>
+    <lastmod>2025-11-18T15:51:48.094Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/execute-bash-in-node-async</loc>
+    <lastmod>2025-11-18T15:51:48.095Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/fastecdsa-install-failure</loc>
+    <lastmod>2025-11-18T15:51:48.095Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/fix-metamask-whitescreen-of-death</loc>
+    <lastmod>2025-11-18T15:51:48.095Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/getstaticprops-getstaticpaths</loc>
+    <lastmod>2025-11-18T15:51:48.095Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/remove-tls-npm-warning</loc>
+    <lastmod>2025-11-18T15:51:48.096Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://edgar.barrantes.dev/til/use-machine-as-hotspot</loc>
+    <lastmod>2025-11-18T15:51:48.096Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

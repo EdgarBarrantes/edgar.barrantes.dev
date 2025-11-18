@@ -247,7 +247,7 @@ export default function Resume() {
       }
 
       // Save the PDF
-      pdf.save('edgar-barrantes-resume.pdf')
+      pdf.save('edgar-barrantes-brais-resume.pdf')
       
       // Cleanup PDF-specific styles
       document.head.removeChild(pdfStyles)
@@ -265,7 +265,7 @@ export default function Resume() {
   return (
     <>
       <Meta
-        title="Edgar Barrantes - Resume"
+        title="Edgar Barrantes Brais - Resume"
         description="Software engineer, specializing in blockchain development, distributed systems, and full-stack web applications."
       />
       <Layout>
@@ -309,7 +309,7 @@ export default function Resume() {
           <div ref={resumeRef} className="space-y-8">
             {/* Header Info (only visible in PDF) */}
             <div className="header-info">
-              <Text variant="h1">Edgar Barrantes</Text>
+              <Text variant="h1">Edgar Barrantes Brais</Text>
               <Text variant="subtle">Software Engineer</Text>
               <div className="contact">
                 <p>

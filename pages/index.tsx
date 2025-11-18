@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <>
       <Meta
-        title="Edgar Barrantes - Software Engineer & Blockchain Developer"
-        description="Edgar Barrantes is a software engineer specializing in decentralized systems and blockchain technology. Currently building at Nethermind, with expertise in TypeScript, Next.js, and Web3 development. Passionate about creating innovative solutions and sharing knowledge through technical writing."
+        title="Edgar Barrantes Brais - Software Engineer & Blockchain Developer"
+        description="Edgar Barrantes Brais is a software engineer specializing in decentralized systems and blockchain technology. Currently building at Nethermind, with expertise in TypeScript, Next.js, and Web3 development. Passionate about creating innovative solutions and sharing knowledge through technical writing."
         keywords={[
-          "Edgar Barrantes",
           "Edgar Barrantes Brais",
+          "Edgar Barrantes",
           "Software Engineer",
           "Web3 Developer",
           "Blockchain",

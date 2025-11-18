@@ -90,7 +90,7 @@ export function Info() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary-light rounded-full blur-md opacity-50" />
               <Image
                 src="/profile.jpg"
-                alt="Edgar Barrantes"
+                alt="Edgar Barrantes Brais"
                 className="relative rounded-full object-cover ring-2 ring-background"
                 fill
                 sizes="(max-width: 640px) 160px, 192px"
@@ -103,7 +103,7 @@ export function Info() {
             <div className="flex-1 text-center md:text-left space-y-6">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold leading-tight">
-                  Edgar Barrantes
+                  Edgar Barrantes Brais
                 </h1>
                 <Text variant="subtle" className="text-lg md:text-xl">
                   Transforming complex technical challenges into elegant prompts

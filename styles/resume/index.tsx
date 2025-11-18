@@ -5,10 +5,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Edgar Barrantes</title>
+        <title>Edgar Barrantes Brais</title>
         <meta
           name="description"
-          content="Edgar Barrantes is a software engineer... What you do for a living doesn't define you though."
+          content="Edgar Barrantes Brais is a software engineer... What you do for a living doesn't define you though."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

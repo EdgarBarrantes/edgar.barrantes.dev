@@ -109,7 +109,7 @@ export function Meta({
             sameAs: [
               "https://twitter.com/edgarbarrantes",
               "https://github.com/edgarbarrantes",
-              "https://linkedin.com/in/edgarbarrantes",
+              "https://www.linkedin.com/in/edgar-barrantes/",
             ],
             jobTitle: "Software Engineer",
             worksFor: {

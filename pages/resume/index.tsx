@@ -287,7 +287,7 @@ export default function Resume() {
                 </Button>
                 <Button variant="outline" size="sm" asChild>
                   <a
-                    href="https://linkedin.com/in/edgarbarrantes"
+                    href="https://www.linkedin.com/in/edgar-barrantes/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -316,8 +316,8 @@ export default function Resume() {
                   <a href="github.com/edgarbarrantes">
                     github.com/edgarbarrantes
                   </a>{" "}
-                  • <a href="linkedin.com/in/edgarbarrantes">
-                    linkedin.com/in/edgarbarrantes
+                  • <a href="www.linkedin.com/in/edgar-barrantes/">
+                    linkedin.com/in/edgar-barrantes
                   </a>
                 </p>
               </div>

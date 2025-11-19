@@ -9,15 +9,18 @@ interface MetaProps {
   date?: string
   keywords?: string[]
   author?: string
+  imageWidth?: string
+  imageHeight?: string
 }
 
 export function Meta({
-  title = "Edgar Barrantes",
+  title = "Edgar Barrantes Brais",
   description = "Software engineer passionate about decentralised systems and thoughtful debates",
   image = "/og-image.jpg",
   type = "website",
   date,
   keywords = [
+    "Edgar Barrantes Brais",
     "Edgar Barrantes",
     "Software Engineer",
     "Web3 Developer",
@@ -41,12 +44,14 @@ export function Meta({
     "Software Development",
     "Costa Rica",
   ],
-  author = "Edgar Barrantes",
+  author = "Edgar Barrantes Brais",
+  imageWidth = "1200",
+  imageHeight = "630",
 }: MetaProps) {
   const router = useRouter();
   const url = `https://edgar.barrantes.dev${router.asPath}`;
   const fullTitle =
-    title === "Edgar Barrantes" ? title : `${title} | Edgar Barrantes`;
+    title === "Edgar Barrantes Brais" ? title : `${title} | Edgar Barrantes Brais`;
 
   return (
     <Head>
@@ -62,13 +67,15 @@ export function Meta({
       {/* Open Graph */}
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="Edgar Barrantes" />
+      <meta property="og:site_name" content="Edgar Barrantes Brais" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
         content={`https://edgar.barrantes.dev${image}`}
       />
+      <meta property="og:image:width" content={imageWidth} />
+      <meta property="og:image:height" content={imageHeight} />
       <meta property="og:image:alt" content={description} />
       <meta property="og:locale" content="en_US" />
 
@@ -96,18 +103,32 @@ export function Meta({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "Edgar Barrantes",
+            name: "Edgar Barrantes Brais",
+            alternateName: "Edgar Barrantes",
             url: "https://edgar.barrantes.dev",
             sameAs: [
               "https://twitter.com/edgarbarrantes",
               "https://github.com/edgarbarrantes",
-              "https://linkedin.com/in/edgarbarrantes",
+              "https://www.linkedin.com/in/edgar-barrantes/",
             ],
             jobTitle: "Software Engineer",
             worksFor: {
               "@type": "Organization",
               name: "Nethermind",
             },
+            knowsAbout: [
+              "Web3",
+              "Blockchain",
+              "TypeScript",
+              "React",
+              "Next.js",
+              "Smart Contracts",
+              "Decentralized Systems",
+              "StarkNet",
+              "Ethereum",
+              "AI",
+              "LLMs",
+            ],
             description:
               "Software engineer passionate about decentralised systems and thoughtful debates",
             image: "https://edgar.barrantes.dev/og-image.jpg",
@@ -126,16 +147,18 @@ export function Meta({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: "Edgar Barrantes",
+            name: "Edgar Barrantes Brais",
             url: "https://edgar.barrantes.dev",
             description: description,
             author: {
               "@type": "Person",
-              name: "Edgar Barrantes",
+              name: "Edgar Barrantes Brais",
+              alternateName: "Edgar Barrantes",
             },
             publisher: {
               "@type": "Person",
-              name: "Edgar Barrantes",
+              name: "Edgar Barrantes Brais",
+              alternateName: "Edgar Barrantes",
             },
           }),
         }}

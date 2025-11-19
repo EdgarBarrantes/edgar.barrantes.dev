@@ -73,7 +73,7 @@ export function Header() {
             <div className="relative w-10 h-10">
               <Image
                 src="/logo.png"
-                alt="Edgar Barrantes"
+                alt="Edgar Barrantes Brais"
                 fill
                 sizes="40px"
                 className="object-contain opacity-0"
@@ -121,7 +121,7 @@ export function Header() {
                   priority
                 />
               </div>
-              <span className="sr-only">Edgar Barrantes</span>
+              <span className="sr-only">Edgar Barrantes Brais</span>
             </Link>
           </div>
 

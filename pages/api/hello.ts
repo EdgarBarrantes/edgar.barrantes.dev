@@ -13,7 +13,7 @@ export default function handler(
   res
     .status(200)
     .json({
-      name: "Edgar Barrantes",
+      name: "Edgar Barrantes Brais",
       resume: "https://edgar.barrantes.dev/resume",
     });
 }

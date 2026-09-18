@@ -1,6 +1,5 @@
 import { writeFileSync, readdirSync } from 'fs';
 import path from 'path';
-// @ts-ignore
 import matter from 'gray-matter';
 
 interface FeedItem {
@@ -42,7 +41,7 @@ async function generate() {
   <channel>
     <title>Edgar Barrantes Brais</title>
     <link>https://edgar.barrantes.dev</link>
-    <description>Software engineer passionate about decentralised systems and thoughtful debates. Thoughts on Web3, blockchain, AI, and software development.</description>
+    <description>Notes by Edgar Barrantes Brais, software engineer in Costa Rica: Starknet tooling, TypeScript, and things learned along the way.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="https://edgar.barrantes.dev/rss.xml" rel="self" type="application/rss+xml"/>
@@ -51,9 +50,6 @@ async function generate() {
     <managingEditor>edgar@barrantes.dev (Edgar Barrantes Brais)</managingEditor>
     <copyright>Copyright ${new Date().getFullYear()} Edgar Barrantes Brais</copyright>
     <category>Technology</category>
-    <category>Web3</category>
-    <category>Blockchain</category>
-    <category>Software Development</category>
     <image>
       <url>https://edgar.barrantes.dev/og-image.jpg</url>
       <title>Edgar Barrantes Brais</title>
@@ -79,7 +75,7 @@ ${allItems.map((item) => {
 </rss>`;
 
   writeFileSync('public/rss.xml', rss);
-  console.log('✅ RSS feed generated successfully');
+  console.log(`rss: ${allItems.length} items`);
 }
 
 generate();

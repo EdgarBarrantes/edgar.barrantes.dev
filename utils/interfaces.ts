@@ -2,7 +2,7 @@ export interface ArticleData {
   title: string
   description: string
   date: string
-  tag?: string[]
+  tag: string[]
   readingTime?: {
     minutes: number
     words: number
@@ -10,12 +10,12 @@ export interface ArticleData {
   }
 }
 
+export type ContentType = 'til' | 'thoughts'
+
 export interface Content {
-  type: 'til' | 'thoughts'
+  type: ContentType
   slug: string
   data: ArticleData
-  filename: string
-  content?: string
 }
 
 export interface Project {
@@ -23,11 +23,5 @@ export interface Project {
   description: string
   href: string
   tags?: string[]
-}
-
-export interface SearchableContent extends Omit<Content, 'content'> {
-  title: string
-  description: string
-  date?: string
-  tag?: string[]
+  featured?: boolean
 }

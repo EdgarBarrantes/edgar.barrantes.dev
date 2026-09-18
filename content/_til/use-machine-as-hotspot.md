@@ -1,10 +1,12 @@
 ---
-tag: [2024, hotspot, server]
-title: How to use a linux machine as a hotspot
+title: "How to use a Linux machine as a hotspot"
 description: "When you have an ethernet connection and need to share it with your phone or other devices."
-date: "24-06-2024"
-source: [web]
+date: "2024-06-24"
+tag:
+  - linux
+  - networking
 ---
+
 
 # How to use a linux machine as a hotspot
 

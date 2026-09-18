@@ -1,12 +1,9 @@
-@import './fonts.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Light mode */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -30,10 +27,9 @@
   }
 
   .dark {
-    /* Dark mode */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 84% 6.5%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
@@ -64,61 +60,19 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03", "cv04";
   }
 
-  /* Improved focus styles */
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 
-  /* Scrollbar styles */
-  ::-webkit-scrollbar {
-    @apply w-2 h-2;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-secondary/50;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/30;
-  }
-
-  /* Selection styles */
   ::selection {
     @apply bg-primary/20 text-foreground;
   }
 
-  /* Improved default link styles */
   a {
     @apply transition-colors duration-200;
   }
-
-  /* Improved default button styles */
-  button {
-    @apply select-none;
-  }
-}
-
-/* Utility classes */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 pre,
@@ -126,6 +80,32 @@ code {
   max-width: calc(100vw - 32px);
 }
 
-* {
-  box-sizing: border-box;
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  .card,
+  section {
+    break-inside: avoid;
+  }
+
+  * {
+    box-shadow: none !important;
+    background-image: none !important;
+  }
 }

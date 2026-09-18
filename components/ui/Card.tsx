@@ -3,19 +3,17 @@ import { twMerge } from "tailwind-merge"
 import { Base, BaseProps } from "./base"
 
 export interface CardProps extends BaseProps {
-  gradient?: boolean
   hover?: boolean
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, gradient, hover, ...props }, ref) => {
+  ({ className, hover, ...props }, ref) => {
     return (
       <Base
         ref={ref}
         className={twMerge(
           "rounded-lg border bg-card text-card-foreground shadow-sm",
-          gradient && "bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950",
-          hover && "transition-all duration-300 hover:shadow-md hover:scale-[1.02]",
+          hover && "transition-shadow duration-200 hover:shadow-md",
           className
         )}
         {...props}

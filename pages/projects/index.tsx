@@ -1,33 +1,28 @@
 import { Meta } from '../../components/SEO/Meta'
 import { Layout } from '../../components/Layout'
 import { ProjectCard } from '../../components/ProjectCard'
+import { Text } from '../../components/ui/base'
+import type { Project } from '../../utils/interfaces'
 import projects from '../../content/projects.json'
 
 export default function Projects() {
   return (
     <>
       <Meta
-        title="Open Source Projects & Contributions"
-        description="Exploring the intersection of web3, decentralized systems, and modern web development through practical, open-source solutions."
+        title="Projects"
+        description="Open source work by Edgar Barrantes Brais: Starknet developer tooling, decentralized storage, and small utilities."
       />
       <Layout>
         <div className="space-y-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold pb-4">Featured Projects</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed pb-8">
-              A curated collection of open-source projects I&apos;ve worked on,
-              focused on decentralized systems, web3 infrastructure, and 
-              developer tools.
-            </p>
+          <div className="max-w-2xl space-y-3">
+            <Text variant="h1">Projects</Text>
+            <Text variant="subtle" className="text-lg">
+              Open source work and side projects. Most of it is on GitHub.
+            </Text>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                description={project.description}
-                href={project.href}
-              />
+            {(projects as Project[]).map((project) => (
+              <ProjectCard key={project.href} {...project} />
             ))}
           </div>
         </div>

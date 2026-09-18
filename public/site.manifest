@@ -1,11 +1,11 @@
 {
   "name": "Edgar Barrantes Brais",
   "short_name": "Edgar B.",
-  "description": "Personal website and blog of Edgar Barrantes Brais, software engineer specializing in decentralized systems and blockchain technology.",
+  "description": "Edgar Barrantes Brais, software engineer in Costa Rica.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111217",
-  "theme_color": "#111217",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -33,8 +33,11 @@
       "type": "image/png"
     }
   ],
-  "categories": ["technology", "blog", "portfolio", "web development"],
+  "categories": [
+    "technology",
+    "portfolio"
+  ],
   "lang": "en-US",
   "orientation": "any",
   "prefer_related_applications": false
-} 
+}

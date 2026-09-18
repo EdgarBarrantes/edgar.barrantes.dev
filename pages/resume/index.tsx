@@ -11,10 +11,11 @@ const experiences = [
     company: 'Nethermind',
     period: 'Jul 2022 – May 2026',
     description: [
-      'Built and maintained the Starknet Remix plugin: compile, deploy and interact with Cairo contracts from the browser.',
-      'Cairo development and feasibility research for new Starknet tooling.',
-      'Worked across teams on Solidity contracts and shared engineering practices.',
-      'CI pipelines and Rust services.',
+      'Wrote Cairo and Noir day to day across Starknet, Aztec and other zero-knowledge stacks.',
+      'Designed and deployed the infrastructure behind several of these projects, and operated them in production.',
+      'Built and maintained the Starknet Remix plugin: write, compile, deploy and interact with Cairo contracts from the browser.',
+      'Backend services and CI pipelines in Rust and TypeScript.',
+      'Worked with other teams on Solidity contracts and shared engineering practices.',
     ],
   },
   {
@@ -72,10 +73,10 @@ const experiences = [
 ]
 
 const skills = {
-  Languages: ['TypeScript', 'JavaScript', 'Solidity', 'Cairo', 'Rust', 'PHP'],
-  'Frameworks and libraries': ['React', 'Next.js', 'Node.js', 'Nest.js', 'GraphQL', 'TypeORM'],
-  'Infrastructure and tools': ['PostgreSQL', 'MySQL', 'AWS', 'Docker', 'Git', 'Supabase'],
-  'Blockchain': ['Starknet', 'Ethereum', 'Smart contracts', 'Web3.js', 'Swarm'],
+  'Zero-knowledge and blockchain': ['Cairo', 'Noir', 'Starknet', 'Aztec', 'Ethereum', 'Smart contracts'],
+  Languages: ['TypeScript', 'Rust', 'Solidity', 'JavaScript', 'PHP'],
+  Infrastructure: ['AWS', 'Docker', 'CI/CD', 'PostgreSQL', 'MySQL', 'Git', 'Supabase'],
+  Web: ['React', 'Next.js', 'Node.js', 'Nest.js', 'GraphQL', 'TypeORM'],
 }
 
 const education = [
@@ -88,7 +89,7 @@ export default function Resume() {
     <>
       <Meta
         title="Resume"
-        description="Resume of Edgar Barrantes Brais, software engineer: Starknet developer tooling at Nethermind, full-stack TypeScript at WalletConnect, Accenture and as a freelancer."
+        description="Resume of Edgar Barrantes Brais, software engineer: zero-knowledge in Cairo and Noir across Starknet and Aztec at Nethermind, and full-stack TypeScript at WalletConnect, Accenture and First Factory."
       />
       <Layout>
         <div className="space-y-10">
@@ -118,9 +119,11 @@ export default function Resume() {
               </div>
             </div>
             <Text variant="subtle" className="text-lg max-w-2xl">
-              Software engineer with ten years of experience, the last four on
-              developer tooling for Starknet at Nethermind. Comfortable across
-              the stack in TypeScript, and in Cairo, Solidity and Rust.
+              Software engineer with over ten years of experience, the last
+              four in zero-knowledge at Nethermind. I work in Cairo and Noir,
+              the languages that sit on top of the Starknet and Aztec proving
+              systems, and I design, deploy and operate the infrastructure
+              around them. Full-stack in TypeScript and Rust.
             </Text>
             <p className="hidden print:block text-sm">
               edgar@barrantes.dev · github.com/edgarbarrantes · linkedin.com/in/edgar-barrantes · edgar.barrantes.dev

@@ -26,11 +26,15 @@ export function Info() {
             Edgar Barrantes Brais
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Software engineer based in Costa Rica. I spent four years at
-            Nethermind building developer tooling for Starknet, in TypeScript,
-            Cairo, Solidity and Rust. Before that I shipped full-stack
-            TypeScript products at WalletConnect, Accenture, First Factory and
-            as a freelancer.
+            Software engineer in Costa Rica, working in zero-knowledge. I spent
+            four years at Nethermind writing Cairo and Noir across Starknet,
+            Aztec and other proving stacks. On several of those projects I
+            designed and deployed the infrastructure as well, and ran it in
+            production.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Before that, seven years of full-stack TypeScript at WalletConnect,
+            Accenture, First Factory and as a freelancer.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
             I am open to new roles.

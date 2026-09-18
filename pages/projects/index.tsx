@@ -10,7 +10,7 @@ export default function Projects() {
     <>
       <Meta
         title="Projects"
-        description="Open source work by Edgar Barrantes Brais: Starknet developer tooling, decentralized storage, and small utilities."
+        description="Open source work by Edgar Barrantes Brais: Starknet and Cairo tools, decentralized storage, and small utilities."
       />
       <Layout>
         <div className="space-y-8">

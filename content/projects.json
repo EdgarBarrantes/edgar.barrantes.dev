@@ -1,7 +1,7 @@
 [
   {
     "title": "Starknet Remix Plugin",
-    "description": "A Remix IDE plugin for Starknet: write, compile and deploy Cairo contracts from the browser. Built at Nethermind.",
+    "description": "A Remix IDE plugin for Starknet: write, compile, deploy and interact with Cairo contracts from the browser. Built, deployed and maintained at Nethermind.",
     "href": "https://github.com/NethermindEth/starknet-remix-plugin",
     "tags": [
       "starknet",

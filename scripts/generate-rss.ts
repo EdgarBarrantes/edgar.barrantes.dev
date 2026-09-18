@@ -41,7 +41,7 @@ async function generate() {
   <channel>
     <title>Edgar Barrantes Brais</title>
     <link>https://edgar.barrantes.dev</link>
-    <description>Notes by Edgar Barrantes Brais, software engineer in Costa Rica: Starknet tooling, TypeScript, and things learned along the way.</description>
+    <description>Notes by Edgar Barrantes Brais, software engineer in Costa Rica: zero-knowledge, Cairo and Noir, TypeScript, and things learned along the way.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="https://edgar.barrantes.dev/rss.xml" rel="self" type="application/rss+xml"/>

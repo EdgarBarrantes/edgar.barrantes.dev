@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 const SITE = 'https://edgar.barrantes.dev'
 const NAME = 'Edgar Barrantes Brais'
 const DEFAULT_DESCRIPTION =
-  'Software engineer in Costa Rica. Developer tooling for Starknet, full-stack TypeScript, notes on things I learn.'
+  'Software engineer in Costa Rica working in zero-knowledge: Cairo and Noir across Starknet and Aztec, and the infrastructure behind them.'
 
 interface MetaProps {
   title?: string
@@ -78,7 +78,7 @@ export function Meta({
                 '@type': 'CollegeOrUniversity',
                 name: 'Universidad de Costa Rica',
               },
-              knowsAbout: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Starknet', 'Cairo', 'Solidity', 'Rust'],
+              knowsAbout: ['Zero-knowledge proofs', 'Cairo', 'Noir', 'Starknet', 'Aztec', 'Rust', 'TypeScript', 'Smart contracts'],
             }),
           }}
         />

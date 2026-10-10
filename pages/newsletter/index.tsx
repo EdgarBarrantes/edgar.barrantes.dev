@@ -1,20 +1,22 @@
-import { Suspense } from 'react'
-import { Layout } from "../../components/Layout"
-import { Newsletter } from "../../components/Newsletter"
-import { LoadingState } from "../../components/LoadingState"
-import { Meta } from "../../components/SEO/Meta"
+import { Meta } from '../../components/SEO/Meta'
+import { Layout } from '../../components/Layout'
+import { Newsletter } from '../../components/Newsletter'
+import { Text } from '../../components/ui/base'
 
 export default function NewsletterPage() {
   return (
     <>
-      <Meta 
-        title="Newsletter"
-        description="Subscribe to my newsletter for updates on software development, decentralized systems, and more."
-      />
+      <Meta title="Newsletter" description="Occasional emails from Edgar Barrantes Brais on software and decentralized systems." />
       <Layout>
-        <Suspense fallback={<LoadingState />}>
+        <div className="space-y-8">
+          <div className="max-w-2xl space-y-3">
+            <Text variant="h1">Newsletter</Text>
+            <Text variant="subtle" className="text-lg">
+              Occasional emails on software, decentralized systems and whatever I am reading.
+            </Text>
+          </div>
           <Newsletter />
-        </Suspense>
+        </div>
       </Layout>
     </>
   )

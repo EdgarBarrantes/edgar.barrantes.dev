@@ -1,95 +1,68 @@
+import Link from 'next/link'
 import { Meta } from '../components/SEO/Meta'
 import { Layout } from '../components/Layout'
 import { Info } from '../components/Info'
-import Link from 'next/link'
-import { Card } from '../components/ui/Card'
+import { ProjectCard } from '../components/ProjectCard'
+import { ArticleCard } from '../components/ArticleCard'
 import { Text } from '../components/ui/base'
+import { getRecentContent } from '../utils/data'
+import type { Content, Project } from '../utils/interfaces'
+import projects from '../content/projects.json'
 
-export default function Home() {
+interface HomeProps {
+  recent: Content[]
+}
+
+export default function Home({ recent }: HomeProps) {
+  const featured = (projects as Project[]).filter((p) => p.featured)
+
   return (
     <>
-      <Meta
-        title="Edgar Barrantes Brais - Software Engineer & Blockchain Developer"
-        description="Edgar Barrantes Brais is a software engineer specializing in decentralized systems and blockchain technology. Currently building at Nethermind, with expertise in TypeScript, Next.js, and Web3 development. Passionate about creating innovative solutions and sharing knowledge through technical writing."
-        keywords={[
-          "Edgar Barrantes Brais",
-          "Edgar Barrantes",
-          "Software Engineer",
-          "Web3 Developer",
-          "Blockchain",
-          "TypeScript",
-          "Next.js",
-          "React",
-          "Decentralized Systems",
-          "Full Stack Developer",
-          "Smart Contracts",
-          "Ethereum",
-          "StarkNet",
-          "Cairo",
-          "AI",
-          "LLMs",
-          "Artificial Intelligence",
-          "Costa Rica",
-          "Software Development",
-          "Web Development",
-        ]}
-      />
+      <Meta />
       <Layout>
-        <div className="space-y-12">
-          <div className="flex items-center justify-center rounded">
-            <Info />
-          </div>
+        <div className="space-y-16">
+          <Info />
 
-          <div className="max-w-4xl mx-auto space-y-8">
-            <section>
-              <Text variant="h2" className="mb-4">
-                Latest Content
-              </Text>
-              <div className="grid gap-4 md:grid-cols-2">
-                <Link href="/til" className="group">
-                  <Card className="p-6 transition-all duration-200 group-hover:shadow-md bg-white/70 dark:bg-black/70">
-                    <Text variant="h3" className="mb-2">
-                      Today I Learned
-                    </Text>
-                    <Text variant="subtle">
-                      Discover bite-sized tech learnings and daily insights from
-                      my software engineering journey.
-                    </Text>
-                  </Card>
-                </Link>
-                <Link href="/thoughts" className="group">
-                  <Card className="p-6 transition-all duration-200 group-hover:shadow-md bg-white/70 dark:bg-black/70">
-                    <Text variant="h3" className="mb-2">
-                      Thoughts
-                    </Text>
-                    <Text variant="subtle">
-                      In-depth articles about software development, blockchain,
-                      and tech insights.
-                    </Text>
-                  </Card>
-                </Link>
-              </div>
-            </section>
-
-            <section>
-              <Text variant="h2" className="mb-4">
-                Featured Projects
-              </Text>
-              <Link href="/projects" className="block group">
-                <Card className="p-6 transition-all duration-200 group-hover:shadow-md bg-white/70 dark:bg-black/70">
-                  <Text variant="h3" className="mb-2">
-                    Open Source Work
-                  </Text>
-                  <Text variant="subtle">
-                    Explore my contributions to decentralized systems, web3
-                    infrastructure, and developer tools.
-                  </Text>
-                </Card>
+          <section className="space-y-6">
+            <div className="flex items-baseline justify-between">
+              <Text variant="h2" className="text-2xl">Selected projects</Text>
+              <Link href="/projects" className="text-sm text-muted-foreground hover:text-foreground">
+                All projects
               </Link>
-            </section>
-          </div>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {featured.map((project) => (
+                <ProjectCard key={project.href} {...project} />
+              ))}
+            </div>
+          </section>
+
+          <section className="space-y-6">
+            <div className="flex items-baseline justify-between">
+              <Text variant="h2" className="text-2xl">Recent notes</Text>
+              <Link href="/til" className="text-sm text-muted-foreground hover:text-foreground">
+                All notes
+              </Link>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {recent.map(({ data, slug, type }) => (
+                <ArticleCard
+                  key={`${type}/${slug}`}
+                  title={data.title}
+                  description={data.description}
+                  date={data.date}
+                  tags={data.tag}
+                  href={`/${type}/${slug}`}
+                />
+              ))}
+            </div>
+          </section>
         </div>
       </Layout>
     </>
-  );
+  )
+}
+
+export async function getStaticProps() {
+  return { props: { recent: getRecentContent(4) } }
 }

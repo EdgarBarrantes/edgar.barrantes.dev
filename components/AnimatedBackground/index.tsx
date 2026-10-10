@@ -1,9 +1,7 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useRef, useState } from 'react'
-import type { BackgroundType } from '../BackgroundSwitcher'
+import { mobileCompatibleEffects, type BackgroundType } from '../BackgroundSwitcher'
 import { twMerge } from 'tailwind-merge'
-
-const mobileCompatibleEffects: BackgroundType[] = ['none', 'subtle', 'psychedelic', 'kaleidoscope', 'wormhole', 'calming']
 
 interface AnimatedBackgroundProps {
   type: BackgroundType

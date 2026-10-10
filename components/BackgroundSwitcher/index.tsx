@@ -1,13 +1,12 @@
 import { Button } from '../ui/Button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu'
 import { Grid, Hexagon, Sparkles, CircleDot, Orbit, Flower, XCircle, Waves, Infinity, Boxes } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 
 export type BackgroundType = 'none' | 'hexagons' | 'grid' | 'sparkles' | 'vortex' | 'neural' | 'kaleidoscope' | 'subtle' | 'psychedelic' | 'wormhole' | 'calming' | 'hangman'
 
 // Define which effects work well on mobile
-const mobileCompatibleEffects: BackgroundType[] = ['none', 'subtle', 'psychedelic', 'kaleidoscope', 'wormhole', 'calming']
+export const mobileCompatibleEffects: BackgroundType[] = ['none', 'subtle', 'psychedelic', 'kaleidoscope', 'wormhole', 'calming']
 
 // Define base backgrounds
 const baseBackgrounds: BackgroundType[] = ['none', 'subtle', 'calming', 'hexagons', 'grid', 'sparkles', 'vortex', 'neural', 'kaleidoscope', 'psychedelic', 'wormhole']
@@ -51,8 +50,6 @@ interface BackgroundSwitcherProps {
 export function BackgroundSwitcher({ value, onChange, showHangman = false }: BackgroundSwitcherProps) {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
 
   useEffect(() => {
     // Check if we're on mobile
@@ -81,11 +78,7 @@ export function BackgroundSwitcher({ value, onChange, showHangman = false }: Bac
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className={isDark ? 'hover:text-primary' : undefined}
-        >
+        <Button variant="ghost" size="icon">
           <Icon className="h-5 w-5" />
           <span className="sr-only">Change background effect</span>
         </Button>

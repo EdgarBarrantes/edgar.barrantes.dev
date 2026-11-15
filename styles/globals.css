@@ -106,28 +106,64 @@ code {
   }
 }
 
+/* Paper: the resume page is the CV. Light palette whatever the theme, smaller type, tight page. */
 @media print {
   @page {
-    margin: 16mm;
+    size: A4;
+    margin: 12mm 15mm;
   }
 
-  html,
-  body {
-    background: #fff !important;
-    color: #000 !important;
+  :root,
+  .dark {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --muted-foreground: 0 0% 35%;
+    --border: 0 0% 80%;
+    --moss: 0 0% 0%;
   }
 
-  .print\:hidden {
-    display: none !important;
+  html {
+    font-size: 12.5px;
   }
 
   main {
     padding-top: 0 !important;
   }
 
-  section,
-  li {
+  main > div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .copy {
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 24pt !important;
+  }
+
+  h2 {
+    font-size: 13pt !important;
+  }
+
+  h3 {
+    font-size: 11pt !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  /* Keep each role and each fact row whole; sections may run over a page. */
+  li,
+  dl > div {
     break-inside: avoid;
+  }
+
+  h2 {
+    break-after: avoid;
   }
 
   * {

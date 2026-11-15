@@ -1,7 +1,7 @@
 [
   {
     "title": "homelab",
-    "description": "Guided installer and CLI that provision a Linux server with a dozen self-hosted services as Docker Compose stacks. Private by default, nightly backups, rebuild from backup tested in a VM.",
+    "description": "Guided installer and CLI that provision a Linux server with a dozen self-hosted services as Docker Compose stacks. Private by default (Tailscale, one wildcard TLS certificate, no open ports), nightly backups, rebuild from backup tested end to end in a VM.",
     "href": "https://github.com/EdgarBarrantes/homelab",
     "year": "2026",
     "tags": [

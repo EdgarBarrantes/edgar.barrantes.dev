@@ -140,14 +140,14 @@ export default function Resume() {
               <Text variant="h1" className="text-[2.75rem] leading-none">Edgar Barrantes Brais</Text>
               <p className="font-serif text-xl">Senior Full-Stack Engineer: TypeScript, Node.js, React</p>
               <p className="text-sm text-muted-foreground">
-                Bulgaria. Remote, European time zone. Open to remote roles in Europe.
+                Open to remote roles in Europe.
               </p>
             </div>
             <p className="copy max-w-prose text-foreground/85">
               Software engineer with about ten years of experience. Full-stack in TypeScript
               (Node.js/Nest, React/Next.js, PostgreSQL), with four years in zero-knowledge at
               Nethermind working in Cairo and Noir on Starknet and Aztec. Builds developer
-              tooling, API infrastructure and integrations. Based in Bulgaria.
+              tooling, API infrastructure and integrations.
             </p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {contacts.map(({ href, text, printed }) => (

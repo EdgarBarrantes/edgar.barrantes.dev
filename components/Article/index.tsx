@@ -3,7 +3,7 @@ import { Meta } from '../SEO/Meta'
 import { ArticleSchema } from '../SEO/ArticleSchema'
 import { BreadcrumbSchema } from '../SEO/BreadcrumbSchema'
 import { Layout } from '../Layout'
-import { formatDate } from '../ArticleCard'
+import { formatDate } from '../ArticleItem'
 import type { ArticleData, ContentType } from '../../utils/interfaces'
 
 const SITE = 'https://edgar.barrantes.dev'
@@ -30,33 +30,26 @@ export function Article({ type, slug, data, html }: ArticleProps) {
         ]}
       />
       <Layout>
-        <article className="prose dark:prose-invert lg:prose-lg mx-auto">
-          <div className="not-prose mb-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-            <Link href={`/${type}`} className="hover:text-foreground">
+        <article className="prose dark:prose-invert mx-auto">
+          <div className="not-prose mb-8 flex flex-wrap items-baseline gap-x-5 gap-y-1 text-sm text-muted-foreground">
+            <Link href={`/${type}`} className="link decoration-transparent hover:text-foreground">
               {sectionName[type]}
             </Link>
-            <span aria-hidden="true">·</span>
             <time dateTime={data.date}>{formatDate(data.date)}</time>
-            {data.readingTime && (
-              <>
-                <span aria-hidden="true">·</span>
-                <span>{data.readingTime.text}</span>
-              </>
-            )}
+            {data.readingTime && <span>{data.readingTime.text}</span>}
           </div>
           <div dangerouslySetInnerHTML={{ __html: html }} />
           {data.tag.length > 0 && (
-            <div className="not-prose mt-12 flex flex-wrap gap-2">
-              {data.tag.map((tag) => (
-                <Link
-                  key={tag}
-                  href={`/tags/${tag}`}
-                  className="rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground hover:text-foreground"
-                >
-                  {tag}
-                </Link>
+            <p className="not-prose mt-12 text-sm text-muted-foreground">
+              {data.tag.map((tag, i) => (
+                <span key={tag}>
+                  {i > 0 && ', '}
+                  <Link href={`/tags/${tag}`} className="hover:text-foreground">
+                    {tag}
+                  </Link>
+                </span>
               ))}
-            </div>
+            </p>
           )}
         </article>
       </Layout>

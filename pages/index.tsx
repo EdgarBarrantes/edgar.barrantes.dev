@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { Meta } from '../components/SEO/Meta'
 import { Layout } from '../components/Layout'
 import { Info } from '../components/Info'
-import { ProjectCard } from '../components/ProjectCard'
-import { ArticleCard } from '../components/ArticleCard'
+import { ProjectItem } from '../components/ProjectItem'
+import { ArticleItem } from '../components/ArticleItem'
 import { Text } from '../components/ui/base'
 import { getRecentContent } from '../utils/data'
 import type { Content, Project } from '../utils/interfaces'
@@ -13,6 +13,17 @@ interface HomeProps {
   recent: Content[]
 }
 
+function SectionHeading({ title, href, linkText }: { title: string; href: string; linkText: string }) {
+  return (
+    <div className="flex items-baseline justify-between border-b pb-3">
+      <Text variant="h2" className="text-2xl">{title}</Text>
+      <Link href={href} className="link text-sm text-muted-foreground hover:text-foreground">
+        {linkText}
+      </Link>
+    </div>
+  )
+}
+
 export default function Home({ recent }: HomeProps) {
   const featured = (projects as Project[]).filter((p) => p.featured)
 
@@ -20,33 +31,23 @@ export default function Home({ recent }: HomeProps) {
     <>
       <Meta />
       <Layout>
-        <div className="space-y-16">
+        <div className="space-y-20">
           <Info />
 
-          <section className="space-y-6">
-            <div className="flex items-baseline justify-between">
-              <Text variant="h2" className="text-2xl">Selected projects</Text>
-              <Link href="/projects" className="text-sm text-muted-foreground hover:text-foreground">
-                All projects
-              </Link>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+          <section className="space-y-10">
+            <SectionHeading title="Selected projects" href="/projects" linkText="All projects" />
+            <ul className="space-y-10">
               {featured.map((project) => (
-                <ProjectCard key={project.href} {...project} />
+                <ProjectItem key={project.href} {...project} />
               ))}
-            </div>
+            </ul>
           </section>
 
-          <section className="space-y-6">
-            <div className="flex items-baseline justify-between">
-              <Text variant="h2" className="text-2xl">Recent notes</Text>
-              <Link href="/til" className="text-sm text-muted-foreground hover:text-foreground">
-                All notes
-              </Link>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+          <section className="space-y-10">
+            <SectionHeading title="Recent notes" href="/til" linkText="All notes" />
+            <ul className="space-y-10">
               {recent.map(({ data, slug, type }) => (
-                <ArticleCard
+                <ArticleItem
                   key={`${type}/${slug}`}
                   title={data.title}
                   description={data.description}
@@ -55,7 +56,7 @@ export default function Home({ recent }: HomeProps) {
                   href={`/${type}/${slug}`}
                 />
               ))}
-            </div>
+            </ul>
           </section>
         </div>
       </Layout>

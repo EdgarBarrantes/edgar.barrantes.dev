@@ -1,8 +1,5 @@
-import { GithubIcon, LinkedinIcon, PrinterIcon } from 'lucide-react'
 import { Meta } from '../../components/SEO/Meta'
 import { Layout } from '../../components/Layout'
-import { Card } from '../../components/ui/Card'
-import { Button } from '../../components/ui/Button'
 import { Text } from '../../components/ui/base'
 
 const experiences = [
@@ -81,19 +78,39 @@ const experiences = [
   },
 ]
 
-const skills = {
-  'Zero-knowledge and blockchain': ['Cairo', 'Noir', 'Starknet', 'Aztec', 'Ethereum', 'Smart contracts'],
-  Languages: ['TypeScript', 'Rust', 'Python', 'Solidity', 'JavaScript', 'PHP'],
-  Infrastructure: ['AWS', 'Docker', 'CI/CD', 'PostgreSQL', 'MySQL', 'Git', 'Supabase', 'Home Assistant'],
-  Web: ['React', 'Next.js', 'Node.js', 'Nest.js', 'GraphQL', 'TypeORM'],
-}
+const skills = [
+  ['Languages', 'TypeScript, Rust, Python, Solidity, JavaScript, PHP'],
+  ['Web', 'React, Next.js, Node.js, Nest.js, GraphQL, TypeORM'],
+  ['Infrastructure', 'AWS, Docker, CI/CD, PostgreSQL, MySQL, Git, Supabase, Home Assistant'],
+  ['Zero-knowledge and blockchain', 'Cairo, Noir, Starknet, Aztec, Ethereum, Smart contracts'],
+]
 
 const education = [
-  { degree: 'Computer Science', institution: 'Universidad de Costa Rica' },
-  { degree: 'Physics (foundational coursework)', institution: 'Universidad de Costa Rica' },
+  ['Computer Science', 'Universidad de Costa Rica'],
+  ['Physics (foundational coursework)', 'Universidad de Costa Rica'],
 ]
 
 const spokenLanguages = 'English and Spanish (fluent), French (learning), Bulgarian (basic).'
+
+const contacts = [
+  { href: 'mailto:edgar@barrantes.dev', text: 'edgar@barrantes.dev' },
+  { href: 'https://github.com/edgarbarrantes', text: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/edgar-barrantes/', text: 'LinkedIn' },
+]
+
+// Facts in two columns: a label on the left, the value on the right. Prints as it reads.
+function Facts({ rows }: { rows: string[][] }) {
+  return (
+    <dl className="grid gap-x-8 gap-y-3 sm:grid-cols-[13rem_1fr]">
+      {rows.map(([label, value]) => (
+        <div key={label} className="contents">
+          <dt className="text-sm text-muted-foreground sm:pt-0.5">{label}</dt>
+          <dd className="copy">{value}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
 
 export default function Resume() {
   return (
@@ -103,110 +120,81 @@ export default function Resume() {
         description="Resume of Edgar Barrantes Brais, senior full-stack engineer: TypeScript across the stack, developer tooling and integrations, and four years in zero-knowledge (Cairo and Noir on Starknet and Aztec) at Nethermind."
       />
       <Layout>
-        <div className="space-y-10">
-          <div className="space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <Text variant="h1">Edgar Barrantes Brais</Text>
-                <Text variant="subtle" className="text-base">Senior Full-Stack Engineer · Bulgaria (remote, European time zone)</Text>
-                <Text variant="subtle" className="text-sm">Open to remote roles in Europe.</Text>
-              </div>
-              <div className="print:hidden flex flex-wrap gap-3">
-                <Button variant="outline" size="sm" asChild>
-                  <a href="https://github.com/edgarbarrantes" target="_blank" rel="noopener noreferrer">
-                    <GithubIcon className="w-4 h-4 mr-2" aria-hidden="true" />
-                    GitHub
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="https://www.linkedin.com/in/edgar-barrantes/" target="_blank" rel="noopener noreferrer">
-                    <LinkedinIcon className="w-4 h-4 mr-2" aria-hidden="true" />
-                    LinkedIn
-                  </a>
-                </Button>
-                <Button variant="outline" size="sm" onClick={() => window.print()}>
-                  <PrinterIcon className="w-4 h-4 mr-2" aria-hidden="true" />
-                  Save as PDF
-                </Button>
-              </div>
+        <div className="space-y-16">
+          <header className="space-y-6">
+            <div className="space-y-2">
+              <Text variant="h1" className="text-[2.75rem] leading-none">Edgar Barrantes Brais</Text>
+              <p className="font-serif text-xl">Senior Full-Stack Engineer</p>
+              <p className="text-sm text-muted-foreground">
+                Bulgaria. Remote, European time zone. Open to remote roles in Europe.
+              </p>
             </div>
-            <Text variant="subtle" className="text-lg max-w-2xl">
-              Software engineer with about ten years of experience. Full-stack
-              in TypeScript (Node.js/Nest, React/Next.js, PostgreSQL), with four
-              years in zero-knowledge at Nethermind working in Cairo and Noir on
-              Starknet and Aztec. Builds developer tooling, API infrastructure
-              and integrations. Based in Bulgaria.
-            </Text>
-            <p className="hidden print:block text-sm">
-              edgar@barrantes.dev · github.com/edgarbarrantes · linkedin.com/in/edgar-barrantes · edgar.barrantes.dev
+            <p className="copy max-w-prose text-foreground/85">
+              Software engineer with about ten years of experience. Full-stack in TypeScript
+              (Node.js/Nest, React/Next.js, PostgreSQL), with four years in zero-knowledge at
+              Nethermind working in Cairo and Noir on Starknet and Aztec. Builds developer
+              tooling, API infrastructure and integrations. Based in Bulgaria.
             </p>
-          </div>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              {contacts.map(({ href, text }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className="link"
+                    target={href.startsWith('mailto') ? undefined : '_blank'}
+                    rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                  >
+                    {text}
+                  </a>
+                </li>
+              ))}
+              <li className="print:hidden">
+                <button type="button" onClick={() => window.print()} className="link">
+                  Save as PDF
+                </button>
+              </li>
+              <li className="hidden print:block">edgar.barrantes.dev</li>
+            </ul>
+          </header>
 
-          <section className="space-y-4">
-            <Text variant="h2">Experience</Text>
-            <div className="grid gap-4">
+          <section className="space-y-8">
+            <Text variant="h2" className="text-2xl">Experience</Text>
+            <ul className="space-y-10">
               {experiences.map((exp) => (
-                <Card key={`${exp.company}-${exp.period}`} className="card p-6">
+                <li key={`${exp.company}-${exp.period}`} className="grid gap-x-8 gap-y-2 sm:grid-cols-[13rem_1fr]">
+                  <div className="text-sm text-muted-foreground sm:pt-1">
+                    <p className="tabular-nums">{exp.period}</p>
+                    <p>{exp.location}</p>
+                  </div>
                   <div className="space-y-3">
-                    <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-                      <div>
-                        <Text variant="h3" className="text-xl">{exp.title}</Text>
-                        <Text variant="subtle" className="text-base">{exp.company}</Text>
-                      </div>
-                      <Text variant="subtle" className="text-sm">{exp.period} · {exp.location}</Text>
-                    </div>
-                    <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                    <h3 className="text-xl font-semibold tracking-tight">
+                      {exp.title}
+                      <span className="font-normal text-muted-foreground">, {exp.company}</span>
+                    </h3>
+                    <ul className="copy max-w-prose list-disc space-y-1 pl-5 text-foreground/85 marker:text-muted-foreground">
                       {exp.description.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
                     </ul>
                   </div>
-                </Card>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
 
-          <section className="space-y-4">
-            <Text variant="h2">Skills</Text>
-            <Card className="card p-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                {Object.entries(skills).map(([category, items]) => (
-                  <div key={category} className="space-y-2">
-                    <Text variant="h3" className="text-base">{category}</Text>
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((skill) => (
-                        <span key={skill} className="rounded-full bg-muted px-2.5 py-0.5 text-sm">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+          <section className="space-y-6">
+            <Text variant="h2" className="text-2xl">Skills</Text>
+            <Facts rows={skills} />
           </section>
 
-          <section className="space-y-4">
-            <Text variant="h2">Education</Text>
-            <Card className="card p-6">
-              <div className="space-y-4">
-                {education.map((edu) => (
-                  <div key={edu.degree} className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-                    <div>
-                      <Text variant="h3" className="text-xl">{edu.degree}</Text>
-                      <Text variant="subtle" className="text-base">{edu.institution}</Text>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+          <section className="space-y-6">
+            <Text variant="h2" className="text-2xl">Education</Text>
+            <Facts rows={education} />
           </section>
 
-          <section className="space-y-4">
-            <Text variant="h2">Spoken languages</Text>
-            <Card className="card p-6">
-              <Text variant="subtle" className="text-base">{spokenLanguages}</Text>
-            </Card>
+          <section className="space-y-6">
+            <Text variant="h2" className="text-2xl">Spoken languages</Text>
+            <p className="copy">{spokenLanguages}</p>
           </section>
         </div>
       </Layout>

@@ -14,7 +14,7 @@ export default function Tag({ tag, content }: TagProps) {
     <>
       <Meta title={`Tagged ${tag}`} description={`Notes tagged ${tag}.`} />
       <Layout>
-        <ContentDisplay title={`Tagged “${tag}”`} content={content} />
+        <ContentDisplay title={`Tagged ${tag}`} content={content} />
       </Layout>
     </>
   )

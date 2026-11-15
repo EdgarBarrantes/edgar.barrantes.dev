@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import { Content } from "../../utils/interfaces"
 import { Text } from '../ui/base'
-import { ArticleCard } from '../ArticleCard'
+import { ArticleItem } from '../ArticleItem'
 
 interface ContentDisplayProps {
   title: string
@@ -11,22 +11,18 @@ interface ContentDisplayProps {
 
 export function ContentDisplay({ title, description, content }: ContentDisplayProps) {
   return (
-    <div className="space-y-8">
-      <div className="max-w-2xl space-y-3">
+    <div className="space-y-12">
+      <div className="max-w-prose space-y-3">
         <Text variant="h1">{title}</Text>
-        {description && (
-          <Text variant="subtle" className="text-lg">
-            {description}
-          </Text>
-        )}
+        {description && <p className="copy text-muted-foreground">{description}</p>}
       </div>
 
       {content.length === 0 ? (
-        <Text variant="subtle">Nothing here yet.</Text>
+        <p className="copy text-muted-foreground">Nothing here yet.</p>
       ) : (
-        <div className="grid gap-6 sm:grid-cols-2">
+        <ul className="space-y-10">
           {content.map(({ data, slug, type }) => (
-            <ArticleCard
+            <ArticleItem
               key={`${type}/${slug}`}
               title={data.title}
               description={data.description}
@@ -35,7 +31,7 @@ export function ContentDisplay({ title, description, content }: ContentDisplayPr
               href={`/${type}/${slug}`}
             />
           ))}
-        </div>
+        </ul>
       )}
     </div>
   )

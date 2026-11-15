@@ -6,7 +6,7 @@ export function Newsletter() {
       width="100%"
       height="320"
       loading="lazy"
-      className="rounded-lg border bg-transparent"
+      className="rounded-lg bg-transparent"
     />
   )
 }

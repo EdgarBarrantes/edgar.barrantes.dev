@@ -6,10 +6,11 @@ interface ProjectCardProps {
   title: string
   description: string
   href: string
+  year?: string
   tags?: string[]
 }
 
-export function ProjectCard({ title, description, href, tags }: ProjectCardProps) {
+export function ProjectCard({ title, description, href, year, tags }: ProjectCardProps) {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="group block h-full">
       <Card hover className="flex h-full flex-col">
@@ -20,6 +21,7 @@ export function ProjectCard({ title, description, href, tags }: ProjectCardProps
             </Text>
             <ExternalLinkIcon className="h-4 w-4 mt-1 flex-shrink-0 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
           </div>
+          {year && <Text variant="subtle" className="text-sm">{year}</Text>}
         </CardHeader>
         <CardContent className="flex-1">
           <Text variant="subtle">{description}</Text>

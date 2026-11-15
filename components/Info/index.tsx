@@ -25,19 +25,28 @@ export function Info() {
           <h1 className="text-4xl font-semibold tracking-tight">
             Edgar Barrantes Brais
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Software engineer in Costa Rica, working in zero-knowledge. I spent
-            four years at Nethermind writing Cairo and Noir across Starknet,
-            Aztec and other proving stacks. On several of those projects I
-            designed and deployed the infrastructure as well, and ran it in
-            production.
+          <p className="text-lg font-medium">
+            Senior Full-Stack Engineer (TypeScript, Node.js, React). Developer
+            tooling and AI workflows. ZK background.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Bulgaria. Remote, European time zone. Open to remote roles in Europe.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Before that, seven years of full-stack TypeScript at WalletConnect,
-            Accenture, First Factory and as a freelancer.
+            I&apos;m a software engineer in Bulgaria with about ten years of
+            experience, mostly on remote teams. My core is TypeScript across the
+            stack (Node.js/Nest, React/Next.js, PostgreSQL), and I tend to end up
+            on the parts other developers depend on: developer tooling, API
+            infrastructure, integrations and CI.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I am open to new roles.
+            I spent four years at Nethermind on zero-knowledge ecosystems
+            (Starknet and Aztec, Cairo and Noir). Before that I worked at
+            WalletConnect, First Factory and Accenture.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            These days I build with AI in the loop and self-host most of what I
+            use. I am open to new roles.
           </p>
         </div>
 

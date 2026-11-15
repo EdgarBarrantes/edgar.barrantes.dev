@@ -1,8 +1,63 @@
 [
   {
+    "title": "homelab",
+    "description": "Guided installer and CLI that provision a Linux server with a dozen self-hosted services as Docker Compose stacks. Private by default, nightly backups, rebuild from backup tested in a VM.",
+    "href": "https://github.com/EdgarBarrantes/homelab",
+    "year": "2026",
+    "tags": [
+      "docker",
+      "linux",
+      "self-hosted"
+    ],
+    "featured": true
+  },
+  {
+    "title": "ha-gree-ifeel",
+    "description": "Home Assistant integration that makes a Gree air conditioner regulate to any room thermometer by sending I Feel reports over infrared. Early.",
+    "href": "https://github.com/EdgarBarrantes/ha-gree-ifeel",
+    "year": "2026",
+    "tags": [
+      "home-assistant",
+      "python"
+    ]
+  },
+  {
+    "title": "ha-flipper-infrared",
+    "description": "Home Assistant integration that uses a USB Flipper Zero as an infrared emitter. Early.",
+    "href": "https://github.com/EdgarBarrantes/ha-flipper-infrared",
+    "year": "2026",
+    "tags": [
+      "home-assistant",
+      "python"
+    ]
+  },
+  {
+    "title": "open-webui-kiwix",
+    "description": "Open WebUI tool that lets a local AI search and cite an offline Kiwix library.",
+    "href": "https://github.com/EdgarBarrantes/open-webui-kiwix",
+    "year": "2026",
+    "tags": [
+      "python",
+      "ai",
+      "offline"
+    ],
+    "featured": true
+  },
+  {
+    "title": "sony-headphones-tray",
+    "description": "Tray icon and CLI for Sony WH-1000XM headphones on Linux.",
+    "href": "https://github.com/EdgarBarrantes/sony-headphones-tray",
+    "year": "2026",
+    "tags": [
+      "python",
+      "linux"
+    ]
+  },
+  {
     "title": "Starknet Remix Plugin",
-    "description": "A Remix IDE plugin for Starknet: write, compile, deploy and interact with Cairo contracts from the browser. Built, deployed and maintained at Nethermind.",
+    "description": "A Remix IDE plugin for Starknet: write, compile, deploy and interact with Cairo contracts from the browser. Built at Nethermind (2022 to 2026).",
     "href": "https://github.com/NethermindEth/starknet-remix-plugin",
+    "year": "2022 to 2026",
     "tags": [
       "starknet",
       "cairo",
@@ -14,6 +69,7 @@
     "title": "Swarm uploader of Wikipedia pages",
     "description": "Winner of the Swarm and Fair Data Society hackathon bounty: a docker-compose that sets up a Swarm node, an Express API and a Next.js app to process zim files and upload them to the Swarm network.",
     "href": "https://github.com/EdgarBarrantes/swarm-zim-uploader",
+    "year": "2022",
     "tags": [
       "swarm",
       "typescript",
@@ -25,6 +81,7 @@
     "title": "Starkfees",
     "description": "See how much you have spent on gas on Starknet.",
     "href": "https://starkfees.xyz/",
+    "year": "2023",
     "tags": [
       "starknet",
       "next-js"
@@ -35,6 +92,7 @@
     "title": "Field matrix library",
     "description": "A small Rust library for matrices over finite fields.",
     "href": "https://github.com/EdgarBarrantes/field-matrix",
+    "year": "2023",
     "tags": [
       "rust",
       "math"
@@ -43,8 +101,9 @@
   },
   {
     "title": "Supabase SWR utils",
-    "description": "SWR wrapper, server-side fetcher and utilities for Supabase, published as a TypeScript monorepo with Lerna.",
+    "description": "SWR wrapper, server-side fetcher and utilities for Supabase.",
     "href": "https://github.com/EdgarBarrantes/supabase-utils",
+    "year": "2021",
     "tags": [
       "typescript",
       "supabase",
@@ -55,6 +114,7 @@
     "title": "HIIT and Qi Gong timer",
     "description": "A timer for my HIIT workouts and Qi Gong sessions.",
     "href": "https://timer.barrantes.dev/",
+    "year": "2025",
     "tags": [
       "react"
     ]
@@ -72,6 +132,7 @@
     "title": "This website",
     "description": "Next.js, TypeScript and Tailwind. Markdown notes, a resume page, and a small effects playground.",
     "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev",
+    "year": "2022",
     "tags": [
       "next-js",
       "typescript",

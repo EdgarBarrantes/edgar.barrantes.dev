@@ -4,7 +4,8 @@ import { useRouter } from 'next/router'
 const SITE = 'https://edgar.barrantes.dev'
 const NAME = 'Edgar Barrantes Brais'
 const DEFAULT_DESCRIPTION =
-  'Software engineer in Costa Rica working in zero-knowledge: Cairo and Noir across Starknet and Aztec, and the infrastructure behind them.'
+  'Senior Full-Stack Engineer (TypeScript, Node.js, React). Developer tooling and AI workflows. ZK background.'
+const HEADLINE_TITLE = 'Senior Full-Stack Engineer'
 
 interface MetaProps {
   title?: string
@@ -26,7 +27,7 @@ export function Meta({
   const router = useRouter()
   const path = router.asPath.split(/[?#]/)[0]
   const url = `${SITE}${path === '/' ? '' : path}`
-  const fullTitle = title ? `${title} | ${NAME}` : NAME
+  const fullTitle = title ? `${title} | ${NAME}` : `${NAME} | ${HEADLINE_TITLE}`
   const imageUrl = `${SITE}${image}`
 
   return (
@@ -67,7 +68,7 @@ export function Meta({
               alternateName: 'Edgar Barrantes',
               url: SITE,
               image: imageUrl,
-              jobTitle: 'Software Engineer',
+              jobTitle: HEADLINE_TITLE,
               description: DEFAULT_DESCRIPTION,
               sameAs: [
                 'https://github.com/edgarbarrantes',
@@ -78,7 +79,7 @@ export function Meta({
                 '@type': 'CollegeOrUniversity',
                 name: 'Universidad de Costa Rica',
               },
-              knowsAbout: ['Zero-knowledge proofs', 'Cairo', 'Noir', 'Starknet', 'Aztec', 'Rust', 'TypeScript', 'Smart contracts'],
+              knowsAbout: ['TypeScript', 'Node.js', 'React', 'Next.js', 'PostgreSQL', 'Developer tooling', 'Zero-knowledge proofs', 'Cairo', 'Noir', 'Starknet', 'Aztec'],
             }),
           }}
         />

@@ -11,10 +11,10 @@ interface ArticleItemProps {
 export const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 
-// One note in a list: the date in a gutter on the left, the title as the link.
+// One note in a list: the date (if given) in a gutter on the left, the title as the link.
 export function ArticleItem({ title, description, date, tags, href }: ArticleItemProps) {
   return (
-    <li className="grid gap-x-8 gap-y-1 sm:grid-cols-[7rem_1fr]">
+    <li className={date ? 'grid gap-x-8 gap-y-1 sm:grid-cols-[7rem_1fr]' : undefined}>
       {date && (
         <time dateTime={date} className="text-sm text-muted-foreground sm:pt-1">
           {formatDate(date)}

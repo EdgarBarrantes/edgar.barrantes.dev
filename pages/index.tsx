@@ -51,7 +51,6 @@ export default function Home({ recent }: HomeProps) {
                   key={`${type}/${slug}`}
                   title={data.title}
                   description={data.description}
-                  date={data.date}
                   tags={data.tag}
                   href={`/${type}/${slug}`}
                 />

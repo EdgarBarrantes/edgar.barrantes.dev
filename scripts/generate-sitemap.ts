@@ -10,8 +10,9 @@ function articles(type: 'thoughts' | 'til') {
   const dir = path.join('content', `_${type}`);
   return readdirSync(dir)
     .filter((f) => f.endsWith('.md'))
-    .map((f) => {
-      const { data } = matter.read(path.join(dir, f));
+    .map((f) => ({ f, data: matter.read(path.join(dir, f)).data }))
+    .filter(({ data }) => data.draft !== true)
+    .map(({ f, data }) => {
       return { route: `/${type}/${f.replace(/\.md$/, '')}`, lastmod: data.date ? String(data.date).slice(0, 10) : undefined };
     });
 }

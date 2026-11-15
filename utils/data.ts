@@ -17,6 +17,7 @@ const toArticleData = (data: Record<string, unknown>, slug: string): ArticleData
   description: typeof data.description === "string" ? data.description : "",
   date: data.date ? String(data.date).slice(0, 10) : "",
   tag: Array.isArray(data.tag) ? data.tag.map(String) : [],
+  draft: data.draft === true,
 });
 
 const byDateDesc = (a: Content, b: Content) =>
@@ -42,6 +43,7 @@ export const getAllContent = (type: ContentType): Content[] =>
       const { data } = matter.read(path.join(contentDir(type), filename));
       return { type, slug, data: toArticleData(data, slug) };
     })
+    .filter((c) => !c.data.draft)
     .sort(byDateDesc);
 
 export const getRecentContent = (limit: number): Content[] =>

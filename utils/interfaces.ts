@@ -3,6 +3,7 @@ export interface ArticleData {
   description: string
   date: string
   tag: string[]
+  draft?: boolean
   readingTime?: {
     minutes: number
     words: number
@@ -22,6 +23,7 @@ export interface Project {
   title: string
   description: string
   href: string
+  year?: string
   tags?: string[]
   featured?: boolean
 }

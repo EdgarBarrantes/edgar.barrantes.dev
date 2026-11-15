@@ -12,18 +12,18 @@ interface FeedItem {
 
 function getContent(type: string) {
   const dir = path.join(`content/_${type}`);
-  const files = readdirSync(dir);
-  return files.map((filename) => {
-    const { data } = matter.read(path.join(dir, filename));
-    return {
+  const files = readdirSync(dir).filter((f) => f.endsWith('.md'));
+  return files
+    .map((filename) => ({ filename, data: matter.read(path.join(dir, filename)).data }))
+    .filter(({ data }) => data.draft !== true)
+    .map(({ filename, data }) => ({
       data: {
         title: data.title || 'Untitled',
         description: data.description || '',
         date: data.date || new Date().toISOString(),
       },
       slug: filename.replace(/\.md$/, ''),
-    };
-  });
+    }));
 }
 
 async function generate() {

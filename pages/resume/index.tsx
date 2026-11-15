@@ -9,30 +9,35 @@ const experiences = [
   {
     title: 'Software Engineer',
     company: 'Nethermind',
-    period: 'Jul 2022 – May 2026',
+    period: 'Jul 2022 to May 2026',
+    location: 'Remote',
     description: [
       'Wrote Cairo and Noir day to day across Starknet, Aztec and other zero-knowledge stacks.',
-      'Designed and deployed the infrastructure behind several of these projects, and operated them in production.',
+      'Ran the servers for several of these projects.',
       'Built and maintained the Starknet Remix plugin: write, compile, deploy and interact with Cairo contracts from the browser.',
       'Backend services and CI pipelines in Rust and TypeScript.',
       'Worked with other teams on Solidity contracts and shared engineering practices.',
+      'Maintained the company Discourse server and took part in onboarding and offboarding.',
     ],
   },
   {
-    title: 'Software Developer, freelance',
+    title: 'Software Developer (freelance)',
     company: 'Self-employed',
-    period: 'Sep 2017 – Present',
+    period: 'Oct 2017 to Present',
+    location: 'Remote',
     description: [
       'Won the Fair Data Society Gitcoin hackathon with a Wikipedia to Swarm uploader.',
       'REST and GraphQL APIs with Node.js and Nest.js.',
       'Full-stack products with PostgreSQL, React and Next.js in TypeScript.',
       'Ran Solidity workshops and software fundamentals training.',
+      'Managed Linux servers and networking for client infrastructure.',
     ],
   },
   {
     title: 'Software Developer',
     company: 'WalletConnect',
-    period: 'May 2021 – Oct 2021',
+    period: 'May 2021 to Oct 2021',
+    location: 'Remote',
     description: [
       'Built the service for API key creation and delivery with PostgreSQL and Next.js.',
       'Developed the registry that stores and exposes service data.',
@@ -43,18 +48,21 @@ const experiences = [
   {
     title: 'Software Developer',
     company: 'First Factory',
-    period: 'Nov 2019 – Apr 2021',
+    period: 'Nov 2019 to Apr 2021',
+    location: 'Remote',
     description: [
       'Led financial sector projects for customer account management.',
       'Data visualization with Nest.js and React.',
       'Mentored junior developers and ran technical interviews.',
       'Internal tooling for employee data.',
+      'Deployed auto-scaling and serverless workloads on AWS.',
     ],
   },
   {
-    title: 'Software Developer',
+    title: 'Web Developer',
     company: 'Accenture',
-    period: 'Jan 2019 – Nov 2019',
+    period: 'Jan 2019 to Nov 2019',
+    location: 'Costa Rica',
     description: [
       'Led development of an internal social network from inception.',
       'Managed the developer team and technical decisions.',
@@ -62,9 +70,10 @@ const experiences = [
     ],
   },
   {
-    title: 'Software Developer',
+    title: 'Web Developer',
     company: 'Estudio Manatí',
-    period: 'Aug 2015 – Sep 2017',
+    period: 'Aug 2015 to Sep 2017',
+    location: 'Costa Rica',
     description: [
       'Full-stack work in JavaScript, TypeScript, React and PHP.',
       'Drupal, MySQL and Docker in agile teams, remote and on site.',
@@ -74,22 +83,24 @@ const experiences = [
 
 const skills = {
   'Zero-knowledge and blockchain': ['Cairo', 'Noir', 'Starknet', 'Aztec', 'Ethereum', 'Smart contracts'],
-  Languages: ['TypeScript', 'Rust', 'Solidity', 'JavaScript', 'PHP'],
-  Infrastructure: ['AWS', 'Docker', 'CI/CD', 'PostgreSQL', 'MySQL', 'Git', 'Supabase'],
+  Languages: ['TypeScript', 'Rust', 'Python', 'Solidity', 'JavaScript', 'PHP'],
+  Infrastructure: ['AWS', 'Docker', 'CI/CD', 'PostgreSQL', 'MySQL', 'Git', 'Supabase', 'Home Assistant'],
   Web: ['React', 'Next.js', 'Node.js', 'Nest.js', 'GraphQL', 'TypeORM'],
 }
 
 const education = [
-  { degree: 'Computer Science', institution: 'Universidad de Costa Rica', period: '2015' },
-  { degree: 'Physics', institution: 'Universidad de Costa Rica', period: '2012 – 2015' },
+  { degree: 'Computer Science', institution: 'Universidad de Costa Rica' },
+  { degree: 'Physics (foundational coursework)', institution: 'Universidad de Costa Rica' },
 ]
+
+const spokenLanguages = 'English and Spanish (fluent), French (learning), Bulgarian (basic).'
 
 export default function Resume() {
   return (
     <>
       <Meta
         title="Resume"
-        description="Resume of Edgar Barrantes Brais, software engineer: zero-knowledge in Cairo and Noir across Starknet and Aztec at Nethermind, and full-stack TypeScript at WalletConnect, Accenture and First Factory."
+        description="Resume of Edgar Barrantes Brais, senior full-stack engineer: TypeScript across the stack, developer tooling and integrations, and four years in zero-knowledge (Cairo and Noir on Starknet and Aztec) at Nethermind."
       />
       <Layout>
         <div className="space-y-10">
@@ -97,7 +108,8 @@ export default function Resume() {
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <Text variant="h1">Edgar Barrantes Brais</Text>
-                <Text variant="subtle" className="text-base">Software Engineer · Costa Rica</Text>
+                <Text variant="subtle" className="text-base">Senior Full-Stack Engineer · Bulgaria (remote, European time zone)</Text>
+                <Text variant="subtle" className="text-sm">Open to remote roles in Europe.</Text>
               </div>
               <div className="print:hidden flex flex-wrap gap-3">
                 <Button variant="outline" size="sm" asChild>
@@ -119,11 +131,11 @@ export default function Resume() {
               </div>
             </div>
             <Text variant="subtle" className="text-lg max-w-2xl">
-              Software engineer with over ten years of experience, the last
-              four in zero-knowledge at Nethermind. I work in Cairo and Noir,
-              the languages that sit on top of the Starknet and Aztec proving
-              systems, and I design, deploy and operate the infrastructure
-              around them. Full-stack in TypeScript and Rust.
+              Software engineer with about ten years of experience. Full-stack
+              in TypeScript (Node.js/Nest, React/Next.js, PostgreSQL), with four
+              years in zero-knowledge at Nethermind working in Cairo and Noir on
+              Starknet and Aztec. Builds developer tooling, API infrastructure
+              and integrations. Based in Bulgaria.
             </Text>
             <p className="hidden print:block text-sm">
               edgar@barrantes.dev · github.com/edgarbarrantes · linkedin.com/in/edgar-barrantes · edgar.barrantes.dev
@@ -141,7 +153,7 @@ export default function Resume() {
                         <Text variant="h3" className="text-xl">{exp.title}</Text>
                         <Text variant="subtle" className="text-base">{exp.company}</Text>
                       </div>
-                      <Text variant="subtle" className="text-sm">{exp.period}</Text>
+                      <Text variant="subtle" className="text-sm">{exp.period} · {exp.location}</Text>
                     </div>
                     <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
                       {exp.description.map((item) => (
@@ -184,10 +196,16 @@ export default function Resume() {
                       <Text variant="h3" className="text-xl">{edu.degree}</Text>
                       <Text variant="subtle" className="text-base">{edu.institution}</Text>
                     </div>
-                    <Text variant="subtle" className="text-sm">{edu.period}</Text>
                   </div>
                 ))}
               </div>
+            </Card>
+          </section>
+
+          <section className="space-y-4">
+            <Text variant="h2">Spoken languages</Text>
+            <Card className="card p-6">
+              <Text variant="subtle" className="text-base">{spokenLanguages}</Text>
             </Card>
           </section>
         </div>

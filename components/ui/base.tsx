@@ -44,7 +44,7 @@ export const Text = forwardRef<HTMLElement, TextProps>(
     }[variant || 'p']) as ElementType
 
     const styles = {
-      h1: 'font-display text-4xl font-semibold tracking-tight',
+      h1: 'font-display text-4xl font-semibold tracking-tight leading-tight',
       h2: 'font-display text-3xl font-semibold tracking-tight',
       h3: 'font-display text-2xl font-semibold tracking-tight',
       h4: 'font-display text-xl font-semibold tracking-tight',

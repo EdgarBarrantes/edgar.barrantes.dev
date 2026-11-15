@@ -1,6 +1,7 @@
 # edgar.barrantes.dev
 
 Personal site: resume, projects and short technical notes. Next.js (pages router), TypeScript, Tailwind.
+Type: Schibsted Grotesk for headings and small data, Source Serif 4 for running text (both via `next/font`). Lists, not cards.
 
 ```bash
 npm install

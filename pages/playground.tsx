@@ -4,7 +4,6 @@ import { XIcon } from 'lucide-react'
 import { Meta } from '../components/SEO/Meta'
 import { Layout } from '../components/Layout'
 import { Text } from '../components/ui/base'
-import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
 import { BackgroundSwitcher, type BackgroundType } from '../components/BackgroundSwitcher'
 
@@ -25,7 +24,7 @@ export default function Playground() {
         <div className="min-h-[calc(100vh-4rem)]" />
         <div className="fixed top-20 right-4 z-40 flex items-start gap-2">
           {showInfo && (
-            <Card className="w-72 bg-background/80 backdrop-blur">
+            <div className="w-72 rounded-lg border bg-background/80 backdrop-blur">
               <div className="relative p-4 pr-10 space-y-2">
                 <Button
                   variant="ghost"
@@ -41,7 +40,7 @@ export default function Playground() {
                   Canvas experiments. Pick an effect with the button on the right. The hangman game takes keyboard input.
                 </Text>
               </div>
-            </Card>
+            </div>
           )}
           <div className="rounded-md bg-background/80 backdrop-blur">
             <BackgroundSwitcher value={type} onChange={setType} showHangman />

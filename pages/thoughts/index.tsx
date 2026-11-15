@@ -21,7 +21,7 @@ export default function Thoughts({ thoughts }: ThoughtsProps) {
         description="Notes on books, podcasts and talks by Edgar Barrantes Brais."
       />
       <Layout>
-        <div className="space-y-12">
+        <div className="space-y-16">
           <ContentDisplay
             title="Thoughts"
             description="Notes on books, podcasts and talks. Longer pieces go out through the newsletter below."

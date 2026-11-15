@@ -10,8 +10,8 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="print:hidden border-t mt-16">
-      <Container className="flex flex-col sm:flex-row items-center justify-between gap-4 py-8 text-sm text-muted-foreground">
+    <footer className="print:hidden mt-24 border-t">
+      <Container size="md" className="flex flex-col gap-4 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <span>Edgar Barrantes Brais</span>
         <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
           {links.map(({ href, label }) => (

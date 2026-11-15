@@ -66,6 +66,35 @@
     "featured": true
   },
   {
+    "title": "HIIT and Qi Gong timer",
+    "description": "A timer for my HIIT workouts and Qi Gong sessions.",
+    "href": "https://timer.barrantes.dev/",
+    "year": "2025",
+    "tags": [
+      "react"
+    ]
+  },
+  {
+    "title": "Starkfees",
+    "description": "See how much you have spent on gas on Starknet.",
+    "href": "https://starkfees.xyz/",
+    "year": "2023",
+    "tags": [
+      "starknet",
+      "next-js"
+    ]
+  },
+  {
+    "title": "Field matrix library",
+    "description": "A small Rust library for matrices over finite fields.",
+    "href": "https://github.com/EdgarBarrantes/field-matrix",
+    "year": "2023",
+    "tags": [
+      "rust",
+      "math"
+    ]
+  },
+  {
     "title": "Swarm uploader of Wikipedia pages",
     "description": "Winner of the Swarm and Fair Data Society hackathon bounty: a docker-compose that sets up a Swarm node, an Express API and a Next.js app to process zim files and upload them to the Swarm network.",
     "href": "https://github.com/EdgarBarrantes/swarm-zim-uploader",
@@ -78,26 +107,15 @@
     "featured": true
   },
   {
-    "title": "Starkfees",
-    "description": "See how much you have spent on gas on Starknet.",
-    "href": "https://starkfees.xyz/",
-    "year": "2023",
+    "title": "This website",
+    "description": "Next.js, TypeScript and Tailwind. Markdown notes, a resume page, and a small effects playground.",
+    "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev",
+    "year": "2022",
     "tags": [
-      "starknet",
-      "next-js"
-    ],
-    "featured": true
-  },
-  {
-    "title": "Field matrix library",
-    "description": "A small Rust library for matrices over finite fields.",
-    "href": "https://github.com/EdgarBarrantes/field-matrix",
-    "year": "2023",
-    "tags": [
-      "rust",
-      "math"
-    ],
-    "featured": true
+      "next-js",
+      "typescript",
+      "tailwind"
+    ]
   },
   {
     "title": "Supabase SWR utils",
@@ -108,35 +126,6 @@
       "typescript",
       "supabase",
       "react"
-    ]
-  },
-  {
-    "title": "HIIT and Qi Gong timer",
-    "description": "A timer for my HIIT workouts and Qi Gong sessions.",
-    "href": "https://timer.barrantes.dev/",
-    "year": "2025",
-    "tags": [
-      "react"
-    ]
-  },
-  {
-    "title": "Starknet Costa Rica meetup",
-    "description": "A meetup to talk about Starknet and Cairo and learn about the technology and its applications.",
-    "href": "https://www.meetup.com/starknet-costa-rica/",
-    "tags": [
-      "starknet",
-      "community"
-    ]
-  },
-  {
-    "title": "This website",
-    "description": "Next.js, TypeScript and Tailwind. Markdown notes, a resume page, and a small effects playground.",
-    "href": "https://github.com/EdgarBarrantes/edgar.barrantes.dev",
-    "year": "2022",
-    "tags": [
-      "next-js",
-      "typescript",
-      "tailwind"
     ]
   }
 ]

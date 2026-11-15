@@ -10,8 +10,8 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/site.manifest" />
         <link rel="alternate" type="application/rss+xml" title="Edgar Barrantes Brais" href="/rss.xml" />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#111217" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#131614" media="(prefers-color-scheme: dark)" />
       </Head>
       <body>
         <Main />

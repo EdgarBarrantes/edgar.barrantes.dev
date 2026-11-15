@@ -37,7 +37,7 @@ export function Header() {
   const linkClass = (href: string, base: string) =>
     twMerge(
       base,
-      'font-medium transition-colors hover:text-primary',
+      'transition-colors hover:text-foreground',
       router.pathname.startsWith(href) ? 'text-foreground' : 'text-muted-foreground'
     )
 
@@ -46,7 +46,7 @@ export function Header() {
       <header
         className={twMerge(
           'print:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-150',
-          scrolled && 'bg-background/80 backdrop-blur-lg shadow-sm'
+          scrolled && 'border-b bg-background/85 backdrop-blur-lg'
         )}
       >
         <Container size="md" className="flex h-16 items-center justify-between">

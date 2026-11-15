@@ -29,13 +29,13 @@ export function Info() {
           </p>
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="h-2 w-2 rounded-full bg-moss" aria-hidden="true" />
-            Open to remote roles in Europe. Bulgaria, European time zone.
+            Open to remote roles in Europe.
           </p>
         </div>
 
         <div className="copy space-y-4 text-foreground/85">
           <p>
-            I&apos;m a software engineer in Bulgaria with about ten years of experience,
+            I&apos;m a software engineer with about ten years of experience,
             mostly on remote teams. My core is TypeScript across the stack (Node.js/Nest,
             React/Next.js, PostgreSQL), and I tend to end up on the parts other developers
             depend on: developer tooling, API infrastructure, integrations and CI.

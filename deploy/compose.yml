@@ -1,0 +1,20 @@
+# Coolify service "site" (project edgar) on poseidon, https://edgar.barrantes.dev (see olympus).
+# No registry: scripts/deploy.sh builds the image on Edgar's machine, loads it into poseidon's
+# Docker over SSH and sets the tag here, so Coolify must never pull it.
+services:
+  site:
+    image: edgar.barrantes.dev:TAG   # set by scripts/deploy.sh to the commit
+    pull_policy: never
+    restart: unless-stopped
+    mem_limit: 256m
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=coolify
+      - traefik.http.routers.edgar-site.rule=Host(`edgar.barrantes.dev`)
+      - traefik.http.routers.edgar-site.entrypoints=https
+      - traefik.http.routers.edgar-site.tls.certresolver=letsencrypt
+      - traefik.http.services.edgar-site.loadbalancer.server.port=3000
+      - traefik.http.routers.edgar-site-http.rule=Host(`edgar.barrantes.dev`)
+      - traefik.http.routers.edgar-site-http.entrypoints=http
+      - traefik.http.routers.edgar-site-http.middlewares=redirect-to-https@file
+      - traefik.http.routers.edgar-site-http.service=edgar-site

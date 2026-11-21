@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // One small Node image for poseidon (olympus DEPLOY.md); Cloudflare compresses, not Next.
+  output: 'standalone',
+  compress: false,
   poweredByHeader: false,
   trailingSlash: false,
   images: {

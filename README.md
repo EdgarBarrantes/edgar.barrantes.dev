@@ -7,7 +7,11 @@ Type: Schibsted Grotesk for headings and small data, Source Serif 4 for running 
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # also regenerates public/sitemap.xml and public/rss.xml
+npm run deploy   # builds the image here, pushes it to ghcr.io, Coolify runs it on poseidon
 ```
+
+Hosting: Edgar's server poseidon, behind Cloudflare (see `~/Code/olympus`). Nothing deploys on push:
+commit, then `npm run deploy`. The image is a standalone Next.js server; `/api/health` is its health check.
 
 ## Content
 

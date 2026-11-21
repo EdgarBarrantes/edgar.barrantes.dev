@@ -32,8 +32,8 @@ coolify --request POST "$API/services/$SERVICE/restart" >/dev/null
 
 echo "Restarting with $TAG; waiting for it to answer..."
 for _ in $(seq 30); do
-  if [[ "$(curl -s https://edgar.barrantes.dev/api/health -H 'Cache-Control: no-cache' -o /dev/null -w '%{http_code}')" == 200 ]] &&
-     ssh poseidon "sudo docker ps --filter name=$SERVICE --format '{{.Image}} {{.Status}}'" | grep -q "$TAG.*healthy"; then
+  # Judged on poseidon itself: a cached DNS answer at home can still point elsewhere.
+  if ssh poseidon "sudo docker ps --filter name=$SERVICE --format '{{.Image}} {{.Status}}'" | grep -q "$TAG.*healthy"; then
     echo "Live: https://edgar.barrantes.dev ($TAG)"
     # Keep the three newest images on poseidon for a quick rollback.
     ssh poseidon "sudo docker image ls edgar.barrantes.dev --format '{{.Tag}}' | tail -n +4 | sed 's/^/edgar.barrantes.dev:/' | xargs -r sudo docker image rm" >/dev/null || true
